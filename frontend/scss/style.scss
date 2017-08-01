@@ -1,6 +1,7 @@
 /*
 * Developed by Anthony Ngene
 */
+@import 'materialize';
 @import "partials/functions";
 @import 'partials/variables';
 @import 'partials/mixins';
@@ -8,18 +9,14 @@
 
 @include google-font("Lato");
 @include google-font("Courgette");
-* {
-    margin: 0;
-}
+
 html, body {
     height: 100%;
 }
 body{
-	font-family: $text-font;
     color: $text-color;
     font-size: $text-size;
 }
 
-h1, h2, h3 {
-  font-family: $header-font;
-}
+// Homepage
+@import 'homepage/navbar'

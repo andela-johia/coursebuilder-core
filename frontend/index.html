@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  
-  <script src="js/main.js"></script>
-</body>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css" media="screen,projection">
+    
+  </head>
+
+  <body>
+    <!-- NavBar -->
+    <div class="navbar-fixed">
+    <nav class="nav-extended">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"><img src="images/navbar-logo.png" alt="logo"></a>
+      </div>
+      
+      <div class="nav-wrapper">
+        <ul class="left hide-on-med-and-down">
+          <li><a href="#!">My Dashboard</a></li>
+          <li><a href="#!">Topic Library</a></li>
+          <li><a href="#!">Certification</a></li>
+          <li><a href="#!">Events</a></li>
+          <li><a href="#!">Partners</a></li>
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">More<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+    </nav>
+    </div>
+    
+    
+    
+   
+<!--  Dropdown -->
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
+   
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+  </body>
 </html>
