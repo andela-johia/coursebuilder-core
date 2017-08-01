@@ -11,13 +11,26 @@
 
   <body>
     <!-- NavBar -->
+    <nav class="home-mobile-nav">
+      <div class="nav-wrapper">
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="#!">My Dashboard</a></li>
+          <li><a href="#!">Topic Library</a></li>
+          <li><a href="#!">Certification</a></li>
+          <li><a href="#!">Events</a></li>
+          <li><a href="#!">Partners</a></li>
+        </ul>
+      </div>
+    </nav>
+    
     <div class="navbar-fixed">
     <nav class="nav-extended">
       <div class="nav-wrapper">
         <a href="#!" class="brand-logo"><img src="images/navbar-logo.png" alt="logo"></a>
       </div>
       
-      <div class="nav-wrapper">
+      <div class="nav-wrapper home-main-menu">
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
           <li><a href="#!">My Dashboard</a></li>
           <li><a href="#!">Topic Library</a></li>
@@ -45,5 +58,6 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

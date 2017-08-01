@@ -16,7 +16,7 @@
     }
   }
 
-  .nav-wrapper:last-child {
+  .home-main-menu {
     border-top: 1px solid #ccc;
   }
 
@@ -30,4 +30,16 @@
       }
     }
   }
+  
+  @media screen and (max-width: 992px) {
+    .home-main-menu {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+.home-mobile-nav {
+  height: 0px;
 }
