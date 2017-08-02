@@ -2,9 +2,12 @@
 * Developed by Anthony Ngene
 */
 @import 'materialize';
+
 @import "partials/functions";
 @import 'partials/variables';
 @import 'partials/mixins';
+
+@import 'owlcarousel/owl.carousel';
 
 @include google-font("Roboto+Slab");
 
@@ -22,4 +25,4 @@ h1, h2 {
 
 // Homepage
 @import 'homepage/navbar';
-@import 'homepage/main'
+@import 'homepage/main';

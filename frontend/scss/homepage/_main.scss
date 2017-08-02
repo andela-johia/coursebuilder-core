@@ -1,3 +1,13 @@
+.section {
+  padding: 50px 0;
+  
+  .section-label {
+    text-align: center;
+    font-size: 1.38rem;
+  }
+}
+
+
 //Hero Banner
 .hero-banner {
   display: block;
@@ -45,3 +55,55 @@
     }
   }
 }
+
+
+// Mission
+.mission {
+  background-color: $hover-blue;
+  color: #fff;
+  
+  .mission-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: center;
+    
+    h2 {
+      margin-top: 0;
+      font-size: 1.75rem;
+      margin-bottom: 40px;
+    }
+    p {
+      margin-bottom: 0;
+      font-size: 1.25rem;
+      font-weight: 200;
+    }
+  }
+}
+
+// Awards
+.awards {
+  text-align: center;
+  padding: 50px 30px;
+  .award-wrapper {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  
+  .item {
+    min-height: 100px;
+    text-align: center;
+    
+    img {
+      max-width: 200px;
+      margin: 0 auto;
+    }
+  }
+}
+
