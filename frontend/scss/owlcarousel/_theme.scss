@@ -45,6 +45,8 @@
 	.owl-dots {
 		text-align: center;
 		-webkit-tap-highlight-color: transparent;
+        position: relative;
+        bottom: -30px;
 
 		.owl-dot {
 			display: inline-block;
@@ -59,13 +61,12 @@
 				display: block;
 				-webkit-backface-visibility: visible;
 				transition: opacity 200ms ease;
-				border-radius: 30px;
 			}
 
 			&.active,
 			&:hover {
 				span {
-					background: $dot-background-active;
+					background: $hover-blue;
 				}
 			}
 		}
