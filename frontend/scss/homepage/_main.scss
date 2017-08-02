@@ -1,0 +1,47 @@
+//Hero Banner
+.hero-banner {
+  display: block;
+  background: url('https://lh3.googleusercontent.com/kl3tvJo3u197hdo4_60AfTr5R72GaR88GBvmr6jLIlOOtr1a95QqdFGOkEN_BA4Gbld8WE3ryNp0IWDvGVv9bjQ=s0');
+  margin-top: 65px;
+  background-position: center;
+  background-size: cover;
+
+  .hero-banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 15px;
+    
+    h1, p { max-width: 470px; }
+    
+    h1 {
+      margin: 0;
+      color: $text-color-l;
+    }
+    
+    p {
+      font-weight: 500;
+      font-size: 18px;
+      margin: 40px 0;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    background: $white-d;
+    margin-top: 0;
+    .hero-banner-content {
+      padding: 50px 15px;
+      
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-weight: 300;
+        font-size: 1.2rem;
+        margin: 30px 0;
+      }
+      
+      .btn-large { margin-top: 30px; }
+    }
+  }
+}

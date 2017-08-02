@@ -1,5 +1,5 @@
 const gulp = require('gulp'),
-    scss = require('gulp-sass'),
+      scss = require('gulp-sass');
 
 gulp.task('scss', () => {
   gulp.src('scss/*.scss')
