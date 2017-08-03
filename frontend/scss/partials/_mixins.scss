@@ -22,10 +22,15 @@
 
 @mixin  google-font($font){
   $font: unquote($font);
-  @import url(https://fonts.googleapis.com/css?family=#{$font}:300);
+  @import url(https://fonts.googleapis.com/css?family=#{$font}:100);
 }
 
-
-
-
-
+@mixin thin-paragraph() {
+  p {
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 0.8px;
+    line-height: 25px;
+    color: #616161;
+  }  
+}

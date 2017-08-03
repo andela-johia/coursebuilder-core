@@ -18,7 +18,7 @@
   background-size: cover;
 
   .hero-banner-content {
-    max-width: 1200px;
+    max-width: $context-width;
     margin: 0 auto;
     padding: 70px 15px;
     
@@ -87,14 +87,11 @@
   
   .carousel-section-wrapper {
     display: block;
-    max-width: 1200px;
+    max-width: $context-width;
     margin: 0 auto;
   }
   
-  p {
-    font-size: 1rem;
-    font-weight: 300;
-  }
+  @include thin-paragraph;
 }
 
 // Awards
@@ -148,3 +145,71 @@
     }
   }
 }
+
+// Question cards
+.question-cards {
+  background-color: $white-d;
+  padding: 50px 15px;
+  
+  .card {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  }
+  .question-card-div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .question-card-media {
+    width: 66.66%;
+  }
+  .question-card-text {
+    width: 33.2%;
+    padding: 20px;
+  }
+  
+  .responsive-media-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56%;
+    height: 0;
+  }
+  
+  .flex-reverse {
+    flex-direction: row-reverse;
+    
+    .question-card-text {
+      padding-bottom: 30px;
+      align-self: flex-end;
+      
+      a {
+        color: $hover-blue;
+      }
+      p { margin-bottom: 40px; }
+    }
+  }
+  
+  iframe {
+    position: absolute;
+  }
+  
+  h2 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    margin-bottom: 40px;
+  }
+  @include thin-paragraph;
+  
+  @media screen and (max-width: 1072px) {
+    .question-card-div {
+      flex-direction: column;
+      .question-card-media, .question-card-text {
+        width: 100%;
+      }
+    }
+  }
+}
+

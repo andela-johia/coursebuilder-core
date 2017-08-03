@@ -23,6 +23,8 @@ h1, h2 {
   font-weight: 300;
 }
 
+img { max-width: 100%; }
+
 // Homepage
 @import 'homepage/navbar';
 @import 'homepage/main';
