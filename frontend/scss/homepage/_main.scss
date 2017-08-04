@@ -12,7 +12,7 @@
 //Hero Banner
 .hero-banner {
   display: block;
-  background: url('https://lh3.googleusercontent.com/kl3tvJo3u197hdo4_60AfTr5R72GaR88GBvmr6jLIlOOtr1a95QqdFGOkEN_BA4Gbld8WE3ryNp0IWDvGVv9bjQ=s0');
+  background: url('../images/hero-banner.png');
   margin-top: 65px;
   background-position: center;
   background-size: cover;
@@ -82,6 +82,8 @@
   }
 }
 
+
+// Awards & How it works
 .awards, .how-it-works {
   padding: 50px 30px;
   
@@ -107,6 +109,13 @@
       max-width: 200px;
       margin: 0 auto;
     }
+  }
+  
+  .owl-prev {
+    left: -30px !important;
+  }
+  .owl-next {
+    right: -30px !important;
   }
 }
 
@@ -146,10 +155,11 @@
   }
 }
 
+
 // Question cards
 .question-cards {
   background-color: $white-d;
-  padding: 50px 15px;
+  padding: 20px 15px;
   
   .card {
     display: inline-block;
@@ -213,3 +223,64 @@
   }
 }
 
+
+// Testimonials
+.testimonials {
+  padding-bottom: 0;
+  .row { margin: 0; }
+  .card-tabs { border: none; }
+  
+  .testimonial-div {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    transition: all 1s;
+    
+    img {
+      min-width: 800px;
+    }
+  }
+  
+  .testimonial-card {
+    width: 350px;
+    position: absolute;
+    background-color: $color-white;
+    padding: 15px;
+    top: 15%;
+    left: 10%;
+//    margin-left: -400px;;
+    
+    @include thin-paragraph;
+    
+    @include sub-heading;
+  }
+}
+
+
+// Continue learing
+.continue-learning {
+  padding: 30px 5% 30px 5%;
+  text-align: right;
+  background-color: $green;
+  color: $color-white;
+  @include transition();
+  
+  &:hover {
+    background-color: lighten($green, 5%);
+  }
+  
+  p {
+    margin-top: 0;
+  }
+  h3 {
+    margin: 0;
+  }
+  i {
+    position: absolute;
+    right: -30px;
+  }
+  a {
+    color: #fff;
+  }
+  @include sub-heading;
+}

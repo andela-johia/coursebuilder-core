@@ -20,6 +20,14 @@
   }
 }
 
+@mixin transition($time: 0.2s){
+  -webkit-transition: all $time;
+  -moz-transition: all $time;
+  -ms-transition: all $time;
+  -o-transition: all $time;
+  transition: all $time;
+}
+
 @mixin  google-font($font){
   $font: unquote($font);
   @import url(https://fonts.googleapis.com/css?family=#{$font}:100);
@@ -33,4 +41,11 @@
     line-height: 25px;
     color: #616161;
   }  
+}
+
+@mixin sub-heading() {
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
 }

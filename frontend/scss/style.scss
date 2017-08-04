@@ -16,6 +16,7 @@ html, body {
 }
 body {
   font-size: $text-size;
+  overflow-x: hidden;
 }
 
 h1, h2 {
@@ -23,8 +24,27 @@ h1, h2 {
   font-weight: 300;
 }
 
-img { max-width: 100%; }
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.simple-container {
+  position: relative;
+  max-width: $context-width;
+  margin: 0 auto;
+}
+
+select {
+  display: block;
+}
+
+.tiny-text {
+  letter-spacing: 0.8px;
+  font-size: 0.9rem;
+}
 
 // Homepage
 @import 'homepage/navbar';
 @import 'homepage/main';
+@import 'footer';

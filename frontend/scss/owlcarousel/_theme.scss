@@ -25,11 +25,11 @@
 		}
         .owl-next {
           position: absolute;
-          right: -50px;
+          right: 0;
         }
         .owl-prev {
           position: absolute;
-          left: -50px;
+          left: 0;
         }
 		.disabled {
 			opacity: $nav-disabled-opacity;
