@@ -30,7 +30,7 @@
 
 @mixin  google-font($font){
   $font: unquote($font);
-  @import url(https://fonts.googleapis.com/css?family=#{$font}:100);
+  @import url(https://fonts.googleapis.com/css?family=#{$font}:100,300);
 }
 
 @mixin thin-paragraph() {

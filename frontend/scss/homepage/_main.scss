@@ -1,10 +1,11 @@
 .section {
-  padding: 50px 0;
+  padding: 4.4rem 0;
   
   .section-label {
     text-align: center;
-    font-size: 1.38rem;
+    font-size: 1.4rem;
     margin-top: 0;
+    font-weight: 100;
   }
 }
 
@@ -13,7 +14,6 @@
 .hero-banner {
   display: block;
   background: url('../images/hero-banner.png');
-  margin-top: 65px;
   background-position: center;
   background-size: cover;
 
@@ -73,6 +73,7 @@
       margin-top: 0;
       font-size: 1.75rem;
       margin-bottom: 40px;
+      font-weight: 200;
     }
     p {
       margin-bottom: 0;
@@ -85,7 +86,7 @@
 
 // Awards & How it works
 .awards, .how-it-works {
-  padding: 50px 30px;
+  padding: 4.4rem 30px;
   
   .carousel-section-wrapper {
     display: block;
@@ -111,12 +112,6 @@
     }
   }
   
-  .owl-prev {
-    left: -30px !important;
-  }
-  .owl-next {
-    right: -30px !important;
-  }
 }
 
 // How it works
@@ -124,7 +119,7 @@
   margin-bottom: 20px;
   
   .section-label {
-    margin-bottom: 50px;
+    margin-bottom: 4.4rem
   }
   
   .how-it-works-text {
@@ -179,6 +174,10 @@
   .question-card-text {
     width: 33.2%;
     padding: 20px;
+    
+    h2 {
+      font-weight: 100;
+    }
   }
   
   .responsive-media-wrapper {
@@ -227,6 +226,11 @@
 // Testimonials
 .testimonials {
   padding-bottom: 0;
+  
+  .section-label {
+    margin-top: 5rem;
+  }
+  
   .row { margin: 0; }
   .card-tabs { border: none; }
   
@@ -248,7 +252,6 @@
     padding: 15px;
     top: 15%;
     left: 10%;
-//    margin-left: -400px;;
     
     @include thin-paragraph;
     

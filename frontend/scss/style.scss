@@ -44,6 +44,19 @@ select {
   font-size: 0.9rem;
 }
 
+.pad-5 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#explorer {
+  display: none;
+}
+
+#explorer, #homepage {
+  margin-top: 65px;
+}
+
 // Homepage
 @import 'homepage/navbar';
 @import 'homepage/main';

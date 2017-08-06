@@ -6,7 +6,7 @@ $(document).ready(function(){
     margin:10,
     nav:true,
     dots: false,
-    navText: ['<i class="large material-icons">chevron_left</i>', '<i class="large material-icons">chevron_right</i>'],
+    navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
     responsive:{
       0:{
         items:1
@@ -18,13 +18,23 @@ $(document).ready(function(){
         items:4
       }
     }
-  })
+  });
+  
+  $('.how-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
+    items: 1,
+  });
+  
+  $('a[href="#!explorer"]').on('click', function() {
+    $('#homepage').hide();
+    $('#explorer').show();
+  });
+  
+  $('a[href="#!home"]').on('click', function() {
+    $('#explorer').hide();
+    $('#homepage').show();
+  });
 });
-
-$('.how-carousel').owlCarousel({
-  loop:true,
-  margin:10,
-  nav:true,
-  navText: ['<i class="large material-icons">chevron_left</i>', '<i class="large material-icons">chevron_right</i>'],
-  items: 1,
-})
