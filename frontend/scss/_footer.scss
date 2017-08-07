@@ -1,7 +1,7 @@
 footer {
 
   .card {
-    padding: 20px 5%;
+    padding: 10px 5%;
     margin: 0;
   }
   
@@ -10,7 +10,7 @@ footer {
     a {
       color: $text-color-l;
     }
-
+    
     select {
       float: right;
       width: 200px;
@@ -18,20 +18,26 @@ footer {
       height: 28px;
       background-color: $white-d;
       border: 1px solid #ccc;
+      margin-top: 12px;
     }
     
     .footer-privacy {
       text-align: center;
+      margin-top: 15px;
     }
     
     img {
+      float: left;
       margin-right: 30px;
+      width: 50px;
     }
     
     .row { margin: 0; }
     
-    .col:first-child span {
+    .col:first-child p {
+      display: inline-block;
       font-size: 1rem;
+      margin-top: 12px;
     }
   }
   

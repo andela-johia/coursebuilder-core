@@ -3,8 +3,8 @@
   background-color: #fff;
   
   .brand-logo img {
-    width: 207px;
-    margin-bottom: 15px;
+    width: 150px;
+    margin-bottom: 5px;
   }
 
   a {
@@ -72,16 +72,31 @@
 
 .side-nav {
   
-}
-.user-view {
-  background-color: $primary-color;
-  
-  img {
-    width: 50px;
-    margin-right: 20px;
+  .user-view {
+    background-color: $primary-color;
+
+    img {
+      width: 50px;
+      margin-right: 20px;
+    }
+
+    .user-view-div {
+      padding-bottom: 15px;
+    }
   }
   
-  .user-view-div {
-    padding-bottom: 15px;
+  li:last-child {
+    margin-bottom: 50px;
+  }
+  
+  .mobile-nav-logo {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    
+    img {
+      height: 100%;
+    }
   }
 }
