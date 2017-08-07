@@ -68,3 +68,20 @@
 .home-mobile-nav {
   height: 0px;
 }
+
+
+.side-nav {
+  
+}
+.user-view {
+  background-color: $primary-color;
+  
+  img {
+    width: 50px;
+    margin-right: 20px;
+  }
+  
+  .user-view-div {
+    padding-bottom: 15px;
+  }
+}
