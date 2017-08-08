@@ -1,0 +1,37 @@
+.topic-library {
+  .simple-container {
+    padding: 0 15px;
+  }
+  
+  .select-wrapper {
+    max-width: 200px;
+  }
+}
+
+.course-card {
+  .card-image {
+    width: 80px;
+    background-color: $secondary-color;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  @include thin-paragraph;
+  
+  .card-action {
+    border-top: none;
+    padding-top: 0;
+    
+    a {
+      color: $primary-color !important;
+      float: right;
+    }
+    
+    & > div {
+      padding-top: 16px;
+      border-top: 3px solid $brown-l;
+    }
+  }
+}

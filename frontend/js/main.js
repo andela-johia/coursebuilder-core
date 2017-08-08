@@ -37,4 +37,7 @@ $(document).ready(function(){
     $('#explorer').hide();
     $('#homepage').show();
   });
+  
+  $('select').material_select();
+  
 });
