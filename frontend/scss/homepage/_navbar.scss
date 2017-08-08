@@ -1,0 +1,102 @@
+
+.nav-extended {
+  background-color: #fff;
+  
+  .brand-logo img {
+    width: 150px;
+    margin-bottom: 5px;
+  }
+
+  a {
+    color: #000;
+    &:hover {
+      color: $hover-blue;
+      background-color: transparent;
+      border: none;
+    }
+    font-size: 1rem;
+  }
+
+  .sign-in-nav {
+    .sign-in-link {
+      color: $primary-color;
+    }
+    
+    .btn {
+      padding-right: 15px;
+      padding-left: 15px;
+      color: $color-white;
+      background-color: $secondary-color;
+      
+      &:hover {
+        background-color: lighten($secondary-color, 7%);
+      }
+    }
+  }
+  
+  .home-main-menu {
+    border-top: 1px solid #ccc;
+  }
+
+  .dropdown-content {
+    top: 60px !important;
+
+    a {
+      color: #000;
+      &:hover {
+        color: $hover-blue;
+      }
+    }
+  }
+  
+  .left > a:first-child, {
+    padding-left: 0;
+  }
+  .right > a:last-child {
+    margin-right: 0;
+  }
+  
+  @media screen and (max-width: 992px) {
+    .home-main-menu {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+.home-mobile-nav {
+  height: 0px;
+}
+
+
+.side-nav {
+  
+  .user-view {
+    background-color: $primary-color;
+
+    img {
+      width: 50px;
+      margin-right: 20px;
+    }
+
+    .user-view-div {
+      padding-bottom: 15px;
+    }
+  }
+  
+  li:last-child {
+    margin-bottom: 50px;
+  }
+  
+  .mobile-nav-logo {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    
+    img {
+      height: 100%;
+    }
+  }
+}

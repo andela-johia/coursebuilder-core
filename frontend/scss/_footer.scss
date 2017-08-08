@@ -1,0 +1,82 @@
+footer {
+
+  .card {
+    padding: 10px 5%;
+    margin: 0;
+  }
+  
+  .footer-top {
+    margin: 0;
+    a {
+      color: $text-color-l;
+    }
+    
+    select {
+      float: right;
+      width: 200px;
+      font-size: 1rem;
+      height: 28px;
+      background-color: $white-d;
+      border: 1px solid #ccc;
+      margin-top: 12px;
+    }
+    
+    .footer-privacy {
+      text-align: center;
+      margin-top: 15px;
+    }
+    
+    img {
+      float: left;
+      margin-right: 30px;
+      width: 50px;
+    }
+    
+    .row { margin: 0; }
+    
+    .col:first-child p {
+      display: inline-block;
+      font-size: 1rem;
+      margin-top: 12px;
+    }
+  }
+  
+  .footer-bottom {
+    padding: 20px 5% 0 5%;
+    .footer-appstores {
+      img {
+        width: 150px;
+        margin-right: 20px;
+      }
+    }
+    
+    .footer-social-icons {
+      padding-top: 10px;
+      text-align: right;
+      img {
+        margin-left: 30px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    text-align: left;
+    
+    .footer-top {
+      select {
+        float: left;
+        margin-top: 15px;
+      }
+      
+      .footer-privacy {
+        text-align: left;
+        margin-top: 15px;
+      }
+    }
+    
+    .footer-social-icons {
+      text-align: left !important;
+      margin: 20px 0;
+    }
+  }
+}

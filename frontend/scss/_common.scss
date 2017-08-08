@@ -1,0 +1,49 @@
+html, body {
+  height: 100%;
+}
+body {
+  font-size: $text-size;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  font-family: $header-font;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.simple-container {
+  position: relative;
+  max-width: $context-width;
+  margin: 0 auto;
+}
+
+select {
+  display: block;
+}
+
+.tiny-text {
+  letter-spacing: 0.8px;
+  font-size: 0.9rem;
+}
+
+.pad-5 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#explorer {
+  display: none;
+}
+
+#explorer, #homepage {
+  margin-top: 65px;
+  
+  @media screen and (max-width: 992px) {
+    margin-top: 0;
+  }
+}

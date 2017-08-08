@@ -1,0 +1,19 @@
+/*
+* Developed by Anthony Ngene
+*/
+@import 'materialize';
+
+@import "partials/functions";
+@import 'partials/variables';
+@import 'partials/mixins';
+
+@import 'owlcarousel/owl.carousel';
+@include google-font("Roboto+Slab");
+
+// Common
+@import 'common';
+
+// Homepage
+@import 'homepage/navbar';
+@import 'homepage/main';
+@import 'footer';
