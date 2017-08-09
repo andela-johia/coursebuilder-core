@@ -31,11 +31,19 @@ $(document).ready(function(){
   $('a[href="#!explorer"]').on('click', function() {
     $('#homepage').hide();
     $('#explorer').show();
+    $('#certification').hide();
   });
   
   $('a[href="#!home"]').on('click', function() {
     $('#explorer').hide();
     $('#homepage').show();
+    $('#certification').hide();
+  });
+
+  $('a[href="#!certification"]').on('click', function() {
+    $('#explorer').hide();
+    $('#homepage').hide();
+    $('#certification').show();
   });
   
   $('select').material_select();
