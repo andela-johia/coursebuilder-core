@@ -28,24 +28,36 @@ $(document).ready(function(){
     items: 1,
   });
   
+  function showPage(pageName) {
+    if (pageName === 'explorer') {
+      $('#homepage').hide();
+      $('#certification').hide();
+      $('#explorer').show();
+    } else if (pageName === 'certification') {
+      $('#explorer').hide();
+      $('#homepage').hide();
+      $('#certification').show();
+    } else {
+      $('#certification').hide();
+      $('#explorer').hide();
+      $('#homepage').show();
+    }
+  }
+  
   $('a[href="#!explorer"]').on('click', function() {
-    $('#homepage').hide();
-    $('#explorer').show();
-    $('#certification').hide();
+    showPage('explorer');
+  });
+  
+  $('a[href="#!certification"]').on('click', function() {
+    showPage('certification');
   });
   
   $('a[href="#!home"]').on('click', function() {
-    $('#explorer').hide();
-    $('#homepage').show();
-    $('#certification').hide();
-  });
-
-  $('a[href="#!certification"]').on('click', function() {
-    $('#explorer').hide();
-    $('#homepage').hide();
-    $('#certification').show();
+    showPage();
   });
   
   $('select').material_select();
-  
+  if (window.location.href.substr(-8) === 'explorer') {
+    showPage('explorer');
+  }
 });
