@@ -28,16 +28,26 @@ $(document).ready(function(){
     items: 1,
   });
   
+  function showPage(pageName) {
+    if (pageName === 'explorer') {
+      $('#homepage').hide();
+      $('#explorer').show();
+    } else {
+      $('#explorer').hide();
+      $('#homepage').show();
+    }
+  }
+  
   $('a[href="#!explorer"]').on('click', function() {
-    $('#homepage').hide();
-    $('#explorer').show();
+    showPage('explorer');
   });
   
   $('a[href="#!home"]').on('click', function() {
-    $('#explorer').hide();
-    $('#homepage').show();
+    showPage();
   });
   
   $('select').material_select();
-  
+  if (window.location.href.substr(-8) === 'explorer') {
+    showPage('explorer');
+  }
 });

@@ -7,14 +7,12 @@
   <template>
     <style>
       :host {
-        padding: 24px;
-        padding-top: 0;
+        padding: 0;
         display: block;
       }
       h2 {
         font-size: 12px;
         color: rgba(0, 0, 0, 0.87);
-        margin-top: 36px;
         line-height: 1.2;
         margin-bottom: 0;
       }
@@ -28,23 +26,24 @@
       }
     </style>
 
-    <h2>Search for keywords</h2>
-    <paper-input
-        id="keyword-input" label="Filter courses" type="text"
-        value="{{filterOptions.filter}}">
-      <iron-icon icon="search" prefix></iron-icon>
-    </paper-input>
+    <div class="row">
+        <div class="col l6 m12">
+            <h2>Search for keywords</h2>
+            <paper-input
+                    id="keyword-input" type="text"
+                    value="{{ filterOptions.filter }}">
+                <iron-icon icon="search" prefix></iron-icon>
+            </paper-input>
+        </div>
+        <div class="col l6 m12">
+            <h2 class="unlabeled">Course status</h2>
+            <course-status-selector status="{{ filterOptions.status }}"></course-status-selector>
+        </div>
+    </div>
 
-    <h2 class="unlabeled">Course status</h2>
-    <course-status-selector status="{{filterOptions.status}}"></course-status-selector>
 
-    <template is="dom-if" if="[[categories.length]]">
-      <h2 class="unlabeled">Category</h2>
-      <course-category-selector
-        value="{{filterOptions.category}}"
-        items="[[categories]]"
-      ></course-category-selector>
-    </template>
+
+
   </template>
   <script>
     Polymer({

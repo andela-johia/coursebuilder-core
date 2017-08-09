@@ -27,14 +27,27 @@ $(document).ready(function(){
     navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
     items: 1,
   });
-  
-  $('a[href="#!explorer"]').on('click', function() {
-    $('#homepage').hide();
-    $('#explorer').show();
-  });
-  
-  $('a[href="#!home"]').on('click', function() {
-    $('#explorer').hide();
-    $('#homepage').show();
-  });
+
+    function showPage(pageName) {
+        if (pageName === 'explorer') {
+            $('#homepage').hide();
+            $('#explorer').show();
+        } else {
+            $('#explorer').hide();
+            $('#homepage').show();
+        }
+    }
+
+    $('a[href="#!explorer"]').on('click', function () {
+        showPage('explorer');
+    });
+
+    $('a[href="#!home"]').on('click', function () {
+        showPage();
+    });
+
+    // $('select').material_select();
+    if (window.location.href.substr(-8) === 'explorer') {
+        showPage('explorer');
+    }
 });
