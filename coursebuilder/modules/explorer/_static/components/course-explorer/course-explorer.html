@@ -7,6 +7,8 @@
 <link rel="import" href="/modules/explorer/_static/components/filter-sidebar/filter-sidebar.html">
 <link rel="import" href="/modules/explorer/_static/components/top-bar/top-bar.html">
 
+
+
 <dom-module id="course-explorer">
   <template>
       <!-- NavBar -->
@@ -370,25 +372,12 @@
       </div>
 
       <div id="explorer">
-          <hr>
 
           <style>
               #top-content {
                   background: white;
                   border-bottom: 1px solid rgb(229, 229, 229);
               }
-
-              #content {
-                  flex: 1;
-                  padding-left: 48px;
-                  padding-top: 32px;
-                  position: relative;
-              }
-
-              #main {
-                  display: flex;
-              }
-
               paper-spinner {
                   position: absolute;
                   left: 32px;
@@ -412,27 +401,43 @@
                   on-response="_onBasicResponse"
           ></iron-ajax>
 
-          <div id="top-content">
 
-              <unsafe-html
-                      html="[[site.courseExplorer.extraContent]]"
-              ></unsafe-html>
+          <!--  Topic Library  -->
+          <div class="section blue-section">
+              <div class="blue-section-inner">
+                  <h2>Topic Library</h2>
+                  <p>The Digital Garage is your one-stop shop for mastering digital marketing. If you have what it takes
+                      to
+                      complete each of the 23 topics and unlock every badge, you can earn the esteemed Digital Garage
+                      Certificate
+                      of Online Proficiency.</p>
+              </div>
           </div>
 
           <div id="main">
-              <floating-sidebar>
-                  <filter-sidebar
-                          filter-options="{{ filterOptions }}"
-                          categories="[[categories]]"
-                  ></filter-sidebar>
-              </floating-sidebar>
+
 
               <div id="content">
                   <paper-spinner active="{{!coursesLoaded}}"></paper-spinner>
-                  <course-card-grouper
-                          id="grouper"
-                          courses="[[_filter(courses.edges, filterOptions.*)]]"
-                  ></course-card-grouper>
+                  <div class="section topic-library">
+                      <div class="simple-container">
+
+                              <filter-sidebar
+                                      filter-options="{{ filterOptions }}"
+                                      categories="[[categories]]"
+                              ></filter-sidebar>
+
+                          <div class="row">
+                              <course-card-grouper
+                                      id="grouper"
+                                      courses="[[_filter(courses.edges, filterOptions.*)]]"
+                              ></course-card-grouper>
+
+                          </div>
+
+                      </div>
+                  </div>
+
               </div>
           </div>
       </div>
@@ -487,7 +492,6 @@
 
       _onBasicResponse: function(event) {
         this.set('site', event.detail.response.data.site);
-          console.log(event.detail.response.data.currentUser)
         this.set('currentUser', event.detail.response.data.currentUser);
       },
 
