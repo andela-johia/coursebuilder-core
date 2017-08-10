@@ -3,13 +3,11 @@
 <head>
   <title></title>
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+  <link rel="stylesheet" href="css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" media="screen,projection"/>
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
 </head>
 <body>
 <div>
@@ -62,17 +60,60 @@
   <div class="container">
     <div class="card">
      <div class="video-container">
-       <video width="580" controls autoplay>
-          <source src="https://youtu.be/v3Vm9aVQV_I" />
-          Your browser does not support the video element.
-       </video>
-      </div>
-      <div class="card-content">
-        <p>I am a very simple card. I am good at containing small bits of information.
-        I am convenient because I require little markup to use effectively.</p>
+       <iframe width="420" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k">
+       </iframe>
       </div>
       <div class="card-action">
-        <a href="#">This is a link</a>
+      <div class="row">
+      <div class="col s6">
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">menu</i>VIEW TRANSCRIPT</div>
+            <div class="collapsible-body">
+            <span>
+<p>Hello there!</p>
+
+<p>It’s no secret that the world has embraced all things digital since the birth of the internet. Now we’re going to talk about how many people are online worldwide, and find out how those people are spending their time online. And finally, you’ll learn how your business can benefit from the still-booming digital trend.</p>
+
+<p>To give you an idea of the explosion of online usage over the last 15 years, consider this: In 2000, about 361 million people were online worldwide. In 2014, there were over 3 billion. That’s a growth rate of 764%! Today, nearly half the world is online.</p> 
+
+<p>In Europe, the numbers are even more impressive: over 75% of Europeans have Internet access. Europeans are so connected that they have an average of 1.25 mobile subscriptions each, that’s more than one mobile line per person! 
+No matter which device they use, on average, people spend over 1,900 minutes per month online—that’s over 30 hours!</p>
+
+<p>So what are they doing with all that time online? And how can your business tap into this opportunity?</p> 
+
+<p>Many of these digitally connected people are shopping. In 2013, the total in online sales for both goods and services in Europe was €364 billion.</p>
+
+<p>Online video has also seen triple-digit growth in the last five years, with millions everyday watching video on social sites or via websites such as Netflix and Youtube.</p>
+
+<p>And people are spending hours socialising and sharing—nearly a third of their time spent online is on social media sites.
+If you’re a business owners, all these people doing all these things online presents loads of potential for you.</p>
+
+<p>And as time goes on, people will continue to use the Internet in even more ways that will impact your business.</p> 
+
+<p>It’s been truly a modern miracle to witness how the Internet has transformed our daily lives in such a short span of time.</p> 
+
+<p>In every country, in every region, across the globe, the world has made a fundamental and profound shift to digital.</p> This is an opportunity any small business can embrace.
+
+<p>Stay with us and we’ll show you how.</p>
+            </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col s6 right">
+        <a class="btn right teal accent-4" href="#!">PUT INTO PRACTICE</a>
+      </div>
+      </div>
+      </div>
+      <div class="card-content">
+      <h5>Key learnings</h5>
+       <p>In this video we’ll delve into the global shift to digital. You’ll learn:</p>
+        <ol style="list-style-type:circle; padding: 20px">
+          <li>how many people are online worldwide</li>
+          <li>how they’re spending their time online</li>
+          <li>how your business can benefit from the still-booming digital trend.</li>
+        </ol>
       </div>
     </div>
   </div>
@@ -317,11 +358,19 @@
 
 
 </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
   $(".dropdown-button").dropdown();
     });
 
+ $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
 </script>
 </body>
 </html>
