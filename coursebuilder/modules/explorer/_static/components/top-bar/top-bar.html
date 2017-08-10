@@ -1,67 +1,107 @@
 <link rel="import" href="/static/polymer-1.2.0/polymer/polymer.html">
-<link rel="import" href="/static/polymer-1.2.0/iron-image/iron-image.html">
 
 <dom-module id="top-bar">
   <template>
-    <style>
-      /* This top bar must match the existing top bar on all courses.
-      Some CSS is copied from main.css to facilitate this. */
+      <!-- NavBar -->
+      <!-- Mobile Nav -->
+      <nav class="home-mobile-nav">
+          <div class="nav-wrapper">
+              <ul class="side-nav" id="mobile-demo">
+                  <li><a href="#!home" class="mobile-nav-logo"><img
+                          src="/modules/explorer/_static/images/navbar-logo.png" alt="logo"></a></li>
 
-      :host {
-        display: flex;
-        align-items: center;
-        background: #f5f5f5;
-        background-image: -moz-linear-gradient(top,#fafafa,#f5f5f5);
-        background-image: -webkit-linear-gradient(top,#fafafa,#f5f5f5);
-        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#fafafa),color-stop(1,#f5f5f5));
-        filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=#fafafa,EndColorStr=#f5f5f5)";
-        background-image: linear-gradient(top,#fafafa,#f5f5f5);
-        border-bottom: 1px solid #ebebeb;
-        color: #777;
-        padding: 17px 15px 5px;
-        font-size: 15.6px;
-        font-family: arial, sans-serif;
-      }
-      #title {
-        flex: 1;
-        font-family: "open sans", arial, sans-serif;
-      }
-      #icon, #controls {
-        flex-basis: auto;
-      }
-      h1 {
-        margin: 0;
-        margin-left: 15px;
-        border-left: 1px solid rgb(186, 188, 192);
-        padding-left: 12px;
-        font-size: 27px;
-        font-weight: normal;
-        color: rgb(119, 119, 119);
-        line-height: 1.52;
-      }
-      a {
-        color: inherit;
-        text-decoration: underline;
-      }
-      #controls {
-        align-self: flex-start;
-        line-height:1.54;
-      }
-    </style>
-    <iron-image src="[[site.logo.url]]" alt="[[site.logo.altText]]" id="icon"></iron-image>
-    <h1 id="title">[[site.title]]</h1>
-    <div id="controls">
-      <template is="dom-if" if="[[currentUser.loggedIn]]">
-        [[currentUser.email]] |
-        <template is="dom-if" if="[[currentUser.canViewDashboard]]">
-          <a href="/modules/admin">Dashboard</a> |
-        </template>
-        <a href="[[currentUser.logoutUrl]]">Logout</a>
-      </template>
-      <template is="dom-if" if="[[!currentUser.loggedIn]]">
-        <a href="[[currentUser.loginUrl]]">Login</a>
-      </template>
-    </div>
+                  <li>
+                      <div class="divider"></div>
+                  </li>
+
+                  <li>
+                      <a href="#!explorer" class="waves-effect waves-light btn-large">Start Learning</a>
+                  </li>
+                  <li><a href="#!"><i class="material-icons">account_circle</i>Sign in</a></li>
+                  <li><a href="#!home"><i class="material-icons">home</i>Home</a></li>
+                  <li><a href="#!explorer"><i class="material-icons">library_books</i>Topic Library</a></li>
+                  <li><a href="#!certification"><i class="material-icons">school</i>Certification</a></li>
+
+                  <li>
+                      <div class="divider"></div>
+                  </li>
+
+                  <li><a href="#!"><i class="material-icons">work</i>Tools</a></li>
+                  <li><a href="#!"><i class="material-icons">insert_invitation</i>Events</a></li>
+                  <li><a href="#!"><i class="material-icons">people</i>Partners</a></li>
+                  <li><a href="#!"><i class="material-icons">help</i>Help & FAQs</a></li>
+                  <li><a href="#!"><i class="material-icons">chat_bubble</i>Feedback</a></li>
+
+                  <li>
+                      <div class="divider"></div>
+                  </li>
+
+                  <li><a href="#!"><i class="material-icons">thumb_up</i>Blog</a></li>
+                  <template is="dom-if" if="[[!currentUser.loggedIn]]">
+                      <li><a href="[[currentUser.loginUrl]]" class="waves-effect waves-light btn-large">Sign in</a></li>
+                  </template>
+
+                  <template is="dom-if" if="[[currentUser.loggedIn]]">
+                      <li>
+                          <div class="divider"></div>
+                      </li>
+                      <template is="dom-if" if="[[currentUser.canViewDashboard]]">
+                          <li><a href="/modules/admin"><i class="material-icons">dashboard</i>Dashboard</a></li>
+                      </template>
+                      <li><a href="[[currentUser.logoutUrl]]"><i class="material-icons">exit_to_app</i>Logout</a></li>
+                  </template>
+              </ul>
+          </div>
+      </nav>
+
+      <!-- Desktop NavBAr -->
+      <div class="navbar-fixed">
+          <nav class="nav-extended">
+              <div class="nav-wrapper pad-5">
+                  <a href="#!home" class="brand-logo"><img src="/modules/explorer/_static/images/navbar-logo.png"
+                                                           alt="logo"></a>
+              </div>
+
+              <div class="nav-wrapper home-main-menu pad-5">
+                  <a href="#" data-activates="mobile-demo" class="button-collapse"><i
+                          class="material-icons">menu</i></a>
+                  <ul class="left hide-on-med-and-down">
+                      <li><a href="#!home">Home</a></li>
+                      <li><a href="#!explorer">Topic Library</a></li>
+                      <li><a href="#!certification">Certification</a></li>
+                      <li><a href="#!">Events</a></li>
+                      <li><a href="#!">Partners</a></li>
+                      <!-- Dropdown Trigger -->
+                      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">More<i
+                              class="material-icons right">arrow_drop_down</i></a>
+                      </li>
+                  </ul>
+
+                  <template is="dom-if" if="[[!currentUser.loggedIn]]">
+                      <ul class="right hide-on-med-and-down sign-in-nav">
+                          <li><a class="sign-in-link" href="[[currentUser.loginUrl]]">SIGN IN</a></li>
+                          <li><a href="[[currentUser.loginUrl]]" class="waves-effect waves-light btn">Start Learning</a>
+                          </li>
+                      </ul>
+                  </template>
+
+              </div>
+          </nav>
+      </div>
+      <!--  Dropdown(s) -->
+      <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#!">First</a></li>
+          <li><a href="#!">Second</a></li>
+          <li><a href="#!">Third</a></li>
+          <li><a href="#!">Fourth</a></li>
+          <li class="divider"></li>
+          <template is="dom-if" if="[[currentUser.loggedIn]]">
+              <template is="dom-if" if="[[currentUser.canViewDashboard]]">
+                  <li><a href="/modules/admin">Dashboard</a></li>
+              </template>
+              <li><a href="[[currentUser.logoutUrl]]">Logout</a></li>
+          </template>
+      </ul>
   </template>
   <script>
     Polymer({
