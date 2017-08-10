@@ -11,13 +11,25 @@
 </head>
 <body>
 <div>
-  <!-- Dropdown Structure -->
+
+<!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
+  <li><a href="https://learndigital.withgoogle.com/digitalgarage/dash"><i class="material-icons">dashboard</i> My Dashboard</a></li>
+  <li><a href="https://learndigital.withgoogle.com/digitalgarage/topic-library"><i class="material-icons">library_books</i>Topic Library</a></li>
+  <li><a href="https://learndigital.withgoogle.com/digitalgarage/certification">Certification</a></li>
   <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  <li><a href="https://learndigital.withgoogle.com/digitalgarage/tools">Tools</a></li>
+  <li><a href="https://learndigital.withgoogle.com/digitalgarage/f2f#/Training%20sessions"><i class="material-icons">event</i>Events</a></li>
+  <li><a href="https://learndigital.withgoogle.com/digitalgarage/partners"><i class="material-icons">people</i>Partners</a></li>
+  <li><a href="https://learndigital.withgoogle.com/digitalgarage/faqs">Help & FAQs</a></li>
+  <li><a href="https://learndigital.withgoogle.com/digitalgarage/feedback"><i class="material-icons">feedback</i>Feedback</a></li>
+  <li class="divider"></li>
+  <li><a href="https://goo.gl/kljwwO"><i class="material-icons">thumb_up</i>Blog</a></li>
+  <li class="divider"></li>
+  <li><a href="https://learndigital.withgoogle.com/digitalgarage/profile"><i class="material-icons">settings</i>My Profile</a></li>
+  <li><a href="https://learndigital.withgoogle.com/digitalgarage/modules/gitkit/signout?dest_url=%2F%2Fdigitalgarage">Sign out</a></li>
 </ul>
+
 <nav class="white">
   <div class="nav-wrapper">
     <ul class="hide-on-med-and-down">
@@ -27,21 +39,22 @@
     </ul>
   </div>
 </nav>
-  
+
+
 <div class="row">
 <div class="col s12 m12 l12 green darken-1">
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">Google +</a></li>
-  <li><a href="#!">Twitter</a></li>
-  <li><a href="#!">Facebook</a></li>
-  <li><a href="#!">LinkedIn</a></li>
+<ul id="dropdown2" class="dropdown-content">
+  <li><a href="https://plus.google.com/share?url=g.co/DigitalGarage">Google +</a></li>
+  <li><a href="https://twitter.com/share?url=https://g.co/DigitalGarage">Twitter</a></li>
+  <li><a href="http://www.facebook.com/sharer/sharer.php?u=digitalgarage.withgoogle.com">Facebook</a></li>
+  <li><a href="https://www.linkedin.com/company/digital-garage_3">LinkedIn</a></li>
 </ul>
   <div style="box-shadow: 0px 0px 0px 0px" class="card-panel green darken-1">
     <span class="white-text">
       <div class="col s9"><h5>1. The world goes digital</h5></div>
     <div class="col s3">
-    <span class="right green darken-1" style="padding: 5px; box-shadow: 0px 0px 0px 0px"><a class="white-text"><i class="material-icons tiny" (click)="#">share</i>SHARE</a></span>
-    <span class="right green darken-1" style="padding: 5px; box-shadow: 0px 0px 0px 0px"><a class="white-text dropdown-button" data-activates="dropdown1" href="#!"><i class="material-icons tiny">star_border</i>BOOKMARK</a></span>
+    <span class="right green darken-1" style="padding: 5px; box-shadow: 0px 0px 0px 0px"><a class="white-text dropdown-button" data-activates="dropdown2"><i class="material-icons tiny">share</i>SHARE</a></span>
+    <span class="right green darken-1" style="padding: 5px; box-shadow: 0px 0px 0px 0px"><a class="white-text href="#!"><i class="material-icons tiny">star_border</i>BOOKMARK</a></span>
     </div>
    <div class="col s12"><i class="grey-text lighten-5">Topic: </i>The online opportunity</div>
     </span>
@@ -371,6 +384,23 @@ $(document).ready(function(){
  $(document).ready(function(){
     $('.collapsible').collapsible();
   });
+
+ $(document).ready(function(){
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+      onOpen: function(el) { },
+      onClose: function(el) { }, 
+    }
+  );
+  // Hide sideNav
+  $('.button-collapse').sideNav('hide');
+  // Destroy sideNav
+  $('.button-collapse').sideNav('destroy');
+        
+ })
 </script>
 </body>
 </html>
