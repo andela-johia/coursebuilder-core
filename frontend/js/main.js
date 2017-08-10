@@ -29,19 +29,8 @@ $(document).ready(function(){
   });
   
   function showPage(pageName) {
-    if (pageName === 'explorer') {
-      $('#homepage').hide();
-      $('#certification').hide();
-      $('#explorer').show();
-    } else if (pageName === 'certification') {
-      $('#explorer').hide();
-      $('#homepage').hide();
-      $('#certification').show();
-    } else {
-      $('#certification').hide();
-      $('#explorer').hide();
-      $('#homepage').show();
-    }
+    $('.page-wrapper').hide();
+    $('#' + pageName).show();
   }
   
   $('a[href="#!explorer"]').on('click', function() {
@@ -52,12 +41,14 @@ $(document).ready(function(){
     showPage('certification');
   });
   
-  $('a[href="#!home"]').on('click', function() {
-    showPage();
+  $('a[href="#!homepage"]').on('click', function() {
+    showPage('homepage');
   });
   
   $('select').material_select();
+  
   if (window.location.href.substr(-8) === 'explorer') {
     showPage('explorer');
   }
+
 });
