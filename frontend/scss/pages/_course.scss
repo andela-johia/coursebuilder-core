@@ -1,3 +1,106 @@
-#course-page.page-wrapper {
+.green-section {
+  background-color: $green-l;
+  padding: 1.25rem 2.5rem;
+  color: $color-white;
+  
+  h2, h3 {margin: 0;}
+  
+  h2 {
+    font-size: 1.36rem;
+    font-family: $text-font;
+    font-weight: 400;
+  }
+  h3 {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+  .light-text {
+    font-weight: 200;
+  }
+  
+  .course-links {
+    display: inline-block;
+    float: right;
+    padding-top: 10px;
+    
+    button {
+      background-color: transparent;
+      box-shadow: none;
+      border: none;
+      
+      &:hover {
+        background-color: lighten($green-l, 5%);
+      }
+    }
+    i {
+      vertical-align: bottom;
+      padding-bottom: 1px;
+    }
+  }
+}
+
+#course-page {
   margin-top: 0;
+
+  .course-content {
+    .row, .course-accordion {
+      margin: 0; padding: 0;
+    }
+    .collapsible {
+      margin: 0 0 10px 0;
+      box-shadow: none;
+      border-bottom: 1px solid $brown-l;
+      border-right: none;
+      
+      & > li {padding-left: 20px;}
+    }
+    
+    .course-accordion {
+      color: $text-color-l;
+      
+      h3 {
+        font-size: 1.2rem;
+        padding-left: 40px;
+      }
+      i {vertical-align: bottom;}
+      
+      .collapsible-header {
+        &:hover { color: $text-color; }
+        border: none;
+        
+      }
+      .collapsible-body {
+        padding-left: 40px;
+        font-size: 1rem;
+        font-weight: 200;
+        
+        .course-time {float: right;}
+        
+        .course-list-item {
+          margin-top: 20px;
+          
+          &:first-child {margin-top: 0;}
+        }
+      }
+      
+      .quiz-btn {
+        display: block;
+        width: 95%;
+        margin: 0 auto;
+        background-color: $white-d;
+        color: $primary-color;
+      }
+    }
+    
+    .course-card {
+      padding: 20px 15px 80px 15px;
+      background-color: $white-d;
+      
+      .card {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+  }
 }
