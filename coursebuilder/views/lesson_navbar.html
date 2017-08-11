@@ -33,20 +33,6 @@
   <ul class="collapsible" data-collapsible="accordion">
     {{ html_hooks.insert('unit.after_leftnav_begins') | safe }}
 
-    {% if not course_info.unit.show_unit_links_in_leftnav %}
-      {% for outline_element in course_outline %}
-        {% if outline_element.is_active %}
-          {% for sub_element in outline_element.contents recursive %}
-            {{ render_sub_element(sub_element, can_see_drafts) }}
-            {% if sub_element.contents %}
-              <ul>
-                {{ loop(sub_element.contents) }}
-              </ul>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      {% endfor %}
-    {% else %}
       {% for outline_element in course_outline %}
         {% if outline_element.is_active %}
           {% set outer_element_class = 'gcb-unit-title expanded' %}
@@ -88,7 +74,6 @@
         </li>
 
       {% endfor %}
-    {% endif %}
     {{ html_hooks.insert('unit.before_leftnav_ends') | safe }}
   </ul>
 </div>

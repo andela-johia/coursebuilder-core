@@ -9,6 +9,7 @@
     font-size: 1.36rem;
     font-family: $text-font;
     font-weight: 400;
+    text-transform: capitalize;
   }
   h3 {
     font-size: 1rem;
@@ -22,6 +23,7 @@
     display: inline-block;
     float: right;
     padding-top: 10px;
+    
     
     button {
       background-color: transparent;
@@ -77,6 +79,7 @@
         padding-left: 40px;
         font-size: 1rem;
         font-weight: 200;
+        border-bottom: none;
         
         .course-time {float: right;}
         
@@ -121,4 +124,5 @@
 
 
 // App specific styles
-.gcb-edit-lesson-button { display: none; }
+.gcb-edit-lesson-button { display: none !important; }
+.gcb-video-container iframe { min-height: 300px; }

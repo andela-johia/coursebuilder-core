@@ -54,8 +54,11 @@
         </button>
       </div>
 
-      <h2>1. The world goes digital</h2>
-      <h3><span class="light-text">Topic: </span> The online opportunity</h3>
+      <h2>{{ display_short_unit_title(unit) }}</h2>
+      {% if lesson %}
+        <h3><span class="light-text">Lesson: </span> {{ lesson.index }}</h3>
+      {% endif %}
+
     </div>
 
 
