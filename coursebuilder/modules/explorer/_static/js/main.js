@@ -46,6 +46,11 @@ $(document).ready(function(){
         showPage('homepage');
     });
 
+    $('a[href="#!tools"]').on('click', function () {
+        showPage('tools');
+    });
+  
+
     $('select').material_select();
 
     if (window.location.href.substr(-8) === 'explorer') {

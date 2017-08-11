@@ -9,6 +9,7 @@
 
 <link rel="import" href="/modules/explorer/_static/components/pages/homepage.html">
 <link rel="import" href="/modules/explorer/_static/components/pages/certification.html">
+<link rel="import" href="/modules/explorer/static/components/pages/tools-page.html">
 
 
 <dom-module id="course-explorer">
@@ -18,6 +19,8 @@
         <home-page current-user="[[currentUser]]"></home-page>
 
         <certification-page current-user="[[currentUser]]"></certification-page>
+
+        <tools-page current-user="[[currentUser]]"></tools-page>
 
 
       <div id="explorer" class="page-wrapper">
@@ -90,8 +93,6 @@
               </div>
           </div>
       </div>
-
-
     </template>
   <script>
 
