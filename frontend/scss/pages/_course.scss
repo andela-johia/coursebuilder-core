@@ -46,10 +46,11 @@
     .row, .course-accordion {
       margin: 0; padding: 0;
     }
+    .row {background-color: $white-d;}
     .collapsible {
       margin: 0 0 10px 0;
       box-shadow: none;
-      border-bottom: 1px solid $brown-l;
+      
       border-right: none;
       
       & > li {padding-left: 20px;}
@@ -57,12 +58,15 @@
     
     .course-accordion {
       color: $text-color-l;
+      background-color: $color-white;
+      border-bottom: 1px solid $brown-l;
       
       h3 {
         font-size: 1.2rem;
         padding-left: 40px;
       }
       i {vertical-align: bottom;}
+      a {color: $primary-color;}
       
       .collapsible-header {
         &:hover { color: $text-color; }
@@ -93,14 +97,28 @@
     }
     
     .course-card {
-      padding: 20px 15px 80px 15px;
+      padding: 2rem 1rem 6rem 1rem;
       background-color: $white-d;
+      
+      h1 {font-size: 2rem;}
+      h2, h3 {font-size: 1.6rem;}
+      p {font-size: 1.2rem;}
+      
+      iframe {
+        width: 100% !important;
+        margin-bottom: 15px;
+      }
       
       .card {
         width: 100%;
-        max-width: 600px;
+        max-width: 800px;
         margin: 0 auto;
+        padding: 30px 20px;
       }
     }
   }
 }
+
+
+// App specific styles
+.gcb-edit-lesson-button { display: none; }
