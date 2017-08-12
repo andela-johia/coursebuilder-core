@@ -25,7 +25,7 @@ $(document).ready(function(){
     margin:10,
     nav:true,
     navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
-    items: 1,
+    items: 1
   });
 
 
@@ -34,7 +34,7 @@ $(document).ready(function(){
         $('#' + pageName).show();
     }
 
-    var pageLinks = ['explorer', 'certification', 'homepage'];
+    var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback'];
 
     pageLinks.forEach(function (name) {
         $('a[href="#!' + name + '"]').on('click', function () {
@@ -44,7 +44,7 @@ $(document).ready(function(){
         if (window.location.href.substr(-name.length) === name) {
             showPage(name);
         }
-    })
+    });
 
     $('select').material_select();
 });
