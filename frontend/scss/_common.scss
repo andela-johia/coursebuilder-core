@@ -60,7 +60,6 @@ img {
 .blue-section {
   background-color: $hover-blue;
   color: #fff;
-
   .blue-section-inner {
     max-width: $context-width;
     margin: 0 auto;
@@ -77,5 +76,16 @@ img {
       font-size: 1.25rem;
       font-weight: 200;
     }
+  }
+}
+
+.section {
+  padding: 4.4rem 0;
+
+  .section-label {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 0;
+    font-weight: 100;
   }
 }
