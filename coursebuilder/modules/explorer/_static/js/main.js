@@ -34,7 +34,7 @@ $(document).ready(function(){
         $('#' + pageName).show();
     }
 
-    var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners'];
+    var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback'];
 
     pageLinks.forEach(function (name) {
         $('a[href="#!' + name + '"]').on('click', function () {
