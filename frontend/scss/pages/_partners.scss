@@ -1,0 +1,39 @@
+#partners {
+  background-color: $white-d;
+  .card {
+    position: relative;
+  }
+  
+  .card-image {
+    height: 82%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    img {
+      position: relative;
+      height: 3.5rem;
+      max-width: 100%;
+      align-self: center;
+    }
+  }
+  
+  .card-action {
+    border: none;
+  }
+  
+  .partners-containter {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .blue-section-inner h2 {
+    margin-bottom: 0;
+  }
+  
+  .row h3 {
+    color: $primary-color;
+    font-size: 1.75rem;
+    font-weight: 300;
+  }
+}
