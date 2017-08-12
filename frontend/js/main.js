@@ -44,6 +44,11 @@ $(document).ready(function(){
   $('a[href="#!homepage"]').on('click', function() {
     showPage('homepage');
   });
+
+  $('a[href="#!tools"]').on('click', function() {
+    showPage('tools');
+  });
+  
   
   $('select').material_select();
   
