@@ -34,26 +34,17 @@ $(document).ready(function(){
         $('#' + pageName).show();
     }
 
-    $('a[href="#!explorer"]').on('click', function () {
-        showPage('explorer');
-    });
+    var pageLinks = ['explorer', 'certification', 'homepage', 'tools'];
 
-    $('a[href="#!certification"]').on('click', function () {
-        showPage('certification');
-    });
+    pageLinks.forEach(function (name) {
+        $('a[href="#!' + name + '"]').on('click', function () {
+            showPage(name);
+        });
 
-    $('a[href="#!homepage"], a[href="#!home"]').on('click', function () {
-        showPage('homepage');
-    });
-
-    $('a[href="#!tools"]').on('click', function () {
-        showPage('tools');
-    });
-  
+        if (window.location.href.substr(-name.length) === name) {
+            showPage(name);
+        }
+    })
 
     $('select').material_select();
-
-    if (window.location.href.substr(-8) === 'explorer') {
-        showPage('explorer');
-    }
 });
