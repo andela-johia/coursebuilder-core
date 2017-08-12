@@ -1,15 +1,3 @@
-.section {
-  padding: 4.4rem 0;
-  
-  .section-label {
-    text-align: center;
-    font-size: 1.4rem;
-    margin-top: 0;
-    font-weight: 100;
-  }
-}
-
-
 //Hero Banner
 .hero-banner {
   display: block;
@@ -59,26 +47,9 @@
 
 // Mission
 .mission {
-  background-color: $hover-blue;
-  color: #fff;
-  
-  .mission-inner {
+  .blue-section-inner {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 0 15px;
     text-align: center;
-    
-    h2 {
-      margin-top: 0;
-      font-size: 1.75rem;
-      margin-bottom: 40px;
-      font-weight: 200;
-    }
-    p {
-      margin-bottom: 0;
-      font-size: 1.25rem;
-      font-weight: 200;
-    }
   }
 }
 

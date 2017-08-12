@@ -27,14 +27,24 @@ $(document).ready(function(){
     navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
     items: 1,
   });
-  
-  $('a[href="#!explorer"]').on('click', function() {
-    $('#homepage').hide();
-    $('#explorer').show();
-  });
-  
-  $('a[href="#!home"]').on('click', function() {
-    $('#explorer').hide();
-    $('#homepage').show();
-  });
+
+
+    function showPage(pageName) {
+        $('.page-wrapper').hide();
+        $('#' + pageName).show();
+    }
+
+    var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback'];
+
+    pageLinks.forEach(function (name) {
+        $('a[href="#!' + name + '"]').on('click', function () {
+            showPage(name);
+        });
+
+        if (window.location.href.substr(-name.length) === name) {
+            showPage(name);
+        }
+    })
+
+    $('select').material_select();
 });

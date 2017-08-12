@@ -22,10 +22,6 @@ img {
   margin: 0 auto;
 }
 
-select {
-  display: block;
-}
-
 .tiny-text {
   letter-spacing: 0.8px;
   font-size: 0.9rem;
@@ -40,10 +36,56 @@ select {
   display: none;
 }
 
-#explorer, #homepage {
+.page-wrapper {
   margin-top: 65px;
+  display: none;
   
   @media screen and (max-width: 992px) {
     margin-top: 0;
+  }
+}
+
+.active-page {
+  display: block;
+}
+
+.text-left {
+  text-align: left;
+  p, h2 {
+    text-align: left;
+  }
+}
+
+// Blue section
+.blue-section {
+  background-color: $hover-blue;
+  color: #fff;
+  .blue-section-inner {
+    max-width: $context-width;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.75rem;
+      margin-bottom: 40px;
+      font-weight: 200;
+    }
+    p {
+      margin-bottom: 0;
+      font-size: 1.25rem;
+      font-weight: 200;
+    }
+  }
+}
+
+.section {
+  padding: 4.4rem 0;
+
+  .section-label {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 0;
+    font-weight: 100;
   }
 }

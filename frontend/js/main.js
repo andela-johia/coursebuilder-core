@@ -28,13 +28,32 @@ $(document).ready(function(){
     items: 1,
   });
   
+  function showPage(pageName) {
+    $('.page-wrapper').hide();
+    $('#' + pageName).show();
+  }
+  
   $('a[href="#!explorer"]').on('click', function() {
-    $('#homepage').hide();
-    $('#explorer').show();
+    showPage('explorer');
   });
   
-  $('a[href="#!home"]').on('click', function() {
-    $('#explorer').hide();
-    $('#homepage').show();
+  $('a[href="#!certification"]').on('click', function() {
+    showPage('certification');
   });
+  
+  $('a[href="#!homepage"]').on('click', function() {
+    showPage('homepage');
+  });
+
+  $('a[href="#!tools"]').on('click', function() {
+    showPage('tools');
+  });
+  
+  
+  $('select').material_select();
+  
+  if (window.location.href.substr(-8) === 'explorer') {
+    showPage('explorer');
+  }
+
 });
