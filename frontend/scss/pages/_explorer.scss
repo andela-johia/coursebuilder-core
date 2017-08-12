@@ -31,6 +31,17 @@
       float: right;
     }
     
+    button {
+      color: $primary-color;
+      background-color: $color-white;
+      border: none;
+      box-shadow: none;
+      
+      &:hover {
+        background-color: $brown-l;
+      }
+    }
+    
     & > div {
       padding-top: 16px;
       border-top: 3px solid $brown-l;
