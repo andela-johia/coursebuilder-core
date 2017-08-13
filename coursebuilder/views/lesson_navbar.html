@@ -3,25 +3,29 @@
 {% macro render_sub_element(sub_element, can_see_drafts) %}
   {% if sub_element.is_active %}
     {% set outer_element_class = 'active-course-item' %}
+    <div class="course-list-item active-course-item">
   {% else %}
-    {% set outer_element_class = '' %}
+    {% set outer_element_class = 'list-course-item' %}
+    <div class="course-list-item">
   {% endif %}
-  {% if sub_element.is_progress_recorded %}
-    {% set inner_element_class = 'gcb-lesson-title-with-progress' %}
+  {% if sub_element.progress == 2 %}
+    {% set inner_element_class = 'lesson-title-with-progress' %}
   {% else %}
-    {% set inner_element_class = 'gcb-lesson-title-no-progress' %}
+    {% set inner_element_class = 'lesson-title-no-progress' %}
   {% endif %}
+
   {{ macros.render_outline_element(
          sub_element, can_see_drafts, course_availability,
          'span', outer_element_class, 'span', inner_element_class,
          suppress_link=sub_element.is_active, suppress_description=True) }}
+    </div>
 {% endmacro %}
 
 {% macro render_elements_list(elements, can_see_drafts) %}
 
 {% endmacro %}
 
-<div class="gcb-nav" id="gcb-nav-y">
+<div>
   <h3>
     Topic Overview
     {% if is_read_write_course and is_course_admin %}
@@ -35,40 +39,39 @@
 
       {% for outline_element in course_outline %}
         {% if outline_element.is_active %}
-          {% set outer_element_class = 'gcb-unit-title expanded' %}
+          {% set outer_element_class = 'expanded' %}
           {% set element_class = 'active' %}
-        {% elif outline_element.contents %}
-          {% set supress_the_link = True %}
-          {% set outer_element_class = 'gcb-unit-title' %}
-        {% else %}
-          {% set supress_the_link = False %}
-          {% set outer_element_class = 'gcb-unit-title expanded leaf' %}
         {% endif %}
 
         <li class="{{ element_class }}">
           <div class="collapsible-header {{ element_class }}"><i class="material-icons">star_border</i>
+            {% if outline_element.contents %}
+              {% set supress_the_link = True %}
+              {% set outer_element_class = 'gcb-unit-title' %}
+              <i class="material-icons course-expand-btn expand-more">expand_more</i>
+              <i class="material-icons course-expand-btn expand-less">expand_less</i>
+            {% else %}
+              {% set supress_the_link = False %}
+              {% set outer_element_class = 'gcb-unit-title leaf' %}
+            {% endif %}
+
             {{ macros.render_outline_element(
                outline_element, can_see_drafts, course_availability,
-               'span', outer_element_class, 'span', 'gcb-top-content', suppress_description=True,
-      suppress_link=supress_the_link) }} </div>
+               'span', '', 'span', '', suppress_link=supress_the_link,suppress_description=True) }} </div>
 
-          <div id="gcb-lesson-container"
+          <div
               {% if outline_element.is_active %}
-               class="gcb-lesson-container collapsible-body"
+               class="collapsible-body"
               {% else %}
-               class="gcb-lesson-container collapsible-body"
+               class="collapsible-body"
               {% endif %}>
             {% for sub_element in outline_element.contents recursive %}
-              <div class="course-list-item">
-                <i class="material-icons">play_circle_outline</i>
                 {{ render_sub_element(sub_element, is_progress_recorded) }}
                 {% if sub_element.contents %}
                   <ul>
                     {{ loop(sub_element.contents) }}
                   </ul>
                 {% endif %}
-
-              </div>
             {% endfor %}
           </div>
         </li>

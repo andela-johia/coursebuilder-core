@@ -68,26 +68,49 @@
         padding-left: 40px;
       }
       i {vertical-align: bottom;}
-      a {color: $primary-color;}
+      a {
+        color: $text-color-l;
+        &:hover { color: $text-color; }
+      }
+      
+      li {padding: 0;}
 
       .collapsible-header {
         &:hover { color: $text-color; }
+        padding-left: 35px;
         border: none;
+        position: relative;
 
+        a, span {
+          width: 100%;
+          display: block;
+        }
+        .expand-less { display: none; }
+        &:hover {
+          .course-expand-btn {
+            background-color: $brown-l; 
+          }
+        }
+      }
+      .collapsible-header.active {
+        .expand-less { display: block; }
+        .expand-more { display: none; }
       }
       .collapsible-body {
-        padding-left: 40px;
+        padding: 0;
         font-size: 1rem;
-        font-weight: 200;
+        font-weight: 300;
         border-bottom: none;
 
-        .course-time {float: right;}
-
         .course-list-item {
-          margin-top: 20px;
+          padding: 5px 65px 15px;
 
           &:first-child {margin-top: 0;}
+          &.active-course-item {
+            background-color: #EEEEEE;
+          }
         }
+        i {padding-top: 10px;}
       }
 
       .quiz-btn {
@@ -121,7 +144,34 @@
   }
 }
 
+.course-navigation {
+  padding-top: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.course-expand-btn  {
+  position: absolute;
+  right: 0; top: 15px;
+  padding: 3px 0;
+  border-radius: 18px;
+  text-align: center;
+  color: $text-color-l;
+}
+
 // App specific styles
 .gcb-edit-lesson-button { display: none !important; }
 .gcb-video-container iframe { min-height: 300px; }
+.gcb-progress-empty,
+.gcb-progress-icon{ display: none; }
 
+.gcb-border-box {
+  border: 1px solid $brown-l;
+  border-radius: 8px;
+}
+.gcb-breadcrumb a {
+  color: $brown-l;
+  &:hover {
+    color: $color-white;
+  }
+}
