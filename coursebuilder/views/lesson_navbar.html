@@ -2,7 +2,7 @@
 
 {% macro render_sub_element(sub_element, can_see_drafts) %}
   {% if sub_element.is_active %}
-    {% set outer_element_class = 'active' %}
+    {% set outer_element_class = 'active-course-item' %}
   {% else %}
     {% set outer_element_class = '' %}
   {% endif %}
@@ -13,7 +13,7 @@
   {% endif %}
   {{ macros.render_outline_element(
          sub_element, can_see_drafts, course_availability,
-         'li', outer_element_class, 'div', inner_element_class,
+         'span', outer_element_class, 'span', inner_element_class,
          suppress_link=sub_element.is_active, suppress_description=True) }}
 {% endmacro %}
 
@@ -21,69 +21,59 @@
 
 {% endmacro %}
 
-<div class="gcb-nav left-menu" id="gcb-nav-y" role="navigation">
-  <ul>
-    {{html_hooks.insert('unit.after_leftnav_begins') | safe}}
+<div class="gcb-nav" id="gcb-nav-y">
+  <h3>
+    Topic Overview
+    {% if is_read_write_course and is_course_admin %}
+      <a id="gcb-edit-unit-button" href="dashboard?action=edit_unit&key={{ unit.unit_id }}"
+         class="icon md-mode-edit gcb-edit-resource-button">
+      </a>
+    {% endif %}
+  </h3>
+  <ul class="collapsible" data-collapsible="accordion">
+    {{ html_hooks.insert('unit.after_leftnav_begins') | safe }}
 
-    {% if not course_info.unit.show_unit_links_in_leftnav %}
-      {% for outline_element in course_outline %}
-        {% if outline_element.is_active %}
-          {% for sub_element in outline_element.contents recursive %}
-            {{ render_sub_element(sub_element, can_see_drafts) }}
-            {% if sub_element.contents %}
-              <ul>
-                {{ loop(sub_element.contents) }}
-              </ul>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      {% endfor %}
-    {% else %}
       {% for outline_element in course_outline %}
         {% if outline_element.is_active %}
           {% set outer_element_class = 'gcb-unit-title expanded' %}
+          {% set element_class = 'active' %}
         {% elif outline_element.contents %}
+          {% set supress_the_link = True %}
           {% set outer_element_class = 'gcb-unit-title' %}
         {% else %}
+          {% set supress_the_link = False %}
           {% set outer_element_class = 'gcb-unit-title expanded leaf' %}
         {% endif %}
-        {{ macros.render_outline_element(
+
+        <li class="{{ element_class }}">
+          <div class="collapsible-header {{ element_class }}"><i class="material-icons">star_border</i>
+            {{ macros.render_outline_element(
                outline_element, can_see_drafts, course_availability,
-               'li', outer_element_class, 'p', 'gcb-top-content', suppress_description=True,
-               suppress_link=outline_element.is_active) }}
+               'span', outer_element_class, 'span', 'gcb-top-content', suppress_description=True,
+      suppress_link=supress_the_link) }} </div>
 
-        <div id="gcb-lesson-container"
-             {% if outline_element.is_active %}
-               class="gcb-lesson-container expanded"
-             {% else %}
-               class="gcb-lesson-container"
-             {% endif %}>
-          {% for sub_element in outline_element.contents recursive %}
-            {{ render_sub_element(sub_element, is_progress_recorded) }}
-            {% if sub_element.contents %}
-              <ul>
-                {{ loop(sub_element.contents) }}
-              </ul>
-            {% endif %}
-          {% endfor %}
-        </div>
+          <div id="gcb-lesson-container"
+              {% if outline_element.is_active %}
+               class="gcb-lesson-container collapsible-body"
+              {% else %}
+               class="gcb-lesson-container collapsible-body"
+              {% endif %}>
+            {% for sub_element in outline_element.contents recursive %}
+              <div class="course-list-item">
+                <i class="material-icons">play_circle_outline</i>
+                {{ render_sub_element(sub_element, is_progress_recorded) }}
+                {% if sub_element.contents %}
+                  <ul>
+                    {{ loop(sub_element.contents) }}
+                  </ul>
+                {% endif %}
+
+              </div>
+            {% endfor %}
+          </div>
+        </li>
+
       {% endfor %}
-
-      <script>
-        $('li.gcb-unit-title').click(function() {
-          if ($(this).hasClass('leaf')) {
-            return;
-          }
-          if ($(this).hasClass('expanded')) {
-            $(this).removeClass('expanded');
-            $(this).next().removeClass('expanded');
-          } else {
-            $(this).addClass('expanded');
-            $(this).next().addClass('expanded');
-          }
-        });
-      </script>
-    {% endif %}
-    {{html_hooks.insert('unit.before_leftnav_ends') | safe}}
+    {{ html_hooks.insert('unit.before_leftnav_ends') | safe }}
   </ul>
 </div>
