@@ -1,29 +1,29 @@
-$(document).ready(function(){
+$(document).ready(function documentReady() {
   $(".button-collapse").sideNav();
 
   $('.awards-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
+    loop: true,
+    margin: 10,
+    nav: true,
     dots: false,
     navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
-    responsive:{
-      0:{
-        items:1
+    responsive: {
+      0: {
+        items: 1
       },
-      600:{
-        items:2
+      600: {
+        items: 2
       },
-      1000:{
-        items:4
+      1000: {
+        items: 4
       }
     }
   });
 
   $('.how-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
+    loop: true,
+    margin: 10,
+    nav: true,
     navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
     items: 1
   });
@@ -36,8 +36,8 @@ $(document).ready(function(){
 
   var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback'];
 
-  pageLinks.forEach(function (name) {
-    $('a[href="#!' + name + '"]').on('click', function () {
+  pageLinks.forEach(function addLinks(name) {
+    $('a[href="#!' + name + '"]').on('click', function showPageEvent() {
       showPage(name);
     });
 
