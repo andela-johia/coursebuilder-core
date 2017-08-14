@@ -55,10 +55,25 @@
       </div>
 
       <h2>{{ display_short_unit_title(unit) }}</h2>
-      {% if lesson %}
-        <h3><span class="light-text">Lesson: </span> {{ lesson.index }}</h3>
-      {% endif %}
-
+        <h3>
+          <ul id="gcb-breadcrumb" class="gcb-breadcrumb">
+            {# I18N: Navigation breadcrumb. #}
+            <li><a href="course">{{ gettext('Course') }}</a></li>
+            <li><a href="unit?unit={{ unit.unit_id }}">
+              {{ display_short_unit_title(unit) }}</a></li>
+            {% if lesson %}
+              <li>
+                {% if activity %}
+                  <a href="unit?unit={{ unit.unit_id }}&lesson={{ lesson.lesson_id }}">
+                {% endif %}
+                {# I18N: Navigation breadcrumb. #}
+                {{ gettext('Lesson') }} {{ lesson.index }}{% if activity %}</a>{% endif %}</li>
+              {% if activity %}
+                <li>{# I18N: Navigation breadcrumb. #} {{ gettext('Activity') }}</li>
+              {% endif %}
+            {% endif %}
+          </ul>
+        </h3>
     </div>
 
 
@@ -66,7 +81,7 @@
       <div class="row">
 
 
-        <div class="course-accordion col l5 xl3 m12">
+        <div class="course-accordion col l5 xl4 m12">
 
           {% if course_outline %}
             {% include 'lesson_navbar.html' %}
@@ -74,7 +89,7 @@
 
         </div>
 
-        <div class="course-card col l7 xl9 m12">
+        <div class="course-card col l7 xl8 m12">
           <div class="card">
 
             {{ html_hooks.insert('unit.after_content_begins') | safe }}
@@ -99,6 +114,27 @@
           {% endif %}
 
           </div>
+
+          <div class="course-navigation">
+            {% if unit.show_contents_on_one_page or
+              (lesson and
+               course_info.unit.hide_lesson_navigation_buttons) or
+              (assessment and
+               not is_confirmation and
+               course_info.unit.hide_assessment_navigation_buttons) %}
+            {% else %}
+                {% if back_button_url %}
+                  <a href="{{ back_button_url }}" class="btn">{{ gettext('Prev') }}</a>
+                {% endif %}
+
+                {% if next_button_url %}
+                  <a href="{{ next_button_url }}" class="btn right">{{ gettext('Next') }}</a>
+                {% else %}
+                  <a href="course" class="btn right"> {{ gettext('End') }} </a>
+                {% endif %}
+            {% endif %}
+          </div>
+
         </div>
       </div>
     </div>
@@ -119,31 +155,7 @@
 
 
 {#  TODO: PAGE NAVIGATION - next, prev   #}
-{#      <div id="gcb-nav-button-box" class="gcb-button-box">#}
-{#        {% if unit.show_contents_on_one_page or#}
-{#              (lesson and#}
-{#               course_info.unit.hide_lesson_navigation_buttons) or#}
-{#              (assessment and#}
-{#               not is_confirmation and#}
-{#               course_info.unit.hide_assessment_navigation_buttons) %}#}
-{#        {% else %}#}
-{#        <div class="gcb-prev-button">#}
-{#          {% if back_button_url %}#}
-            {# I18N: Text on the navigation button at the end of a lesson page. #}
-{#            <a href="{{ back_button_url }}"> {{ gettext('Previous Page') }} </a>#}
-{#          {% endif %}#}
-{#        </div>#}
-{#        <div class="gcb-next-button">#}
-{#          {% if next_button_url %}#}
-            {# I18N: Text on the navigation button at the end of a lesson page. #}
-{#            <a href="{{ next_button_url }}"> {{ gettext('Next Page') }} </a>#}
-{#          {% else %}#}
-            {# I18N: Text on the navigation button at the end of a lesson. It signals that the student has completed a unit (which is a series of lessons). #}
-{#            <a href="course"> {{ gettext('End') }} </a>#}
-{#          {% endif %}#}
-{#        </div>#}
-{#        {% endif %}#}
-{#      </div>#}
+
 
 
 
