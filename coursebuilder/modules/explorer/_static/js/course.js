@@ -1,6 +1,5 @@
-window.addEventListener('WebComponentsReady', function documentReady() {
+$(document).ready(function documentReady() {
   $(".button-collapse").sideNav();
-  $(".dropdown-button").dropdown();
 
   $('.awards-carousel').owlCarousel({
     loop: true,
