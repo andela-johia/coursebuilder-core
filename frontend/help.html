@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="css/style.css" media="screen,projection">
 
     <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+         function switchContent(divId){
+            var newDiv = document.getElementById(divId);
+            document.getElementById('mainContent').innerHTML = newDiv;
+            $(divId).removeAttr("hidden");
+        }
+    </script>
 
   </head>
 
@@ -106,36 +114,36 @@
     
     <div class="container">
       <div class="row">
-       <div class="col l10 offset-l1">
+       <div id="mainContent" class="col l10 offset-l1">
          <div>
           <a id="wizard" class="btn white">
             <span>Choose a topic</span>
           </a>
-          <a id="wizard" class="btn white" href="https://learndigital.withgoogle.com/digitalgarage/faqs#/General">
+          <a onclick="switchContent(generalContent)" id="wizard" class="btn white">
             <span>General</span>
             <i id="expand" class="material-icons teal-text right">expand_more</i>
           </a>
-          <a id="wizard" class="btn white" href="https://learndigital.withgoogle.com/digitalgarage/faqs#setup">
+          <a onclick="switchContent(accountSetup)" id="wizard" class="btn white">
             <span>Account Setup</span>
             <i id="expand" class="material-icons teal-text right">expand_more</i>
           </a>
-          <a id="wizard" class="btn white" href="https://learndigital.withgoogle.com/digitalgarage/faqs#Topics">
+          <a onclick="switchContent(topicscontent)" id="wizard" class="btn white">
             <span>Topics</span>
             <i id="expand" class="material-icons teal-text right">expand_more</i>
           </a>
-          <a id="wizard" class="btn white" href="https://learndigital.withgoogle.com/digitalgarage/faqs#events">
+          <a onclick="switchContent(eventscontent)" id="wizard" class="btn white">
             <span>Events</span>
             <i id="expand" class="material-icons teal-text right">expand_more</i>
           </a>
-          <a id="wizard" class="btn white" href="https://learndigital.withgoogle.com/digitalgarage/faqs#Badges">
+          <a onclick="switchContent(badgescontent)" id="wizard" class="btn white">
             <span>Badges</span>
             <i id="expand" class="material-icons teal-text right">expand_more</i>
           </a>
-          <a id="wizard" class="btn white" href="https://learndigital.withgoogle.com/digitalgarage/faqs#Certificates">
+          <a onclick="switchContent(certificatescontent)" id="wizard" class="btn white">
             <span>Certificates</span>
             <i id="expand" class="material-icons teal-text right">expand_more</i>
           </a>
-          <a id="wizard" class="btn white" href="https://learndigital.withgoogle.com/digitalgarage/faqs#Support">
+          <a onclick="switchContent(supportcontent)" id="wizard" class="btn white">
             <span>Support</span>
             <i id="expand" class="material-icons teal-text right">expand_more</i>
           </a>
@@ -144,7 +152,7 @@
       </div>
 
       <div class="row">
-       <div class="col l10 offset-l1">
+       <div id="generalContent" class="col l10 offset-l1" hidden>
         <ul class="collapsible" data-collapsible="accordion">
           <li>
             <div class="collapsible-header">
@@ -191,7 +199,7 @@ When people learn to make the most of the web, it's amazing how much individuals
       </div>
 
          <div class="row">
-       <div class="col l10 offset-l1">
+       <div id="accountSetup" class="col l10 offset-l1" hidden>
         <ul class="collapsible" data-collapsible="accordion">
           <li>
             <div class="collapsible-header">
@@ -238,7 +246,7 @@ There are hundreds of resources in The Digital Garage covering loads of topics t
       </div>
 
          <div class="row">
-       <div class="col l10 offset-l1">
+       <div id="topicscontent" class="col l10 offset-l1" hidden>
         <ul class="collapsible" data-collapsible="accordion">
           <li>
             <div class="collapsible-header">
@@ -285,7 +293,7 @@ When people learn to make the most of the web, it's amazing how much individuals
       </div>
 
          <div class="row">
-       <div class="col l10 offset-l1">
+       <div id="eventscontent" class="col l10 offset-l1" hidden>
         <ul class="collapsible" data-collapsible="accordion">
           <li>
             <div class="collapsible-header">
@@ -332,7 +340,7 @@ When people learn to make the most of the web, it's amazing how much individuals
       </div>
 
          <div class="row">
-       <div class="col l10 offset-l1">
+       <div id="badgescontent" class="col l10 offset-l1" hidden>
         <ul class="collapsible" data-collapsible="accordion">
           <li>
             <div class="collapsible-header">
@@ -379,7 +387,7 @@ When people learn to make the most of the web, it's amazing how much individuals
       </div>
 
          <div class="row">
-       <div class="col l10 offset-l1">
+       <div id="certificatescontent" class="col l10 offset-l1" hidden>
         <ul class="collapsible" data-collapsible="accordion">
           <li>
             <div class="collapsible-header">
@@ -426,7 +434,7 @@ When people learn to make the most of the web, it's amazing how much individuals
       </div>
 
          <div class="row">
-       <div class="col l10 offset-l1">
+       <div id="supportcontent" class="col l10 offset-l1" hidden>
         <ul class="collapsible" data-collapsible="accordion">
           <li>
             <div class="collapsible-header">
@@ -712,7 +720,6 @@ When people learn to make the most of the web, it's amazing how much individuals
 
 
 <!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script src="js/main.js">
    $(document).ready(function(){
