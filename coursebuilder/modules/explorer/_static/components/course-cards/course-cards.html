@@ -3,24 +3,18 @@
 
 <dom-module id="course-cards">
   <template>
-    <style>
-      :host {
-        display: block;
 
-        /* Prevent inline-block children from having space between them */
-        font-size: 0;
-        position: relative;
-      }
-      course-card {
-        width: var(--course-card-width, 360);
-      }
-    </style>
 
-    <div class="course-list">
-      <template is="dom-repeat" items="[[courses]]" as="course" sort="_compareCourses">
-        <course-card course="[[course.node]]" width="[[cardWidth]]"></course-card>
-      </template>
-    </div>
+
+
+                  <template is="dom-repeat" items="[[courses]]" as="course" sort="_compareCourses">
+                      <course-card course="[[course.node]]" width="[[cardWidth]]"></course-card>
+                  </template>
+
+
+
+
+
   </template>
   <script>
     Polymer({

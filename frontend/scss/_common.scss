@@ -1,0 +1,91 @@
+html, body {
+  height: 100%;
+}
+body {
+  font-size: $text-size;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  font-family: $header-font;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.simple-container {
+  position: relative;
+  max-width: $context-width;
+  margin: 0 auto;
+}
+
+.tiny-text {
+  letter-spacing: 0.8px;
+  font-size: 0.9rem;
+}
+
+.pad-5 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#explorer {
+  display: none;
+}
+
+.page-wrapper {
+  margin-top: 65px;
+  display: none;
+  
+  @media screen and (max-width: 992px) {
+    margin-top: 0;
+  }
+}
+
+.active-page {
+  display: block;
+}
+
+.text-left {
+  text-align: left;
+  p, h2 {
+    text-align: left;
+  }
+}
+
+// Blue section
+.blue-section {
+  background-color: $hover-blue;
+  color: #fff;
+  .blue-section-inner {
+    max-width: $context-width;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.75rem;
+      margin-bottom: 40px;
+      font-weight: 200;
+    }
+    p {
+      margin-bottom: 0;
+      font-size: 1.25rem;
+      font-weight: 200;
+    }
+  }
+}
+
+.section {
+  padding: 4.4rem 0;
+
+  .section-label {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 0;
+    font-weight: 100;
+  }
+}

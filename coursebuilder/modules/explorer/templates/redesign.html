@@ -1,0 +1,131 @@
+
+<div class="section topic-library">
+    <div class="simple-container">
+
+        <select aria-label="Filter">
+            <option value="3">My learning plan</option>
+            <option value="3">Unstarted topics</option>
+            <option value="3">Completed topics</option>
+            <option value="3">All available topics</option>
+            <option value="3">Uncompleted topics</option>
+        </select>
+
+        <div class="row">
+            <div class="col m12 l6">
+
+                <div class="card horizontal course-card">
+                    <div class="card-image">
+                        <img src="images/explorer-course-icon.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h2>The online opportunity</h2>
+                            <p>Today's world is a digital world, with nearly half the world online. With so many people
+                                using the internet, it makes sense for a business to tap into digital. Find out what
+                                opportunities exist and how a website, videos or social media could help you reach your
+                                goals.</p>
+                        </div>
+                        <div class="card-action">
+                            <div>
+                                <a href="#!">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col m12 l6">
+                <div class="card horizontal course-card">
+                    <div class="card-image">
+                        <img src="images/explorer-course-icon.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h2>The online opportunity</h2>
+                            <p>Today's world is a digital world, with nearly half the world online. With so many people
+                                using the internet, it makes sense for a business to tap into digital. Find out what
+                                opportunities exist and how a website, videos or social media could help you reach your
+                                goals.</p>
+                        </div>
+                        <div class="card-action">
+                            <div>
+                                <a href="#!">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col m12 l6">
+                <div class="card horizontal course-card">
+                    <div class="card-image">
+                        <img src="images/explorer-course-icon.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h2>The online opportunity</h2>
+                            <p>Today's world is a digital world, with nearly half the world online. With so many people
+                                using the internet, it makes sense for a business to tap into digital. Find out what
+                                opportunities exist and how a website, videos or social media could help you reach your
+                                goals.</p>
+                        </div>
+                        <div class="card-action">
+                            <div>
+                                <a href="#!">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<floating-sidebar>
+    <filter-sidebar
+            filter-options="{{ filterOptions }}"
+            categories="[[categories]]"
+    ></filter-sidebar>
+</floating-sidebar>
+
+
+<div id="open">
+    <template is="dom-if" if="[[openCourses.length]]">
+        <h2>
+            [[openCourses.length]]
+            course
+            <template
+                    is="dom-if" if="[[isntOne(openCourses.length)}]]">s
+            </template>
+            open for registration
+        </h2>
+
+    </template>
+</div>
+
+
+<h2>
+    [[otherCourses.length]] more
+    course
+    <template
+            is="dom-if" if="[[isntOne(otherCourses.length)]]">s
+    </template>
+    in the library
+</h2>
+
+
+<link rel="import" href="/static/polymer-1.2.0/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="/static/polymer-1.2.0/paper-item/paper-item.html">
+<link rel="import" href="/static/polymer-1.2.0/paper-listbox/paper-listbox.html">
+
+<paper-dropdown-menu>
+    <paper-listbox slot="dropdown-content" selected="1">
+        <paper-item>allosaurus</paper-item>
+        <paper-item>brontosaurus</paper-item>
+        <paper-item>carcharodontosaurus</paper-item>
+        <paper-item>diplodocus</paper-item>
+    </paper-listbox>
+</paper-dropdown-menu>

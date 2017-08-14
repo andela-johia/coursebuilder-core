@@ -21,49 +21,75 @@
       cbShowMsgAutoHide(regClosedMsg);
     }
   </script>
-  <div class="gcb-cols">
-    <div class="gcb-col-11 gcb-aside">
-      {% include 'summary.html' %}
-
-      {% if transient_student %}
-        {% include 'registration_module.html' %}
-      {% endif %}
-    </div>
-</div>
 {% endblock %}
 
 {% block main_content %}
   {% import 'macros.html' as macros %}
-    <div style="margin-top: 20px;" class="gcb-cols">
-      <div class="gcb-col-1">
-      </div>
-      <div class="gcb-col-9">
 
-        {% if course_outline %}
-          <h1 class="gcb-syllabus-headers">
-            {# I18N: Title for the course syllabus on the main contents page. #}
-            {{ gettext('Syllabus') }}
-          </h1>
-          <div id="gcb-main" role="main">
-            <div class="gcb-nav gcb-nav-full" id="gcb-nav-y">
-              <ul>
-                {% for outline_element in course_outline recursive %}
-                  {{ macros.render_outline_element(
+
+  <div id="course-page" class="page-wrapper active-page">
+    <div class="green-section">
+      <div class="course-links">
+        <button class="course-bookmark waves-effect waves-light btn">
+          <i class="material-icons">star_border</i> BOOKMARK
+        </button>
+        <button class="course-share waves-effect waves-light btn">
+          <i class="material-icons">share</i>
+          SHARE
+        </button>
+      </div>
+
+      <h2>{{ course_info.course.title }}</h2>
+      <h3>Syllabus</h3>
+
+    </div>
+
+
+    <div class="course-content">
+      <div class="row">
+
+
+        <div class="course-accordion col l5 xl4 m12">
+
+          {% if course_outline %}
+            <h3>
+              Topic Overview
+            </h3>
+                <ul class="collapsible" data-collapsible="accordion">
+                  {% for outline_element in course_outline recursive %}
+                    <div class="collapsible-header {{ element_class }}"><i class="material-icons">star_border</i>
+                    {{ macros.render_outline_element(
                          outline_element, can_see_drafts, course_availability,
-                         'li', '', 'p', 'gcb-top-content') }}
-                  {% if show_lessons_in_syllabus and outline_element.contents %}
-                    <ul>
-                      {{ loop(outline_element.contents) }}
-                    </ul>
-                  {% endif %}
-                {% endfor %}
-              </ul>
+                         'span', '', 'span', 'gcb-top-content') }}
+                    {% if show_lessons_in_syllabus and outline_element.contents %}
+                      <ul>
+                        {{ loop(outline_element.contents) }}
+                      </ul>
+                    {% endif %}
+                    </div>
+                  {% endfor %}
+                </ul>
+              {% for item in extra_content %}
+                {{ item }}
+              {% endfor %}
+          {% endif %}
+
+        </div>
+
+        <div class="course-card col l7 xl8 m12">
+          <div class="card">
+
+            <div class="gcb-cols">
+                {% include 'summary.html' %}
+
+                {% if transient_student %}
+                  {% include 'registration_module.html' %}
+                {% endif %}
             </div>
-            {% for item in extra_content %}
-              {{ item }}
-            {% endfor %}
+
           </div>
-        {% endif %}
+        </div>
       </div>
     </div>
+  </div>
 {% endblock %}

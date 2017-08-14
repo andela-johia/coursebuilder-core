@@ -1,0 +1,194 @@
+
+.tools-page {
+
+  .tools-first-section {
+    padding-top: 2rem;
+  }
+
+  .section-label {
+    margin-top: 5rem;
+    text-align: left;
+  }
+    .simple-container {
+        padding: 0 15px;
+    }
+}
+
+#tools {
+  background-color: $white-d;
+  .section {
+    padding: 4.4rem 0;
+
+    .tools-section-label {
+      text-align: left;
+      font-weight: 300;
+      color: #616161;
+      font-size: 1.1rem;
+      margin-left: 10px;
+      line-height: 1.77778;
+    }
+  }
+
+
+  .card-panel {
+    transition: box-shadow .25s;
+    padding: $card-padding;
+    margin: $element-top-margin 0 $element-bottom-margin 0;
+    border-radius: 2px;
+    @extend .z-depth-1;
+    background-color: $card-bg-color;
+  }
+
+  .tools-simple-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+
+
+  .tools-card {
+    position: relative;
+    margin: $element-top-margin 0 $element-bottom-margin 0;
+    background-color: $card-bg-color;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    @extend .z-depth-1;
+    padding: 15px;
+
+
+    .card-title {
+      font-size: 24px;
+      font-weight: 300;
+      &.activator {
+        cursor: pointer;
+      }
+    }
+
+    .visit-link a {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    // Card Sizes
+    &.small, &.medium, &.large {
+      position: relative;
+
+      .card-image {
+        max-height: 60%;
+        overflow: hidden;
+      }
+      .tools-card-image + .card-content {
+        max-height: 40%;
+      }
+      .tools-card-content {
+        max-height: 100%;
+        overflow: hidden;
+
+      }
+      .tools-card-action {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &.small {
+      height: 300px;
+    }
+
+    &.medium {
+      height: 400px;
+    }
+
+    &.large {
+      height: 500px;
+    }
+
+    // Horizontal Cards
+    &.tools-horizontal {
+      &.small, &.medium, &.large {
+        .card-image {
+          height: 100%;
+          max-height: none;
+          overflow: visible;
+
+          img {
+            height: 100%;
+          }
+        }
+      }
+
+      display: flex;
+
+      .tools-card-image {
+        max-width: 15%;
+        img {
+          border-radius: 2px 0 0 2px;
+          max-width: 50%;
+          width: auto;
+        }
+        .main-cards {
+          max-width: 85.4rem;
+          margin: 0 auto 4rem;
+          position: relative;
+        }
+      }
+      .tools-card-stacked {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+
+        .tools-card-content {
+          flex-grow: 1;
+        }
+      }
+    }
+
+
+
+
+    .tools-card-image {
+      position: absolute;
+
+      // Image background for content
+      img {
+        display: block;
+        border-radius: 2px 2px 0 0;
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 30px;
+      }
+    }
+
+    .tools-card-content {
+      padding: $card-padding;
+
+      h2 {
+        display: inline !important;
+        margin-left: 55px !important;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      .card-title {
+        display: block;
+        line-height: 32px;
+        margin-bottom: 8px;
+
+        i {
+          line-height: 32px;
+        }
+      }
+    }
+  }
+}
+
+
+

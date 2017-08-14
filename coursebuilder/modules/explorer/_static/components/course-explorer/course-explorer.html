@@ -7,77 +7,99 @@
 <link rel="import" href="/modules/explorer/_static/components/filter-sidebar/filter-sidebar.html">
 <link rel="import" href="/modules/explorer/_static/components/top-bar/top-bar.html">
 
+<link rel="import" href="/modules/explorer/_static/components/pages/homepage.html">
+<link rel="import" href="/modules/explorer/_static/components/pages/certification.html">
+<link rel="import" href="/modules/explorer/_static/components/pages/tools-page.html">
+<link rel="import" href="/modules/explorer/_static/components/pages/partners-page.html">
+<link rel="import" href="/modules/explorer/_static/components/pages/feedback-page.html">
+
+
 <dom-module id="course-explorer">
-  <template>
-    <style>
-      #top-content {
-        background: white;
-        border-bottom: 1px solid rgb(229, 229, 229);
-      }
+    <template>
+        <top-bar current-user="[[currentUser]]"></top-bar>
 
-      #content {
-        flex: 1;
-        padding-left: 48px;
-        padding-top: 32px;
-        position: relative;
-      }
+        <home-page current-user="[[currentUser]]"></home-page>
 
-      #main {
-        display: flex;
-      }
+        <certification-page current-user="[[currentUser]]"></certification-page>
 
-      paper-spinner {
-        position: absolute;
-        left: 32px;
-        top: 32px;
-      }
-    </style>
+        <tools-page></tools-page>
 
-    <iron-ajax
-      auto url="/modules/gql/query"
-      params="[[_getCoursesQuery()]]"
-      handle-as="json"
-      json-prefix=")]}'"
-      on-response="_onCoursesResponse"
-    ></iron-ajax>
+        <partners-page></partners-page>
 
-    <iron-ajax
-      auto url="/modules/gql/query"
-      params="[[_getBasicQuery()]]"
-      handle-as="json"
-      json-prefix=")]}'"
-      on-response="_onBasicResponse"
-    ></iron-ajax>
+        <feedback-page></feedback-page>
 
-    <div id="top-content">
-      <top-bar
-        site="[[site]]"
-        current-user="[[currentUser]]"
-      ></top-bar>
 
-      <unsafe-html
-        html="[[site.courseExplorer.extraContent]]"
-      ></unsafe-html>
-    </div>
+      <div id="explorer" class="page-wrapper">
 
-    <div id="main">
-      <floating-sidebar>
-        <filter-sidebar
-          filter-options="{{filterOptions}}"
-          categories="[[categories]]"
-        ></filter-sidebar>
-      </floating-sidebar>
+          <style>
+              #top-content {
+                  background: white;
+                  border-bottom: 1px solid rgb(229, 229, 229);
+              }
+              paper-spinner {
+                  position: absolute;
+                  left: 32px;
+                  top: 32px;
+              }
+          </style>
 
-      <div id="content">
-        <paper-spinner active="{{!coursesLoaded}}"></paper-spinner>
-        <course-card-grouper
-          id="grouper"
-          courses="[[_filter(courses.edges, filterOptions.*)]]"
-        ></course-card-grouper>
+          <iron-ajax
+                  auto url="/modules/gql/query"
+                  params="[[_getCoursesQuery()]]"
+                  handle-as="json"
+                  json-prefix=")]}'"
+                  on-response="_onCoursesResponse"
+          ></iron-ajax>
+
+          <iron-ajax
+                  auto url="/modules/gql/query"
+                  params="[[_getBasicQuery()]]"
+                  handle-as="json"
+                  json-prefix=")]}'"
+                  on-response="_onBasicResponse"
+          ></iron-ajax>
+
+
+          <!--  Topic Library  -->
+          <div class="section blue-section">
+              <div class="blue-section-inner">
+                  <h2>Topic Library</h2>
+                  <p>The Digital Garage is your one-stop shop for mastering digital marketing. If you have what it takes
+                      to
+                      complete each of the 23 topics and unlock every badge, you can earn the esteemed Digital Garage
+                      Certificate
+                      of Online Proficiency.</p>
+              </div>
+          </div>
+
+          <div id="main">
+
+
+              <div id="content">
+                  <paper-spinner active="{{!coursesLoaded}}"></paper-spinner>
+                  <div class="section topic-library">
+                      <div class="simple-container">
+
+                              <filter-sidebar
+                                      filter-options="{{ filterOptions }}"
+                                      categories="[[categories]]"
+                              ></filter-sidebar>
+
+                          <div class="row">
+                              <course-card-grouper
+                                      id="grouper"
+                                      courses="[[_filter(courses.edges, filterOptions.*)]]"
+                              ></course-card-grouper>
+
+                          </div>
+
+                      </div>
+                  </div>
+
+              </div>
+          </div>
       </div>
-    </div>
-
-  </template>
+    </template>
   <script>
 
     var _textMatch = function(needle, haystack) {
