@@ -45,6 +45,13 @@
   {% endif %}
 
   <{{ outer_element_tag }} class="{{ outer_element_class|trim }}">
+
+  {% if inner_element_class == "lesson-title-with-progress" %}
+    <i class="material-icons green-text">check_circle</i>
+  {% elif inner_element_class == "lesson-title-no-progress" %}
+    <i class="material-icons">play_circle_outline</i>
+  {% endif %}
+
     <{{ inner_element_tag }} class="{{ inner_element_class|trim }}">
       {{ render_progress(outline_element) }}
       {% if outline_element.link and not suppress_link %}

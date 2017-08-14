@@ -10,11 +10,18 @@
 {% endblock %}
 
 {% block assets %}
-  <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <link rel="icon" href="assets/img/favicon.ico" />
   <link href="assets/css/main.css" rel="stylesheet" type="text/css">
   <link href="assets/css/minimal.mobile.css" rel="stylesheet" type="text/css"
         media="only screen and (max-device-width: 1024px)">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="/modules/explorer/_static/css/style.css" media="screen,projection">
+
 
   <!-- jQuery should be imported first -->
   <script src="/static/jquery/jquery.min.js"></script>
@@ -27,74 +34,64 @@
 
 {% block navbar %}
   <!-- nav bar -->
-  <div class="gcb-nav gcb-complex" id="gcb-nav-x">
-    <div class="gcb-aux">
-      <ul class="clearfix">
 
-        <!-- left-aligned links in order -->
-        {{ html_hooks.insert('base.after_navbar_begins') }}
-        <li {% if navbar.announcements %}class='active'{% endif %}>
-          {# I18N: Navbar tab. #}
-          <a href="announcements">{{ gettext('Announcements') }}</a>
-        </li>
-        <li {% if navbar.course %}class='active'{% endif %}>
-          {# I18N: Navbar tab. #}
-          <a href="course">{{ gettext('Course') }}</a>
-        </li>
-        {% if course_info.course.forum_email %}
-          <li {% if navbar.forum %}class='active'{% endif %}>
-            {# I18N: Navbar tab. #}
-            <a href="forum">{{ gettext('Forum') }}</a>
-          </li>
-        {% endif %}
-        {% if not transient_student %}
-          <li {% if navbar.progress %}class='active'{% endif %}>
-            {# I18N: Navbar tab. #}
-            <a href="student/home">{{ gettext('Progress') }}</a>
-          </li>
-        {% elif can_register %}
-          <li {% if navbar.registration %}class='active'{% endif %}>
-            {# I18N: Navbar tab. #}
-            <a href="register">{{ gettext('Registration') }}</a>
-          </li>
-        {% endif %}
-        {% for item in left_links %}
-          <li>
-            {% if item is string %}
-              {{ item }}
-            {% else %}
-              {# For convenience for simple items, leftnavs can be
-                 2-tuples of href and link text.  More complex things
-                 can be injected as template evaluations, SafeDOM, etc. #}
-              {% set href, link = item %}
-              <a href="{{ href }}">{{ link }}</a>
-            {% endif %}
-          </li>
-        {% endfor %}
+    <nav class="home-mobile-nav">
+        <div class="nav-wrapper">
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#!home" class="mobile-nav-logo"><img src="/modules/explorer/_static/images/navbar-logo.png" alt="logo"></a></li>
 
-        <!-- right-aligned links are in order -->
-        {% for href, link in right_links %}
-          <li class="gcb-pull-right">
-            <a href="{{ href }}">{{ link }}</a>
-          </li>
-        {% endfor %}
-        {% if show_course_explorer_tab %}
-          {% if logoutUrl %}
-            <li class="gcb-pull-right">
-              {# I18N: Text for title of navigation bar tab to reach list of
-                 courses the current user is enrolled in or whitelisted for. #}
-              <a href="/">{{ gettext('My Courses') }}</a>
-            </li>
-          {% else %}
-            <li class="gcb-pull-right">
-              {# I18N: Text for title of navigation bar tab to reach list of all
-                 available courses when user is logged out. #}
-              <a href="/explorer">{{ gettext('Explore Courses') }}</a>
-            </li>
-          {% endif %}
-        {% endif %}
-        {{ html_hooks.insert('base.before_navbar_ends') }}
-      </ul>
+                <li>
+                    <div class="divider"></div>
+                </li>
+
+                {% if loginUrl %}
+                <li>
+                    <a href="{{ loginUrl }}" class="waves-effect waves-light btn-large">Start Learning</a>
+                </li>
+                {% endif %}
+
+                <li><a href="/"><i class="material-icons">home</i>Home</a></li>
+                <li><a href="/#!explorer"><i class="material-icons">library_books</i>Topic Library</a></li>
+                <li><a href="/#!certification"><i class="material-icons">school</i>Certification</a></li>
+
+                <li>
+                    <div class="divider"></div>
+                </li>
+
+                <li><a href="/#!tools"><i class="material-icons">work</i>Tools</a></li>
+                <li><a href="#!"><i class="material-icons">insert_invitation</i>Events</a></li>
+                <li><a href="/#!partners"><i class="material-icons">people</i>Partners</a></li>
+                <li><a href="#!"><i class="material-icons">help</i>Help & FAQs</a></li>
+                <li><a href="/#!feedback"><i class="material-icons">chat_bubble</i>Feedback</a></li>
+
+                <li>
+                    <div class="divider"></div>
+                </li>
+
+                <li><a href="#!"><i class="material-icons">thumb_up</i>Blog</a></li>
+                {% if loginUrl %}
+                <li><a href="{{ loginUrl }}" class="waves-effect waves-light btn-large">Sign in</a></li>
+                {% endif %}
+
+                {% if logoutUrl %}
+                    {% if is_course_admin %}
+                    {% for href, link in auth_links %}
+                        <li><a href="{{ href }}"><i class="material-icons">dashboard</i>{{ link }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                    <li><a href="{{ logoutUrl }}"><i class="material-icons">exit_to_app</i>Logout</a></li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="navbar-fixed course-page-nav">
+        <nav class="nav-extended">
+            <div class="nav-wrapper">
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <a href="#!home" class="brand-logo"><img src="/modules/explorer/_static/images/navbar-logo.png" alt="logo"></a>
+            </div>
+        </nav>
     </div>
-  </div>
 {% endblock %}

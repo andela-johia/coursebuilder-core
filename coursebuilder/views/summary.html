@@ -1,7 +1,7 @@
 {% if video_exists or image_exists %}
-  <div class="gcb-col-5">
+  <div >
 {% else %}
-  <div class="gcb-col-11">
+  <div >
 {% endif %}
 
   <h1 class="gcb-product-headers-large">
@@ -19,7 +19,7 @@
 </div>
 
 {% if show_video %}
-  <div id="main-image" class="gcb-col-5">
+  <div id="main-image">
     {# I18N: Alt text for an embedded YouTube video player. #}
     <div class="gcb-video-container">
         <iframe class="youtube-player" type="text/html"
@@ -31,7 +31,7 @@
     </div>
   </div>
 {% elif show_image %}
-  <div id="main-image" class="gcb-col-5">
+  <div id="main-image">
     <img height="300"
         alt="{{course_info.course.main_image.alt_text}}"
         src="{{course_info.course.main_image.url}}">
