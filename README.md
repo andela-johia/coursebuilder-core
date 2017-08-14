@@ -24,4 +24,4 @@ Academy.AFRICA's courses built on Google's Course builder. Learn more at https:/
 
 ## License
 
-MIT
+Apache 2.0
