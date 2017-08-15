@@ -40,6 +40,7 @@
 
   .dropdown-content {
     top: 60px !important;
+    min-width: 200px;
 
     a {
       color: #000;
@@ -98,5 +99,30 @@
     img {
       height: 100%;
     }
+  }
+}
+
+.button-collapse {
+  padding: 0 20px;
+  border-right: 1px solid $brown-l;
+  @include transition();
+  position: absolute !important;
+  left: 0;
+  margin-left: 0 !important;
+
+  &:hover {
+    border-right: 1px solid $brown-l;
+    background-color: $brown-l !important;
+    color: #000 !important;
+  }
+}
+
+
+
+.course-page-nav {
+  .button-collapse {
+    display: block;
+    position: relative !important;
+    margin-right: 50px;
   }
 }

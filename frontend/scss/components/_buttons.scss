@@ -1,6 +1,7 @@
 // shared styles
 .btn,
-.btn-flat {
+.btn-flat,
+.gcb-button {
   border: $button-border;
   border-radius: $button-radius;
   display: inline-block;
@@ -15,6 +16,7 @@
 
 // Disabled shared style
 .btn.disabled,
+.gcb-button.disabled,
 .btn-floating.disabled,
 .btn-large.disabled,
 .btn-flat.disabled,
@@ -40,6 +42,7 @@
 
 // Shared icon styles
 .btn,
+.gcb-button,
 .btn-floating,
 .btn-large,
 .btn-flat {
@@ -54,6 +57,7 @@
 
 // Shared focus button style
 .btn,
+.gcb-button,
 .btn-floating {
   &:focus {
     background-color: darken($button-raised-background, 10%);
@@ -61,7 +65,7 @@
 }
 
 // Raised Button
-.btn {
+.btn, .gcb-button {
   text-decoration: none;
   color: $button-raised-color;
   background-color: $button-raised-background;

@@ -22,6 +22,7 @@
   @include thin-paragraph;
   
   .card-action {
+    margin-right: 12px;
     border-top: none;
     padding-top: 0;
     
@@ -45,6 +46,9 @@
       padding-top: 16px;
       border-top: 3px solid $brown-l;
     }
+    .visit-link {
+      border-top: none !important;
+    }
   }
 }
 
@@ -65,3 +69,4 @@ input.style-scope.paper-input {
 h2.style-scope.filter-sidebar {
   margin-top: 0 !important;
 }
+

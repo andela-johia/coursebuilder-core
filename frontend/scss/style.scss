@@ -1,25 +1,25 @@
-/*
-* Developed by Anthony Ngene
-*/
-@import 'materialize';
+@import "materialize";
 
 @import "partials/functions";
-@import 'partials/variables';
-@import 'partials/mixins';
+@import "partials/variables";
+@import "partials/mixins";
 
-@import 'owlcarousel/owl.carousel';
+@import "owlcarousel/owl.carousel";
 @include google-font("Roboto+Slab");
 
 // Common
-@import 'common';
+@import "common";
+@import "navbar";
 
 // Homepage
-@import 'homepage/navbar';
-@import 'homepage/main';
-@import 'footer';
+@import "homepage/main";
+@import "footer";
 
-// Topic Library
-@import 'homepage/topics';
+// Pages
+@import "pages/explorer";
+@import "pages/partners";
+@import "pages/tools";
+@import "pages/course";
 
 .img {
   position: relative;
@@ -96,6 +96,6 @@ span
   background-color: white;
 }
 #h2
- {
- padding-left: 50px; border: 30px
- }
+{
+  padding-left: 50px; border: 30px
+}

@@ -18,7 +18,7 @@
                       <a href="#!explorer" class="waves-effect waves-light btn-large">Start Learning</a>
                   </li>
                   <li><a href="#!"><i class="material-icons">account_circle</i>Sign in</a></li>
-                  <li><a href="#!home"><i class="material-icons">home</i>Home</a></li>
+                  <li><a href="#!homepage"><i class="material-icons">home</i>Home</a></li>
                   <li><a href="#!explorer"><i class="material-icons">library_books</i>Topic Library</a></li>
                   <li><a href="#!certification"><i class="material-icons">school</i>Certification</a></li>
 
@@ -26,11 +26,11 @@
                       <div class="divider"></div>
                   </li>
 
-                  <li><a href="#!"><i class="material-icons">work</i>Tools</a></li>
+                  <li><a href="#!tools"><i class="material-icons">work</i>Tools</a></li>
                   <li><a href="#!"><i class="material-icons">insert_invitation</i>Events</a></li>
-                  <li><a href="#!"><i class="material-icons">people</i>Partners</a></li>
+                  <li><a href="#!partners"><i class="material-icons">people</i>Partners</a></li>
                   <li><a href="#!"><i class="material-icons">help</i>Help & FAQs</a></li>
-                  <li><a href="#!"><i class="material-icons">chat_bubble</i>Feedback</a></li>
+                  <li><a href="#!feedback"><i class="material-icons">chat_bubble</i>Feedback</a></li>
 
                   <li>
                       <div class="divider"></div>
@@ -66,11 +66,11 @@
                   <a href="#" data-activates="mobile-demo" class="button-collapse"><i
                           class="material-icons">menu</i></a>
                   <ul class="left hide-on-med-and-down">
-                      <li><a href="#!home">Home</a></li>
+                      <li><a href="#!homepage">Home</a></li>
                       <li><a href="#!explorer">Topic Library</a></li>
                       <li><a href="#!certification">Certification</a></li>
                       <li><a href="#!">Events</a></li>
-                      <li><a href="#!">Partners</a></li>
+                      <li><a href="#!partners">Partners</a></li>
                       <!-- Dropdown Trigger -->
                       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">More<i
                               class="material-icons right">arrow_drop_down</i></a>
@@ -90,17 +90,18 @@
       </div>
       <!--  Dropdown(s) -->
       <ul id='dropdown1' class='dropdown-content'>
-          <li><a href="#!">First</a></li>
-          <li><a href="#!">Second</a></li>
-          <li><a href="#!">Third</a></li>
-          <li><a href="#!">Fourth</a></li>
-          <li class="divider"></li>
-          <template is="dom-if" if="[[currentUser.loggedIn]]">
-              <template is="dom-if" if="[[currentUser.canViewDashboard]]">
-                  <li><a href="/modules/admin">Dashboard</a></li>
-              </template>
-              <li><a href="[[currentUser.logoutUrl]]">Logout</a></li>
-          </template>
+        <li><a href="#!tools">Tools</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Help & FAQs</a></li>
+        <li><a href="#!feedback">Feedback</a></li>
+        <li><a href="#!">Blog</a></li>
+        <li class="divider"></li>
+        <template is="dom-if" if="[[currentUser.loggedIn]]">
+            <template is="dom-if" if="[[currentUser.canViewDashboard]]">
+                <li><a href="/modules/admin">Dashboard</a></li>
+            </template>
+            <li><a href="[[currentUser.logoutUrl]]">Logout</a></li>
+        </template>
       </ul>
   </template>
   <script>

@@ -1,54 +1,50 @@
-$(document).ready(function(){
+$(document).ready(function documentReady() {
   $(".button-collapse").sideNav();
-  
+
   $('.awards-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
+    loop: true,
+    margin: 10,
+    nav: true,
     dots: false,
     navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
-    responsive:{
-      0:{
-        items:1
+    responsive: {
+      0: {
+        items: 1
       },
-      600:{
-        items:2
+      600: {
+        items: 2
       },
-      1000:{
-        items:4
+      1000: {
+        items: 4
       }
     }
   });
-  
+
   $('.how-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
+    loop: true,
+    margin: 10,
+    nav: true,
     navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
-    items: 1,
+    items: 1
   });
-  
+
+
   function showPage(pageName) {
     $('.page-wrapper').hide();
     $('#' + pageName).show();
   }
-  
-  $('a[href="#!explorer"]').on('click', function() {
-    showPage('explorer');
-  });
-  
-  $('a[href="#!certification"]').on('click', function() {
-    showPage('certification');
-  });
-  
-  $('a[href="#!homepage"]').on('click', function() {
-    showPage('homepage');
-  });
-  
-  $('select').material_select();
-  
-  if (window.location.href.substr(-8) === 'explorer') {
-    showPage('explorer');
-  }
 
+  var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback'];
+
+  pageLinks.forEach(function addLinks(name) {
+    $('a[href="#!' + name + '"]').on('click', function showPageEvent() {
+      showPage(name);
+    });
+
+    if (window.location.href.substr(-name.length) === name) {
+      showPage(name);
+    }
+  });
+
+  $('select').material_select();
 });

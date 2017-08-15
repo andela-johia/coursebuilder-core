@@ -9,6 +9,9 @@
 
 <link rel="import" href="/modules/explorer/_static/components/pages/homepage.html">
 <link rel="import" href="/modules/explorer/_static/components/pages/certification.html">
+<link rel="import" href="/modules/explorer/_static/components/pages/tools-page.html">
+<link rel="import" href="/modules/explorer/_static/components/pages/partners-page.html">
+<link rel="import" href="/modules/explorer/_static/components/pages/feedback-page.html">
 
 
 <dom-module id="course-explorer">
@@ -18,6 +21,12 @@
         <home-page current-user="[[currentUser]]"></home-page>
 
         <certification-page current-user="[[currentUser]]"></certification-page>
+
+        <tools-page></tools-page>
+
+        <partners-page></partners-page>
+
+        <feedback-page></feedback-page>
 
 
       <div id="explorer" class="page-wrapper">
@@ -90,8 +99,6 @@
               </div>
           </div>
       </div>
-
-
     </template>
   <script>
 
