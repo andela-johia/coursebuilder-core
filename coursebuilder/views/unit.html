@@ -109,8 +109,6 @@
                 {{ item }}
               </div><!-- /gcb-aside -->
             {% endfor %}
-
-
           {% endif %}
 
           </div>
@@ -140,28 +138,6 @@
     </div>
   </div>
 
-
-
-  <div id="gcb-main-article" class="gcb-article tab-content" role="main">
-    {{html_hooks.insert('unit.after_content_begins') | safe}}
-
-    {% if not display_content %}
-      <div class="gcb-aside gcb-button-box">
-        {# I18N: Text shown for a unit that contains no assessments, lessons, header or footer. #}
-        {{ gettext('This unit has no content.') }}
-      </div>
-    {% else %}
-
-
-
-{#  TODO: PAGE NAVIGATION - next, prev   #}
-
-
-
-
-    {% endif %}
-    {{html_hooks.insert('unit.before_content_ends') | safe}}
-  </div>
 </div>
 
 {% endblock %}
