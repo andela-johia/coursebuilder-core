@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() => {
   $('.button-collapse').sideNav();
   $('.dropdown-button').dropdown();
   $('ul.tabs').tabs();
@@ -31,15 +31,22 @@ $(document).ready(function () {
     items: 1
   });
 
+
   function showPage(pageName) {
     $('.page-wrapper').hide();
-    $('#' + pageName).show();
+    $(`#${pageName}`).show();
   }
 
-  var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback', 'faqs'];
+  const pageLinks = ['explorer',
+    'certification',
+    'homepage',
+    'tools',
+    'partners',
+    'feedback',
+    'faqs'];
 
-  pageLinks.forEach(function (name) {
-    $('a[href="#!' + name + '"]').on('click', function () {
+  pageLinks.forEach((name) => {
+    $(`a[href="#!${name}"]`).on('click', () => {
       showPage(name);
     });
 
@@ -50,15 +57,15 @@ $(document).ready(function () {
 
   $('select').material_select();
 
-  $('.faq-switch').on('click', function (e) {
-    var contentDiv = '#' + $(e.target).data('switch');
-    $('#mainContent').fadeOut(300, function () {
+  $('.faq-switch').on('click', (e) => {
+    const contentDiv = `#${$(e.target).data('switch')}`;
+    $('#mainContent').fadeOut(300, () => {
       $(contentDiv).fadeIn();
     });
   });
 
-  $('.faq-collapsible-back').on('click', function (e) {
-    $(e.target).closest('.faq-collapsible').fadeOut(300, function () {
+  $('.faq-collapsible-back').on('click', (e) => {
+    $(e.target).closest('.faq-collapsible').fadeOut(300, () => {
       $('#mainContent').fadeIn();
     });
   });
