@@ -37,7 +37,13 @@ $(document).ready(() => {
     $(`#${pageName}`).show();
   }
 
-  const pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback'];
+  const pageLinks = ['explorer',
+    'certification',
+    'homepage',
+    'tools',
+    'partners',
+    'feedback',
+    'faqs'];
 
   pageLinks.forEach((name) => {
     $(`a[href="#!${name}"]`).on('click', () => {
