@@ -1,6 +1,6 @@
 eslint:
   enabled: true
-  config_file: .eslintrc.json
-  ignore_file: .eslintignore
+  config_file: frontend/.eslintrc.json
+  ignore_file: frontend/.eslintignore
 scss:
   enabled: false
