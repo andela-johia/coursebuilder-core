@@ -9,19 +9,9 @@
 
     <link rel="stylesheet" href="css/style.css" media="screen,projection">
 
-    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript">
-         function switchContent(divId){
-            var newDiv = document.getElementById(divId);
-            document.getElementById('mainContent').innerHTML = newDiv;
-            $(divId).removeAttr("hidden");
-        }
-    </script>
-
   </head>
 
-  <body class="grey lighten-4">
+  <body>
     <!-- NavBar -->
     <nav class="home-mobile-nav">
       <div class="nav-wrapper">
@@ -33,37 +23,36 @@
           <li>
             <a href="#!" class="waves-effect waves-light btn-large">Start Learning</a>
           </li>
-          <li><a href="#!"><i class="material-icons">account_circle</i>Sign in</a></li>
-          <li><a href="#!home"><i class="material-icons">home</i>Home</a></li>
-          <li><a href="#!explorer"><i class="material-icons">library_books</i>Topic Library</a></li>
-          <li><a href="#!"><i class="material-icons">school</i>Certification</a></li>
+          <li><a href="index.html"><i class="material-icons">home</i>Home</a></li>
+          <li><a href="explorer.html"><i class="material-icons">library_books</i>Topic Library</a></li>
+          <li><a href="certification.html"><i class="material-icons">school</i>Certification</a></li>
 
           <li><div class="divider"></div></li>
 
           <li><a href="#!"><i class="material-icons">work</i>Tools</a></li>
           <li><a href="#!"><i class="material-icons">insert_invitation</i>Events</a></li>
-          <li><a href="#!"><i class="material-icons">people</i>Partners</a></li>
-          <li><a href="#!"><i class="material-icons">help</i>Help & FAQs</a></li>
-          <li><a href="#!"><i class="material-icons">chat_bubble</i>Feedback</a></li>
+          <li><a href="partners.html"><i class="material-icons">people</i>Partners</a></li>
+          <li><a href="help.html"><i class="material-icons">help</i>Help & FAQs</a></li>
+          <li><a href="feedback.html"><i class="material-icons">chat_bubble</i>Feedback</a></li>
 
           <li><div class="divider"></div></li>
 
           <li><a href="#!"><i class="material-icons">thumb_up</i>Blog</a></li>
           <li><a href="#!" class="waves-effect waves-light btn-large">Sign in</a></li>
         </ul>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#!">First Sidebar Link</a></li>
-          <li><a href="#!">Second Sidebar Link</a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-          <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!">First</a></li>
-            <li><a href="#!">Second</a></li>
-            <li><a href="#!">Third</a></li>
-            <li><a href="#!">Fourth</a></li>
-          </ul>
-        </ul>
       </div>
     </nav>
+
+    <ul id='dropdown1' class='dropdown-content'>
+      <li><a href="tools-page.html">Tools</a></li>
+      <li class="divider"></li>
+      <li><a href="help.html">Help & FAQs</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="#!">Blog</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">My Profile</a></li>
+      <li><a href="#!">Sign out</a></li>
+    </ul>
 
     <div class="navbar-fixed">
       <nav class="nav-extended">
@@ -74,11 +63,11 @@
         <div class="nav-wrapper home-main-menu pad-5">
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="left hide-on-med-and-down">
-            <li><a href="#!homepage">Home</a></li>
-            <li><a href="#!explorer">Topic Library</a></li>
-            <li><a href="#!certification">Certification</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explorer.html">Topic Library</a></li>
+            <li><a href="certification.html">Certification</a></li>
             <li><a href="#!">Events</a></li>
-            <li><a href="#!">Partners</a></li>
+            <li><a href="partners.html">Partners</a></li>
             <!-- Dropdown Trigger -->
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1">More<i class="material-icons right">arrow_drop_down</i></a></li>
           </ul>
@@ -90,10 +79,11 @@
         </div>
       </nav>
     </div>
+    <!--  End navbar  -->
 
 
 
-    <div id="partners" class="page-wrapper active-page">
+    <div id="faqs" class="page-wrapper active-page">
 
       <!--  Mission  -->
       <div class="section blue-section">
@@ -102,384 +92,363 @@
         </div>
       </div>
 
-    </div>
+      <div class="container help-faq">
+        <div class="row">
+          <div id="mainContent" class="col l10 offset-l1">
+            <div>
+              <a id="wizard" class="btn white">
+                <span>Choose a topic</span>
+              </a>
+              <a data-switch="generalContent" id="wizard" class="btn white faq-switch">
+                <span>General</span>
+                <i id="expand" class="material-icons teal-text right">expand_more</i>
+              </a>
+              <a data-switch="accountSetup" id="wizard" class="btn white faq-switch">
+                <span>Account Setup</span>
+                <i id="expand" class="material-icons teal-text right">expand_more</i>
+              </a>
+              <a data-switch="topicscontent" id="wizard" class="btn white faq-switch">
+                <span>Topics</span>
+                <i id="expand" class="material-icons teal-text right">expand_more</i>
+              </a>
+              <a data-switch="eventscontent" id="wizard" class="btn white faq-switch">
+                <span>Events</span>
+                <i id="expand" class="material-icons teal-text right">expand_more</i>
+              </a>
+              <a data-switch="badgescontent" id="wizard" class="btn white faq-switch">
+                <span>Badges</span>
+                <i id="expand" class="material-icons teal-text right">expand_more</i>
+              </a>
+              <a data-switch="certificatescontent" id="wizard" class="btn white faq-switch">
+                <span>Certificates</span>
+                <i id="expand" class="material-icons teal-text right">expand_more</i>
+              </a>
+              <a data-switch="supportcontent" id="wizard" class="btn white faq-switch">
+                <span>Support</span>
+                <i id="expand" class="material-icons teal-text right">expand_more</i>
+              </a>
+            </div>
+          </div>
 
-    <div id="explorer" class="page-wrapper">
-      <h1>explorer</h1>
-    </div>
+          <div id="generalContent" class="col l10 offset-l1 faq-collapsible">
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons grey-text faq-collapsible-back">arrow_back</i>
+                  Topic
+                  General
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  What knowledge and skills will I gain upon completing my training?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    There's no limit to how much you can grow! After watching video tutorials from everyday experts who've been in your shoes, you'll build the skills to promote yourself and your business online. You'll learn how to get noticed by the right people, and how to make the most of the web to achieve your goals. Have fun!
+                  </span></div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  What is the Digital Garage?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    Brush up your digital skills to grow your business, your career, or just your confidence. The everyday experts at The Digital Garage will help you succeed online. Anyone can benefit, regardless of their skill level, goals or background.
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  Why has Google launched the Digital Garage?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
+                  </span>
+                </div>
+              </li>
+            </ul>
 
-    <div id="certification" class="page-wrapper">
-      <h1>certification</h1>
+          </div>
+
+          <div id="accountSetup" class="col l10 offset-l1 faq-collapsible">
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons grey-text faq-collapsible-back">arrow_back</i>
+                  Topic
+                  Account Setup
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  How do I create an account?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    Ready to learn? Create your account by selecting 'My Profile' in the menu.
+                  </span></div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  How do I delete my account?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    Sorry to see you go. Select 'My Profile' in the menu to delete your account. Please note that deleting your Google Account will not automatically delete your Digital Garage account or data associated with that account, and that deleting your Digital Garage account will not delete or otherwise affect your Google Account.
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  What is the Diagnostic?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    There are hundreds of resources in The Digital Garage covering loads of topics to help you succeed online. But you don't have to explore all of it — we'll set you up with a personal learning plan that covers only the topics you need. Hit 'Create my plan' anywhere on the site to tell us your goals, so we'll know exactly what to include in your personal plan. Of course, if you see something else you'd like to learn that's not included in your plan, go ahead and explore
+                  </span>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+
+          <div id="topicscontent" class="col l10 offset-l1 faq-collapsible">
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons grey-text faq-collapsible-back">arrow_back</i>
+                  Topic
+                  Topics
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  How do I get started with a topic/topics?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    Have you taken your Diagnostic yet? If not, that's your first step to receive your personal plan. Click 'Create my plan' anywhere on the site to get started — it will only take a minute or two. You can always skip the Diagnostic and explore topics on your own if you wish, by visiting the 'Library' section on this site
+                  </span></div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  Can I jump around to different tutorials?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    Absolutely! Watch tutorial videos in any order. And when you're ready, we can always tailor a personal learning plan for you.
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  Why has Google launched the Digital Garage?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
+                  </span>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+
+          <div id="eventscontent" class="col l10 offset-l1 faq-collapsible">
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons grey-text faq-collapsible-back">arrow_back</i>
+                  Topic
+                  Events
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  What knowledge and skills will I gain upon completing my training?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    There's no limit to how much you can grow! After watching video tutorials from everyday experts who've been in your shoes, you'll build the skills to promote yourself and your business online. You'll learn how to get noticed by the right people, and how to make the most of the web to achieve your goals. Have fun!
+                  </span></div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  What is the Digital Garage?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    Brush up your digital skills to grow your business, your career, or just your confidence. The everyday experts at The Digital Garage will help you succeed online. Anyone can benefit, regardless of their skill level, goals or background.
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  Why has Google launched the Digital Garage?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
+                  </span>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+
+          <div id="badgescontent" class="col l10 offset-l1 faq-collapsible">
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons grey-text faq-collapsible-back">arrow_back</i>
+                  Topic
+                  Badges
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  What knowledge and skills will I gain upon completing my training?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    There's no limit to how much you can grow! After watching video tutorials from everyday experts who've been in your shoes, you'll build the skills to promote yourself and your business online. You'll learn how to get noticed by the right people, and how to make the most of the web to achieve your goals. Have fun!
+                  </span></div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  What is the Digital Garage?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    Brush up your digital skills to grow your business, your career, or just your confidence. The everyday experts at The Digital Garage will help you succeed online. Anyone can benefit, regardless of their skill level, goals or background.
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  Why has Google launched the Digital Garage?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
+                  </span>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+
+          <div id="certificatescontent" class="col l10 offset-l1 faq-collapsible">
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons grey-text faq-collapsible-back">arrow_back</i>
+                  Topic
+                  Certificates
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  What knowledge and skills will I gain upon completing my training?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    There's no limit to how much you can grow! After watching video tutorials from everyday experts who've been in your shoes, you'll build the skills to promote yourself and your business online. You'll learn how to get noticed by the right people, and how to make the most of the web to achieve your goals. Have fun!
+                  </span></div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  What is the Digital Garage?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    Brush up your digital skills to grow your business, your career, or just your confidence. The everyday experts at The Digital Garage will help you succeed online. Anyone can benefit, regardless of their skill level, goals or background.
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  Why has Google launched the Digital Garage?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
+                  </span>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+
+          <div id="supportcontent" class="col l10 offset-l1 faq-collapsible">
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons grey-text faq-collapsible-back">arrow_back</i>
+                  Topic
+                  Support
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  What knowledge and skills will I gain upon completing my training?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    There's no limit to how much you can grow! After watching video tutorials from everyday experts who've been in your shoes, you'll build the skills to promote yourself and your business online. You'll learn how to get noticed by the right people, and how to make the most of the web to achieve your goals. Have fun!
+                  </span></div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  What is the Digital Garage?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    Brush up your digital skills to grow your business, your career, or just your confidence. The everyday experts at The Digital Garage will help you succeed online. Anyone can benefit, regardless of their skill level, goals or background.
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  Why has Google launched the Digital Garage?
+                  <i id="expand" class="material-icons right">expand_more</i>
+                </div>
+                <div class="collapsible-body">
+                  <span>
+                    When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
+                  </span>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
     </div>
     
-    <div class="container">
-      <div class="row">
-       <div id="mainContent" class="col l10 offset-l1">
-         <div>
-          <a id="wizard" class="btn white">
-            <span>Choose a topic</span>
-          </a>
-          <a onclick="switchContent(generalContent)" id="wizard" class="btn white">
-            <span>General</span>
-            <i id="expand" class="material-icons teal-text right">expand_more</i>
-          </a>
-          <a onclick="switchContent(accountSetup)" id="wizard" class="btn white">
-            <span>Account Setup</span>
-            <i id="expand" class="material-icons teal-text right">expand_more</i>
-          </a>
-          <a onclick="switchContent(topicscontent)" id="wizard" class="btn white">
-            <span>Topics</span>
-            <i id="expand" class="material-icons teal-text right">expand_more</i>
-          </a>
-          <a onclick="switchContent(eventscontent)" id="wizard" class="btn white">
-            <span>Events</span>
-            <i id="expand" class="material-icons teal-text right">expand_more</i>
-          </a>
-          <a onclick="switchContent(badgescontent)" id="wizard" class="btn white">
-            <span>Badges</span>
-            <i id="expand" class="material-icons teal-text right">expand_more</i>
-          </a>
-          <a onclick="switchContent(certificatescontent)" id="wizard" class="btn white">
-            <span>Certificates</span>
-            <i id="expand" class="material-icons teal-text right">expand_more</i>
-          </a>
-          <a onclick="switchContent(supportcontent)" id="wizard" class="btn white">
-            <span>Support</span>
-            <i id="expand" class="material-icons teal-text right">expand_more</i>
-          </a>
-         </div>
-       </div>
-      </div>
-
-      <div class="row">
-       <div id="generalContent" class="col l10 offset-l1" hidden>
-        <ul class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header">
-            <i class="material-icons grey-text">arrow_back</i>
-            Topic
-            General
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            What knowledge and skills will I gain upon completing my training?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-There's no limit to how much you can grow! After watching video tutorials from everyday experts who've been in your shoes, you'll build the skills to promote yourself and your business online. You'll learn how to get noticed by the right people, and how to make the most of the web to achieve your goals. Have fun!
-            </span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            What is the Digital Garage?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-Brush up your digital skills to grow your business, your career, or just your confidence. The everyday experts at The Digital Garage will help you succeed online. Anyone can benefit, regardless of their skill level, goals or background.
-            </span>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            Why has Google launched the Digital Garage?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
-            </span>
-            </div>
-          </li>
-        </ul>
-        
-       </div>
-      </div>
-
-         <div class="row">
-       <div id="accountSetup" class="col l10 offset-l1" hidden>
-        <ul class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header">
-            <i class="material-icons grey-text">arrow_back</i>
-            Topic
-            Account Setup
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            How do I create an account?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-            Ready to learn? Create your account by selecting 'My Profile' in the menu.
-            </span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            How do I delete my account?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-Sorry to see you go. Select 'My Profile' in the menu to delete your account. Please note that deleting your Google Account will not automatically delete your Digital Garage account or data associated with that account, and that deleting your Digital Garage account will not delete or otherwise affect your Google Account.
-            </span>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            What is the Diagnostic?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-There are hundreds of resources in The Digital Garage covering loads of topics to help you succeed online. But you don't have to explore all of it — we'll set you up with a personal learning plan that covers only the topics you need. Hit 'Create my plan' anywhere on the site to tell us your goals, so we'll know exactly what to include in your personal plan. Of course, if you see something else you'd like to learn that's not included in your plan, go ahead and explore
-            </span>
-            </div>
-          </li>
-        </ul>
-        
-       </div>
-      </div>
-
-         <div class="row">
-       <div id="topicscontent" class="col l10 offset-l1" hidden>
-        <ul class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header">
-            <i class="material-icons grey-text">arrow_back</i>
-            Topic
-            Topics
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            How do I get started with a topic/topics?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-Have you taken your Diagnostic yet? If not, that's your first step to receive your personal plan. Click 'Create my plan' anywhere on the site to get started — it will only take a minute or two. You can always skip the Diagnostic and explore topics on your own if you wish, by visiting the 'Library' section on this site
-            </span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            Can I jump around to different tutorials?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-Absolutely! Watch tutorial videos in any order. And when you're ready, we can always tailor a personal learning plan for you.
-            </span>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            Why has Google launched the Digital Garage?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
-            </span>
-            </div>
-          </li>
-        </ul>
-        
-       </div>
-      </div>
-
-         <div class="row">
-       <div id="eventscontent" class="col l10 offset-l1" hidden>
-        <ul class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header">
-            <i class="material-icons grey-text">arrow_back</i>
-            Topic
-            Events
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            What knowledge and skills will I gain upon completing my training?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-There's no limit to how much you can grow! After watching video tutorials from everyday experts who've been in your shoes, you'll build the skills to promote yourself and your business online. You'll learn how to get noticed by the right people, and how to make the most of the web to achieve your goals. Have fun!
-            </span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            What is the Digital Garage?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-Brush up your digital skills to grow your business, your career, or just your confidence. The everyday experts at The Digital Garage will help you succeed online. Anyone can benefit, regardless of their skill level, goals or background.
-            </span>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            Why has Google launched the Digital Garage?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
-            </span>
-            </div>
-          </li>
-        </ul>
-        
-       </div>
-      </div>
-
-         <div class="row">
-       <div id="badgescontent" class="col l10 offset-l1" hidden>
-        <ul class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header">
-            <i class="material-icons grey-text">arrow_back</i>
-            Topic
-            Badges
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            What knowledge and skills will I gain upon completing my training?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-There's no limit to how much you can grow! After watching video tutorials from everyday experts who've been in your shoes, you'll build the skills to promote yourself and your business online. You'll learn how to get noticed by the right people, and how to make the most of the web to achieve your goals. Have fun!
-            </span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            What is the Digital Garage?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-Brush up your digital skills to grow your business, your career, or just your confidence. The everyday experts at The Digital Garage will help you succeed online. Anyone can benefit, regardless of their skill level, goals or background.
-            </span>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            Why has Google launched the Digital Garage?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
-            </span>
-            </div>
-          </li>
-        </ul>
-        
-       </div>
-      </div>
-
-         <div class="row">
-       <div id="certificatescontent" class="col l10 offset-l1" hidden>
-        <ul class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header">
-            <i class="material-icons grey-text">arrow_back</i>
-            Topic
-            Certificates
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            What knowledge and skills will I gain upon completing my training?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-There's no limit to how much you can grow! After watching video tutorials from everyday experts who've been in your shoes, you'll build the skills to promote yourself and your business online. You'll learn how to get noticed by the right people, and how to make the most of the web to achieve your goals. Have fun!
-            </span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            What is the Digital Garage?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-Brush up your digital skills to grow your business, your career, or just your confidence. The everyday experts at The Digital Garage will help you succeed online. Anyone can benefit, regardless of their skill level, goals or background.
-            </span>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            Why has Google launched the Digital Garage?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
-            </span>
-            </div>
-          </li>
-        </ul>
-        
-       </div>
-      </div>
-
-         <div class="row">
-       <div id="supportcontent" class="col l10 offset-l1" hidden>
-        <ul class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header">
-            <i class="material-icons grey-text">arrow_back</i>
-            Topic
-            Support
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            What knowledge and skills will I gain upon completing my training?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-There's no limit to how much you can grow! After watching video tutorials from everyday experts who've been in your shoes, you'll build the skills to promote yourself and your business online. You'll learn how to get noticed by the right people, and how to make the most of the web to achieve your goals. Have fun!
-            </span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            What is the Digital Garage?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-Brush up your digital skills to grow your business, your career, or just your confidence. The everyday experts at The Digital Garage will help you succeed online. Anyone can benefit, regardless of their skill level, goals or background.
-            </span>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header">
-            Why has Google launched the Digital Garage?
-            <i id="expand" class="material-icons right">expand_more</i>
-            </div>
-            <div class="collapsible-body">
-            <span>
-When people learn to make the most of the web, it's amazing how much individuals, businesses, and whole economies can grow. We want everyone to have the digital skills they need to benefit from the technology revolution and share in that growth — including you.
-            </span>
-            </div>
-          </li>
-        </ul>
-        
-       </div>
-      </div>
-    </div>
+    
 
     <!--  Footer  -->
     <footer>
@@ -506,183 +475,6 @@ When people learn to make the most of the web, it's amazing how much individuals
               <option value="https://learndigital.withgoogle.com/lateliernumerique">
                 Afrique
               </option>
-
-              <option value="https://learndigital.withgoogle.com/oficinaafrica">
-                África
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalgarage-au">
-                Australia
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/atelierdigital-be">
-                Belgique
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitaalatelier">
-                België
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalengarazh">
-                България
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/ateliedigital">
-                Brazil
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalnigaraz">
-                Česká republika
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalnagaraza-rs">
-                Србија
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/zukunftswerkstatt">
-                Deutschland
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/succesonline">
-                Danmark
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalgarage-ee">
-                Eesti
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/greektourism">
-                Ελλάδα
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/activatunegocio">
-                España
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalworkshop-eu">
-                European
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalactive">
-                France (Digital Active)
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/pourlespros">
-                France (Pour les Pros)
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalnagaraza">
-                Hrvatska
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalgarage-ie">
-                Ireland
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalunlocked">
-                India
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/eccellenzeindigitale">
-                Italia
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalworkshop-jp">
-                日本
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/garagedigital">
-                Latinoamérica
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalgarage-lv">
-                Latvija
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalgarage-lt">
-                Lietuva
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digital-workshop-lu">
-                Luxembourg (EN)
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/atelierdigital-lu">
-                Luxembourg (FR)
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalworkshop-lu">
-                Luxemburg (DE)
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalworkshop-hu">
-                Magyarország
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalworkshop-mt">
-                Malta
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalewerkplaats">
-                Nederland
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalworkshop-at">
-                Österreich
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/internetowerewolucje">
-                Polska
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/atelierdigitalportugal">
-                Portugal
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/atelieruldigital">
-                România
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalakademin">
-                Sverige
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalnagaraza-si">
-                Slovenija
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalnagaraz">
-                Slovensko
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/atelierdigital-de">
-                Schweiz
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalgarage-fi">
-                Suomi
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/atelierdigital-fr">
-                Suisse
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/atelierdigital-it">
-                Svizzera
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/dijitalatolye">
-                Türkçe
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalgarage" selected="">
-                United Kingdom
-              </option>
-
-              <option value="https://learndigital.withgoogle.com/digitalworkshop-ua">
-                Україна
-              </option>
-
             </select>
           </div>
         </div>
@@ -720,12 +512,10 @@ When people learn to make the most of the web, it's amazing how much individuals
 
 
 <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
-<script src="js/main.js">
-   $(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
-</script>
+    <script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
 
   </body>
 </html>

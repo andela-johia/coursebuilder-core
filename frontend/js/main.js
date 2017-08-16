@@ -1,5 +1,6 @@
 $(document).ready(function documentReady() {
   $(".button-collapse").sideNav();
+  $('.collapsible').collapsible();
 
   $('.awards-carousel').owlCarousel({
     loop: true,
@@ -47,4 +48,26 @@ $(document).ready(function documentReady() {
   });
 
   $('select').material_select();
+  
+  function switchContent(divId){
+    var newDiv = document.getElementById(divId);
+    document.getElementById('mainContent').innerHTML = newDiv;
+    $(divId).removeAttr("hidden");
+  }
+  
+  $('.faq-switch').on('click', function(e){
+    var contentDiv = '#' + $(this).data('switch');
+    $('#mainContent').fadeOut(300, function(){
+      $(contentDiv).fadeIn();
+    });
+  });
+  
+  $('.faq-collapsible-back').on('click', function(e){
+    $(this).closest('.faq-collapsible').fadeOut(300, function(){
+      $('#mainContent').fadeIn();
+    });
+  });
 });
+  
+
+  
