@@ -1,7 +1,8 @@
-window.addEventListener('WebComponentsReady', function documentReady() {
-  $(".button-collapse").sideNav();
-  $(".dropdown-button").dropdown();
+$(document).ready(function () {
+  $('.button-collapse').sideNav();
+  $('.dropdown-button').dropdown();
   $('ul.tabs').tabs();
+  $('.collapsible').collapsible();
 
   $('.awards-carousel').owlCarousel({
     loop: true,
@@ -30,16 +31,15 @@ window.addEventListener('WebComponentsReady', function documentReady() {
     items: 1
   });
 
-
   function showPage(pageName) {
     $('.page-wrapper').hide();
     $('#' + pageName).show();
   }
 
-  var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback'];
+  var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback', 'faqs'];
 
-  pageLinks.forEach(function addLinks(name) {
-    $('a[href="#!' + name + '"]').on('click', function showPageEvent() {
+  pageLinks.forEach(function (name) {
+    $('a[href="#!' + name + '"]').on('click', function () {
       showPage(name);
     });
 
@@ -49,4 +49,17 @@ window.addEventListener('WebComponentsReady', function documentReady() {
   });
 
   $('select').material_select();
+
+  $('.faq-switch').on('click', function (e) {
+    var contentDiv = '#' + $(e.target).data('switch');
+    $('#mainContent').fadeOut(300, function () {
+      $(contentDiv).fadeIn();
+    });
+  });
+
+  $('.faq-collapsible-back').on('click', function (e) {
+    $(e.target).closest('.faq-collapsible').fadeOut(300, function () {
+      $('#mainContent').fadeIn();
+    });
+  });
 });
