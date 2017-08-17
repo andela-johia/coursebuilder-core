@@ -51,9 +51,8 @@ $(document).ready(function () {
   $('select').material_select();
 
   $('.faq-switch').on('click', function (e) {
-    var contentDiv = '#' + $(e.target).data('switch');
     $('#mainContent').fadeOut(300, function () {
-      $(contentDiv).fadeIn();
+      $('#' + $(e.target).data('switch')).fadeIn();
     });
   });
 
