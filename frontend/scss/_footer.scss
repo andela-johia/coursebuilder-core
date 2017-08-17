@@ -42,7 +42,11 @@ footer {
   }
   
   .footer-bottom {
-    padding: 20px 5% 0 5%;
+    padding: 20px 5% 20px 5%;
+    .row {
+      margin-bottom: 0;
+    }
+
     .footer-appstores {
       img {
         width: 150px;
