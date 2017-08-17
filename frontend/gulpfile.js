@@ -22,5 +22,4 @@ gulp.task('babel', () =>
     gulp.src('js-source/main.js')
         .pipe(babel({ presets: ['es2015-script'] }))
         .pipe(gulp.dest('js'))
-        .pipe(gulp.dest('../coursebuilder/modules/explorer/_static/js'))
 );
