@@ -6,28 +6,18 @@
 <dom-module id="course-card">
   <template>
 
-      <div class="col m12 l6">
-          <div class="card horizontal course-card">
-              <div class="card-image">
-                  <img src="/modules/explorer/_static/images/explorer-course-icon.png">
-              </div>
-              <div class="card-stacked">
-                  <div class="card-content">
-                      <h2>[[course.title]]</h2>
-                      <p>
-                          <unsafe-html html="[[course.abstract]]" body></unsafe-html>
-                      </p>
-                  </div>
-                  <div class="card-action">
-                      <div>
-                          <a href="[[_getUrl(course)]]">
-                              <button class="btn waves-effect waves-dark">Explore</button>
-                          </a>
-                      </div>
-                  </div>
-              </div>
+    <div class="col l4 m6 s12">
+      <a href="[[_getUrl(course)]]" class="course-link">
+        <div class="card course-card">
+          <div class="course-overlay"></div>
+          <img src="[[course.instructorDetails]]" alt="please add image with aspect ration of 2:1">
+          <div class="course-card-content">
+            <h4 class="free-course">FREE</h4>
+            <h3>[[course.title]]</h3>
           </div>
-      </div>
+        </div>
+      </a>
+    </div>
 
   </template>
   <script>
@@ -66,7 +56,8 @@
         if (date.getFullYear() != new Date().getFullYear()) {
           result += ', ' + date.getFullYear();
         }
-        return result;
+        return result;gst
+
       },
       _hasAtLeastOneDate: function(course) {
         return course.startDate || course.endDate;

@@ -72,7 +72,7 @@
         color: $text-color-l;
         &:hover { color: $text-color; }
       }
-      
+
       li {padding: 0;}
 
       .collapsible-header {
@@ -88,7 +88,7 @@
         .expand-less { display: none; }
         &:hover {
           .course-expand-btn {
-            background-color: $brown-l; 
+            background-color: $brown-l;
           }
         }
       }
@@ -177,4 +177,7 @@
 }
 #gcb-breadcrumb {
   margin: 0;
+}
+.course-content .gcb-bio-headers {
+  display: none !important;
 }
