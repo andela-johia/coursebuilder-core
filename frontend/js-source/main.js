@@ -43,7 +43,8 @@ $(document).ready(() => {
     'tools',
     'partners',
     'feedback',
-    'faqs'];
+    'faqs',
+    'events'];
 
   pageLinks.forEach((name) => {
     $(`a[href="#!${name}"]`).on('click', () => {

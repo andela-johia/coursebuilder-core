@@ -1,0 +1,46 @@
+#events {
+  background-color: $white-d;
+
+  .blue-section {
+    padding-bottom: 0;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .tabs {
+    background-color: transparent;
+    margin: 0 0;
+    a {
+      color: #fff;
+    }
+    .indicator {
+      background-color: $green;
+      height: 4px;
+    }
+  }
+
+  .card {
+    padding: 20px 0;
+    min-height: 400px;
+
+    h3 {
+      font-size: 1.2rem;
+      padding: 0 20px 15px;
+      margin: 0;
+    }
+  }
+
+  .event-content {
+    padding: 20px 20px 0 20px;
+    .event-register {
+      color: $primary-color;
+      font-size: 1rem;
+    }
+    p {
+      font-weight: 300;
+      font-size: 1rem;
+    }
+  }
+}
