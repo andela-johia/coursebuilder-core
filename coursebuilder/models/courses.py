@@ -2631,7 +2631,7 @@ class Course(object):
                 common.tags.EditorBlacklists.COURSE_SCOPE},
             optional=True))
         opts.add_property(schema_fields.SchemaField(
-            'course:instructor_details', 'Instructor Details', 'html',
+            'course:instructor_details', 'Display Image URL', 'html',
             description=messages.HOMEPAGE_INSTRUCTOR_DETAILS_DESCRIPTION,
             optional=True))
 

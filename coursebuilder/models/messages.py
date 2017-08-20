@@ -183,7 +183,7 @@ should describe the course.
 """
 
 HOMEPAGE_INSTRUCTOR_DETAILS_DESCRIPTION = """
-The instructor details are displayed to students on the course homepage.
+Link to the course image displayed to students on the courses page (aspect ratio of 2:1).
 """
 
 HOMEPAGE_SHOW_GPLUS_BUTTON_DESCRIPTION = """

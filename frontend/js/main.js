@@ -1,5 +1,8 @@
-$(document).ready(function documentReady() {
-  $(".button-collapse").sideNav();
+$(document).ready(function () {
+  $('.button-collapse').sideNav();
+  $('.dropdown-button').dropdown();
+  $('ul.tabs').tabs();
+  $('.collapsible').collapsible();
 
   $('.awards-carousel').owlCarousel({
     loop: true,
@@ -28,16 +31,15 @@ $(document).ready(function documentReady() {
     items: 1
   });
 
-
   function showPage(pageName) {
     $('.page-wrapper').hide();
     $('#' + pageName).show();
   }
 
-  var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback'];
+  var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback', 'faqs', 'events'];
 
-  pageLinks.forEach(function addLinks(name) {
-    $('a[href="#!' + name + '"]').on('click', function showPageEvent() {
+  pageLinks.forEach(function (name) {
+    $('a[href="#!' + name + '"]').on('click', function () {
       showPage(name);
     });
 
@@ -47,4 +49,16 @@ $(document).ready(function documentReady() {
   });
 
   $('select').material_select();
+
+  $('.faq-switch').on('click', function (e) {
+    $('#mainContent').fadeOut(300, function () {
+      $('#' + $(e.target).data('switch')).fadeIn();
+    });
+  });
+
+  $('.faq-collapsible-back').on('click', function (e) {
+    $(e.target).closest('.faq-collapsible').fadeOut(300, function () {
+      $('#mainContent').fadeIn();
+    });
+  });
 });

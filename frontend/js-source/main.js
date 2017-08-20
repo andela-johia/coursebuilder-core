@@ -1,4 +1,4 @@
-window.addEventListener('WebComponentsReady', function documentReady() {
+$(document).ready(() => {
   $('.button-collapse').sideNav();
   $('.dropdown-button').dropdown();
   $('ul.tabs').tabs();
@@ -31,15 +31,23 @@ window.addEventListener('WebComponentsReady', function documentReady() {
     items: 1
   });
 
+
   function showPage(pageName) {
     $('.page-wrapper').hide();
-    $('#' + pageName).show();
+    $(`#${pageName}`).show();
   }
 
-  var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback', 'faqs', 'events'];
+  const pageLinks = ['explorer',
+    'certification',
+    'homepage',
+    'tools',
+    'partners',
+    'feedback',
+    'faqs',
+    'events'];
 
-  pageLinks.forEach(function (name) {
-    $('a[href="#!' + name + '"]').on('click', function () {
+  pageLinks.forEach((name) => {
+    $(`a[href="#!${name}"]`).on('click', () => {
       showPage(name);
     });
 
@@ -50,14 +58,14 @@ window.addEventListener('WebComponentsReady', function documentReady() {
 
   $('select').material_select();
 
-  $('.faq-switch').on('click', function (e) {
-    $('#mainContent').fadeOut(300, function () {
-      $('#' + $(e.target).data('switch')).fadeIn();
+  $('.faq-switch').on('click', (e) => {
+    $('#mainContent').fadeOut(300, () => {
+      $(`#${$(e.target).data('switch')}`).fadeIn();
     });
   });
 
-  $('.faq-collapsible-back').on('click', function (e) {
-    $(e.target).closest('.faq-collapsible').fadeOut(300, function () {
+  $('.faq-collapsible-back').on('click', (e) => {
+    $(e.target).closest('.faq-collapsible').fadeOut(300, () => {
       $('#mainContent').fadeIn();
     });
   });
