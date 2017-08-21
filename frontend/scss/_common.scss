@@ -67,9 +67,11 @@ img {
 
     h2 {
       margin-top: 0;
-      font-size: 1.75rem;
       margin-bottom: 40px;
       font-weight: 200;
+      padding-left: 8%; 
+      padding-bottom: 0.5px;
+      font-size: 2rem; 
     }
     p {
       margin-bottom: 0;
@@ -81,6 +83,7 @@ img {
 
 .section {
   padding: 4.4rem 0;
+  padding-top: 3%;
 
   .section-label {
     text-align: center;
