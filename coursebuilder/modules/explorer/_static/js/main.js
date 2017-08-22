@@ -36,7 +36,7 @@ window.addEventListener('WebComponentsReady', function documentReady() {
     $('#' + pageName).show();
   }
 
-  var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback', 'faqs'];
+  var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback', 'faqs', 'events'];
 
   pageLinks.forEach(function (name) {
     $('a[href="#!' + name + '"]').on('click', function () {

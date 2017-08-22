@@ -29,7 +29,6 @@
         }
       },
       _getUrl: function(course) {
-        console.log(course);
         return course.url;
       },
       _getEnrollmentStatus: function(course) {
@@ -57,7 +56,8 @@
         if (date.getFullYear() != new Date().getFullYear()) {
           result += ', ' + date.getFullYear();
         }
-        return result;
+        return result;gst
+
       },
       _hasAtLeastOneDate: function(course) {
         return course.startDate || course.endDate;
