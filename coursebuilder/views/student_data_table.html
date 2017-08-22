@@ -1,71 +1,97 @@
-<table class="gcb-student-data-table">
-  <colgroup>
-    <col style="width: 10%">
-    <col>
-  </colgroup>
+<!--   Main  -->
+<div class="sd-body section-s">
+  <div class="container">
+    <div class="row">
 
-  <tr>
-    {# I18N: Table header that states when a student enrolled in a course. #}
-    <th align="left">{{ gettext('Date enrolled') }}</th>
-    <td>{{ date_enrolled }}</td>
-  </tr>
+      {% for header, value in extra_student_data %}
 
-  <tr>
-    {# I18N: Table header for the student's email address. This is a noun. #}
-    <th align="left">{{ gettext('Email') }}</th>
-    <td>{{ student.email }}</td>
-  </tr>
-
-  <tr>
-    {# I18N: Table header for the student's name. #}
-    <th align="left">{{ gettext('Name') }}</th>
-    <td>{{ student_name }}</td>
-  </tr>
-
-  <tr>
-    {# I18N: Table header for the student's assessment scores. #}
-    <th align="left" colspan=2>
-      {{ gettext('Assessment scores') }}
-    </th>
-  </tr>
-
-  {% for assessment in score_list %}
-    <tr>
-      <th align="left">&nbsp;&nbsp;&nbsp;{{ assessment['title'] }}</th>
-      <td>
-        {% if assessment['human_graded'] %}
-          <a href="assessment?name={{ assessment.id }}">
-            {% if assessment['completed'] %}
-              {# I18N: Shown in the student profile page, next to an assessment title. States whether the assessment has been completed. #}
-              {{ gettext('Completed') }}
-            {% else %}
-              {# I18N: Shown in the student profile page, next to an assignment title, as the link text for a self- or peer-reviewed assignment. #}
-              {{ gettext('View assignment') }}
-            {% endif %}
-          </a>
-        {% elif 'score' in assessment and assessment['score'] is defined %}
-          <span id="assessment-score-{{assessment['title']}}">{{ assessment['score'] }}</span>
+        {% if header == 'Subscribe/Unsubscribe' %}
+          <div class="col l6 m12">
+            <div class="card">
+              <div class="card-content">
+                <h3>Details</h3>
+                <p><b>Date Enrolled:</b> {{ date_enrolled }}</p>
+                <p><b>{{ header }}:</b> {{ value }}</p>
+              </div>
+              <div class="card-action">
+                <a class="btn" href="course">Keep Learning</a>
+              </div>
+            </div>
+          </div>
+        {% elif header == 'Certificate' %}
+          <div class="col l6 m12 right">
+            <div class="card">
+              <div class="card-content">
+                <div class="row">
+                  <div class="col s8">
+                    <h3>Certification Progress</h3>
+                    <p>{{ value }}</p>
+                  </div>
+                  <div class="col s4">
+                    <div class="certificate-circle">
+                      <img src="/modules/explorer/_static/images/course/certification-complete.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <a class="btn" href="/#!explorer">View Courses</a>
+              </div>
+            </div>
+          </div>
         {% endif %}
-      </td>
-    </tr>
-  {% endfor %}
+      {% endfor %}
 
-  {% if overall_score != None %}
-    <tr>
-      {# I18N: Table header for the student's overall score. #}
-      <th align="left">{{ gettext('Overall course score') }}</th>
-      <td>
-        <span id="assessment-score-overall">{{ overall_score }}</span>
-      </td>
-    </tr>
-  {% endif %}
+    </div>
 
-  {% for header, value in extra_student_data %}
-    {% if header or value %}
-      <tr>
-        <th align="left">{{ header }}</th>
-        <td>{{ value }}</td>
-      </tr>
-    {% endif %}
-  {% endfor %}
+  </div>
+</div>
+
+<!--    Table  -->
+<div class="section-s">
+  <div class="container">
+    <h3 class="section-label">Assessment Scores</h3>
+    <table class="highlight bordered">
+      <tbody>
+      {% for assessment in score_list %}
+        <tr>
+          <th>&nbsp;&nbsp;&nbsp;{{ assessment['title'] }}</th>
+          <td>
+            {% if assessment['human_graded'] %}
+              <a href="assessment?name={{ assessment.id }}">
+                {% if assessment['completed'] %}
+                  {{ gettext('Completed') }}
+                {% else %}
+                  {{ gettext('View assignment') }}
+                {% endif %}
+              </a>
+            {% elif 'score' in assessment and assessment['score'] is defined %}
+              <span id="assessment-score-{{ assessment['title'] }}">{{ assessment['score'] }}</span>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+
+      {% if overall_score != None %}
+        <tr>
+          <th>{{ gettext('Overall course score') }}</th>
+          <td>
+            <span id="assessment-score-overall">{{ overall_score }}</span>
+          </td>
+        </tr>
+      {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<table class="gcb-student-data-table">
+
+
+
+
+
+
 </table>
