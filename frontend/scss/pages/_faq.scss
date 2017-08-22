@@ -85,4 +85,12 @@
   .faq-collapsible {
     display: none;
   }
+  .blue-section
+  {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 0;
+    height: 175px;
+  }
 }
