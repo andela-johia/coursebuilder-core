@@ -64,23 +64,32 @@
                 <li><a href="#!"><i class="material-icons">help</i>Help & FAQs</a></li>
                 <li><a href="/#!feedback"><i class="material-icons">chat_bubble</i>Feedback</a></li>
 
-                <li>
-                    <div class="divider"></div>
-                </li>
+              <li>
+                <div class="divider"></div>
+              </li>
+              <li><a href="#!"><i class="material-icons">thumb_up</i>Blog</a></li>
+              <li>
+                <div class="divider"></div>
+              </li>
 
-                <li><a href="#!"><i class="material-icons">thumb_up</i>Blog</a></li>
-                {% if loginUrl %}
+              {% if loginUrl %}
                 <li><a href="{{ loginUrl }}" class="waves-effect waves-light btn-large">Sign in</a></li>
+              {% endif %}
+
+              {% if logoutUrl %}
+                {% if not transient_student %}
+                  <li>
+                    <a href="student/home"><i class="material-icons">settings</i>{{ gettext('My Progress') }}</a>
+                  </li>
                 {% endif %}
 
-                {% if logoutUrl %}
-                    {% if is_course_admin %}
-                    {% for href, link in auth_links %}
-                        <li><a href="{{ href }}"><i class="material-icons">dashboard</i>{{ link }}</a></li>
-                    {% endfor %}
-                    {% endif %}
-                    <li><a href="{{ logoutUrl }}"><i class="material-icons">exit_to_app</i>Logout</a></li>
+                {% if is_course_admin %}
+                  {% for href, link in auth_links %}
+                    <li><a href="{{ href }}"><i class="material-icons">dashboard</i>{{ link }}</a></li>
+                  {% endfor %}
                 {% endif %}
+                <li><a href="{{ logoutUrl }}"><i class="material-icons">exit_to_app</i>Logout</a></li>
+              {% endif %}
 
             </ul>
         </div>
