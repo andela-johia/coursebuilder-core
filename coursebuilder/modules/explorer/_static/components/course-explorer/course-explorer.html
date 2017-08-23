@@ -172,7 +172,7 @@
       _onCoursesResponse: function(event) {
         this.set('courses', event.detail.response.data.allCourses);
         this.set(
-          'filterOptions.status', this._enrolledInAny() ? 'enrolled' : 'all');
+          'filterOptions.status', 'all'); // Todo:  this._enrolledInAny() ? 'enrolled' : 'all'
         this.set('categories', this._getCategories().sort());
         this.set('coursesLoaded', true);
       },

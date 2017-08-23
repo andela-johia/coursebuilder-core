@@ -10,11 +10,27 @@
     }
   </style>
   <template>
-    <paper-radio-group selected="{{status}}">
-      <paper-radio-button name="all">All</paper-radio-button>
-      <paper-radio-button name="enrolled">Registered</paper-radio-button>
-      <paper-radio-button name="ended">Ended</paper-radio-button>
-    </paper-radio-group>
+    <!-- Dropdown Trigger -->
+    <a class='dropdown-button btn' href='#' data-activates='courseFilters'>Filter: {{ status }}</a>
+
+    <!-- Dropdown Structure -->
+      <ul id='courseFilters' class='dropdown-content'>
+        <li>
+          <paper-radio-group selected="{{ status }}">
+            <paper-radio-button name="all">All</paper-radio-button>
+          </paper-radio-group>
+        </li>
+        <li>
+          <paper-radio-group selected="{{ status }}">
+            <paper-radio-button name="enrolled">Registered</paper-radio-button>
+          </paper-radio-group>
+        </li>
+        <li>
+          <paper-radio-group selected="{{ status }}">
+            <paper-radio-button name="ended">Ended</paper-radio-button>
+          </paper-radio-group>
+        </li>
+      </ul>
   </template>
   <script>
     Polymer({
