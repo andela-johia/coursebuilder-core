@@ -69,4 +69,7 @@ $(document).ready(() => {
       $('#mainContent').fadeIn();
     });
   });
+  setTimeout(() => {
+    $('#courseCategorySelector').dropdown();
+  }, 200);
 });

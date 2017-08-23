@@ -36,8 +36,15 @@
             </paper-input>
         </div>
         <div class="col l6 m12">
-            <h2 class="unlabeled">Course status</h2>
+            <h2 class="unlabeled">Course status and Categories</h2>
             <course-status-selector status="{{ filterOptions.status }}"></course-status-selector>
+
+            <template is="dom-if" if="[[categories.length]]">
+              <course-category-selector
+                  value="{{ filterOptions.category }}"
+                  items="[[categories]]"
+              ></course-category-selector>
+            </template>
         </div>
     </div>
 

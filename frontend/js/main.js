@@ -61,4 +61,7 @@ $(document).ready(function () {
       $('#mainContent').fadeIn();
     });
   });
+  setTimeout(function () {
+    $('#courseCategorySelector').dropdown();
+  }, 200);
 });
