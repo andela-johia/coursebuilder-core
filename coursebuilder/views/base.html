@@ -199,65 +199,6 @@
     {% endif %}
     {% endif %}
 
-    <!-- ButterBar -->
-    <div class="gcb-butterbar-container">
-      <div id="gcb-butterbar-top" class="gcb-butterbar" style="margin-top:50px" aria-live="polite">
-        <p id="gcb-butterbar-message"></p>
-        <a id="gcb-butterbar-close">X</a>
-      </div>
-    </div>
-
-    <!-- logo bar -->
-    <div id="gcb-header" role="banner">
-      <div class="gcb-aux clearfix">
-        <p class="gcb-course-image">
-          <a href="./">
-            {% if site_info.logo_url %}
-            <img src="{{ site_info.logo_url }}"
-                 alt="{{ site_info.logo_alt_text or ''}}">
-            {% else %}
-              &nbsp;
-            {% endif %}
-          </a>
-        </p>
-        <p class="gcb-title-header">
-          {% if site_info.title %}
-            <a href="./">{{ site_info.title }}</a>
-          {% endif %}
-        </p>
-        {% if course_info.base.show_gplus_button %}
-          <span class="plusone-button" id="plusone-3" style="height: 15px; width: 70px; display: inline-block; text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; ">
-            <g:plusone size="medium"></g:plusone>
-          </span>
-        {% endif %}
-
-        {% if logoutUrl %}
-        <div class="gcb-pull-right gcb-login-header" style="font-size: larger;">
-          <span class="gcb-login-header-email">
-            {{ email }}
-            {% if transient_student and can_register %}
-              {# I18N: Text shown in parentheses next to the student's email address at the top-right of all course pages, if the student is logged in but not registered for the course he/she is currently browsing. #}
-              ({{ gettext('Not registered') }})
-            {% endif %}
-            |
-          </span>
-          {% for href, link in auth_links %}
-            <a href="{{ href }}" style="text-decoration: underline;">{{ link }}</a> |
-          {% endfor %}
-          <a href="{{ logoutUrl }}" style="text-decoration: underline;">
-            {# I18N: Navbar text. #}
-            {{ gettext('Logout') }}
-          </a>
-        </div>
-        {% elif loginUrl %}
-        <div class="gcb-pull-right gcb-login-header" style="font-size: larger;">
-          {# I18N: Navbar text. #}
-          <a href="{{ loginUrl }}">{{ gettext('Login') }}</a>
-        </div>
-        {% endif %}
-      </div>
-    </div>
-
     {% block navbar %}
     {% endblock %}
 
@@ -274,49 +215,251 @@
     </div>
 
     <!-- footer section -->
-    <div style="margin-top: 50px;" id="gcb-signature"></div>
-    <div class="gcb-footer" id="gcb-footer">
-      <div id="gcb-footer-local">
-        <div class="gcb-aux">
+
+    <!--  Footer  -->
+    <footer>
+      <div class="card footer-top">
+        <div class="row">
+          <div class="col l6 m12">
+            <img src="/modules/explorer/_static/images/logo.png" alt="Google" aria-label="Google" draggable="false">
+            <p>A Growth Engine for Digital Skills</p>
+          </div>
+
+          <div class="col l3 m12 footer-privacy">
+            <a href="https://www.google.co.uk/intl/en/policies/privacy/?fg=1" class="gbl-footer__link"
+               target="_blank">
+              <span class="tiny-text">Privacy &amp; Terms</span>
+            </a>
+          </div>
+
+          <div class="col l3 m12">
+            <select aria-label="Choose another locale" class="browser-default">
+
+              <option value="https://learndigital.withgoogle.com/digitalskills">
+                Africa
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/lateliernumerique">
+                Afrique
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/oficinaafrica">
+                África
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalgarage-au">
+                Australia
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/atelierdigital-be">
+                Belgique
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitaalatelier">
+                België
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalengarazh">
+                България
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/ateliedigital">
+                Brazil
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalnigaraz">
+                Česká republika
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalnagaraza-rs">
+                Србија
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/zukunftswerkstatt">
+                Deutschland
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/succesonline">
+                Danmark
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalgarage-ee">
+                Eesti
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/greektourism">
+                Ελλάδα
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/activatunegocio">
+                España
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalworkshop-eu">
+                European
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalactive">
+                France (Digital Active)
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/pourlespros">
+                France (Pour les Pros)
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalnagaraza">
+                Hrvatska
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalgarage-ie">
+                Ireland
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalunlocked">
+                India
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/eccellenzeindigitale">
+                Italia
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalworkshop-jp">
+                日本
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/garagedigital">
+                Latinoamérica
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalgarage-lv">
+                Latvija
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalgarage-lt">
+                Lietuva
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digital-workshop-lu">
+                Luxembourg (EN)
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/atelierdigital-lu">
+                Luxembourg (FR)
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalworkshop-lu">
+                Luxemburg (DE)
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalworkshop-hu">
+                Magyarország
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalworkshop-mt">
+                Malta
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalewerkplaats">
+                Nederland
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalworkshop-at">
+                Österreich
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/internetowerewolucje">
+                Polska
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/atelierdigitalportugal">
+                Portugal
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/atelieruldigital">
+                România
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalakademin">
+                Sverige
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalnagaraza-si">
+                Slovenija
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalnagaraz">
+                Slovensko
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/atelierdigital-de">
+                Schweiz
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalgarage-fi">
+                Suomi
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/atelierdigital-fr">
+                Suisse
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/atelierdigital-it">
+                Svizzera
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/dijitalatolye">
+                Türkçe
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalgarage" selected="">
+                United Kingdom
+              </option>
+
+              <option value="https://learndigital.withgoogle.com/digitalworkshop-ua">
+                Україна
+              </option>
+
+            </select>
+          </div>
         </div>
       </div>
-      <div id="gcb-footer-global" role="contentinfo">
-        <div class="gcb-aux">
-          <ul>
-            {% if site_info.institution_url and site_info.institution_name %}
-            <li>
-              <a href="{{ site_info.institution_url }}" target="_blank" id="institution-link">{{ site_info.institution_name }}</a>
-            </li>
-            {% endif %}
-            {% if site_info.privacy_terms_url %}
-            <li>
-              <a href="{{ site_info.privacy_terms_url }}" target="_blank" id="privacy-policy-link">
-                {# I18N: Link at the bottom of each page to the privacy and 'Terms and Conditions' pages. #}
-                {{ gettext('Privacy & Terms') }}
-              </a>
-            </li>
-            {% endif %}
-            {% if available_locales and available_locales|length > 1 %}
-              <li>
-                {# I18N: Text describing the locale selector. #}
-                {{ gettext('Language:') }}
-                <select id="locale-select" data-xsrf-token="{{ locale_xsrf_token}}">
-                  {% for locale in available_locales %}
-                    <option value="{{ locale.value }}"
-                      {% if locale.value == selected_locale %}selected{% endif %}>
-                      {{ locale.name }}
-                    </option>
-                  {% endfor %}
-                </select>
-              </li>
-            {% endif %}
-            {% for item in footer_items %}
-              {{ item }}
-            {% endfor %}
-          </ul>
+
+      <div class="footer-bottom">
+        <div class="row">
+          <div class="col l6 m12 footer-appstores">
+            <a target="_blank"
+               href="https://play.google.com/store/apps/details?id=com.google.android.apps.growthengine">
+              <img class="store" src="/modules/explorer/_static/images/playstore.png">
+            </a>
+            <a target="_blank" href="https://itunes.apple.com/gb/app/learn-digital/id1206273386?l=en&amp;mt=8">
+              <img class="store" src="/modules/explorer/_static/images/appstore.png">
+            </a>
+          </div>
+
+          <div class="col l6 m12 footer-social-icons">
+            <span class="gbl-footer__sharing-text">Share</span>
+
+            <a href="https://plus.google.com/share?url=g.co/DigitalGarage" target="_blank"
+               class="gbl-footer__sharing-control"
+               aria-label="" share-width="" share-height="">
+              <img src="/modules/explorer/_static/images/google-plus.png" alt="" widht="33" height="22">
+            </a>
+
+            <a href="http://www.facebook.com/sharer/sharer.php?u=digitalgarage.withgoogle.com" target="_blank"
+               class="gbl-footer__sharing-control"
+               aria-label="" share-width="" share-height="">
+              <img src="/modules/explorer/_static/images/facebook.png" alt="FB" widht="22" height="22">
+            </a>
+
+            <a href="https://twitter.com/share?url=https://g.co/DigitalGarage"
+               target="_blank" class="gbl-footer__sharing-control" aria-label="" share-width="" share-height="">
+              <img src="/modules/explorer/_static/images/twitter.png" alt="twitter" widht="25" height="22">
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </footer>
+
     {{ html_hooks.insert('base.before_body_tag_ends') }}
 
     {% if context %}
@@ -331,6 +474,13 @@
 {{ debug_info }}
 gcb-debug-info-end //-->
 {% endif %}
+
+
+    <script type="text/javascript" src="/modules/explorer/_static/js/materialize.min.js"></script>
+    <script src="/modules/explorer/_static/js/owl.carousel.min.js"></script>
+    <script src="/modules/explorer/_static/js/course.js"></script>
+
+
     {% if page_uuid %}
       <!-- For functional tests; please leave this section dead last. -->
       <div id="page_uuid"

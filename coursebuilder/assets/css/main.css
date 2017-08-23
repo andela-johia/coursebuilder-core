@@ -24,43 +24,10 @@
 
 /* Wide-ranging styles. */
 
-html {
-  background: #fff;
-  color: #444;
-  font-size: 13px;
-  line-height: 1.54;
-  padding: 0 15px;
-}
-
-html, input, textarea {
-  font-family: arial,sans-serif;
-}
-
 body, table, fieldset {
   margin: 0;
 }
 
-h1, h2, h3, h4, blockquote, q, .gcb-nav ul {
-  font-family: "open sans",arial,sans-serif;
-}
-
-ul, ol {
-  margin: 10px 10px 10px 30px;
-  padding: 0;
-}
-
-a {
-  color: #15c;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #7847b2;
-}
-
-a:focus, a:hover, a:active {
-  text-decoration: underline;
-}
 
 form label, form p, form input, form textarea, form select {
   margin: 0 0 5px;
@@ -247,9 +214,6 @@ th, td, .th, .td {
 }
 
 .gcb-breadcrumb {
-  font-size: 11px;
-  margin: 0 0 20px;
-  min-height: 28px;
   overflow: hidden;
 }
 
@@ -286,82 +250,12 @@ th, td, .th, .td {
   font-family: "open sans",arial,sans-serif;
 }
 
-.gcb-button {
-  background-color: #666;
-  background-image: -moz-linear-gradient(top,#777,#555);
-  background-image: -webkit-linear-gradient(top,#777,#555);
-  background-image: linear-gradient(top,#777,#555);
-  background-position: left bottom;
-  background-repeat: repeat-x;
-  border: 1px solid #505050;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0 1px 1px rgba(0,0,0,.2);
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2);
-  box-shadow: 0 1px 1px rgba(0,0,0,.2);
-  color: white;
-  display: inline-block;
-  font-family: "open sans",arial,sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.54;
-  padding: 4px 7px;
-  text-align: center;
-  text-shadow: 0 1px rgba(0,0,0,.1);
-  -moz-transition: all .218s ease-in;
-  -webkit-transition: all .218s ease-in;
-  transition: all .218s ease-in;
-}
-
-.gcb-button[disabled], .gcb-button[disabled]:hover {
-  background: none;
-  background-image: -moz-linear-gradient(top,rgba(226,226,226,.14),rgba(34,34,34,.14));
-  background-image: -webkit-linear-gradient(top,rgba(226,226,226,.14),rgba(34,34,34,.14));
-  background-image: linear-gradient(top,rgba(226,226,226,.14),rgba(34,34,34,.14));
-  border-color: #f3f3f3;
-  color: #b8b8b8;
-}
-
 .gcb-button-large {
   width: 200px;
   height: 48px;
   line-height: 48px;
   font-size: 150%;
   margin: 12px;
-}
-
-a.gcb-button {
-  color: #fff !important;
-  text-decoration: none;
-}
-
-button.gcb-button {
-  margin: 0;
-  overflow: visible;
-  white-space: normal;
-}
-
-button.gcb-button::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-.gcb-button:hover, .gcb-button:focus {
-  border-color: #404040;
-  background-image: -moz-linear-gradient(top,#444,#111);
-  background-image: -webkit-linear-gradient(top,#444,#111);
-  background-image: linear-gradient(top,#444,#111);
-}
-
-.gcb-button:focus {
-  outline: 0;
-}
-
-.gcb-button:active {
-  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
 }
 
 a.gcb-button-action, button.gcb-button-action {
@@ -794,8 +688,7 @@ table.gcb-student-data-table {
 
 /* A box that surrounds read-only assessments. */
 .gcb-border-box {
-  border: 1px solid black;
-  margin: 20px;
+  margin: 20px 0;
   padding: 10px;
 }
 
@@ -902,9 +795,6 @@ div#base-before-navbar-ends {
   font-size: xx-small;
 }
 
-.gcb-last-location {
-  background-color: #DEF;
-}
 
 /*
  * Extra CSS for views/unit.html in order to suppress everything (all navigation

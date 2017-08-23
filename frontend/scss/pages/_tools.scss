@@ -1,10 +1,10 @@
 
 .tools-page {
-  
+
   .tools-first-section {
     padding-top: 2rem;
   }
-  
+
   .section-label {
     margin-top: 5rem;
     text-align: left;
@@ -15,6 +15,7 @@
 }
 
 #tools {
+  background-color: $white-d;
   .section {
     padding: 4.4rem 0;
 
@@ -27,7 +28,7 @@
       line-height: 1.77778;
     }
   }
-  
+
 
   .card-panel {
     transition: box-shadow .25s;
