@@ -61,4 +61,13 @@ window.addEventListener('WebComponentsReady', function documentReady() {
       $('#mainContent').fadeIn();
     });
   });
+
+  var courseSelectorInitialized = false;
+  $('body').on('click', '#courseCategorySelector', function () {
+    if (!courseSelectorInitialized) {
+      $('#courseCategorySelector').dropdown();
+      $('#courseCategorySelector').dropdown('open');
+      courseSelectorInitialized = true;
+    }
+  });
 });
