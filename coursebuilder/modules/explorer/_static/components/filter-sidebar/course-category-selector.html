@@ -2,6 +2,7 @@
 <link rel="import" href="/static/polymer-1.2.0/paper-radio-group/paper-radio-group.html">
 <link rel="import" href="/static/polymer-1.2.0/paper-radio-button/paper-radio-button.html">
 
+
 <dom-module id="course-category-selector">
   <style>
     paper-radio-button {
@@ -10,12 +11,26 @@
     }
   </style>
   <template>
-    <paper-radio-group selected="{{value}}">
-      <paper-radio-button name="all">All</paper-radio-button>
+    <!-- Dropdown Trigger -->
+    <a id="courseCategorySelector" class='dropdown-button btn' data-activates='courseCategory'>Category: {{ value }}</a>
+
+    <!-- Dropdown Structure -->
+    <ul id='courseCategory' class='dropdown-content'>
+      <li>
+        <paper-radio-group selected="{{value}}">
+          <paper-radio-button name="all">All</paper-radio-button>
+        </paper-radio-group>
+      </li>
+
       <template is="dom-repeat" items="[[items]]" as="item">
-        <paper-radio-button name="[[item]]">[[item]]</paper-radio-button>
-      </template>,
-    </paper-radio-group>
+        <li>
+          <paper-radio-group selected="{{value}}">
+            <paper-radio-button name="[[item]]">[[item]]</paper-radio-button>
+          </paper-radio-group>
+        </li>
+      </template>
+    </ul>
+
   </template>
   <script>
     Polymer({
@@ -30,6 +45,6 @@
           type: Array,
         }
       },
-    })
+    });
   </script>
 </dom-module>

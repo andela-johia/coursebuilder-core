@@ -55,6 +55,30 @@
   margin-top: 0;
 }
 
+#explorer {
+  .hidden-dropdown {
+    display: none !important;
+  }
+  .dropdown-content {
+    min-width: 180px;
+  }
+  .dropdown-button {
+    margin-right: 30px;
+    margin-top: 20px;
+    text-transform: none;
+  }
+  paper-radio-group, paper-radio-button {
+    width: 100%;
+  }
+  a.dropdown-button.btn {
+    background-color: $color-white;
+    color: $text-color;
+  }
+  #radioContainer {
+    display: none !important;
+  }
+}
+
 
 //  Affects the main app
 paper-radio-button {
