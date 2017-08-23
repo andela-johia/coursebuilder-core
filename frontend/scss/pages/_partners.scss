@@ -1,7 +1,15 @@
 #partners {
   background-color: $white-d;
+
+  .row {
+    margin-top: 10px;
+  }
   .card {
     position: relative;
+
+    &.small {
+      height: 250px;
+    }
   }
 
   .card-image {
@@ -39,6 +47,7 @@
   .blue-section-inner h2 {
     margin-bottom: 0;
   }
+
 }
 
 .partners-containter {
