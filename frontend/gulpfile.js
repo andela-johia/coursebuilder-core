@@ -13,9 +13,10 @@ gulp.task('scss', () => {
 
 gulp.task('watch', () => {
   gulp.watch('scss/**/*.scss', ['scss']);
+  gulp.watch('js-source/*.js', ['babel']);
 });
 
-gulp.task('default', ['scss', 'watch']);
+gulp.task('default', ['scss', 'babel', 'watch']);
 
 gulp.task('babel', () =>
     gulp.src('js-source/main.js')

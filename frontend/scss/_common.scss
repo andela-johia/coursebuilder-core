@@ -27,18 +27,18 @@ img {
   font-size: 0.9rem;
 }
 
-.pad-5 {
-  padding-left: 2%;
+.light-text {
+  font-weight: 300;
 }
 
-#explorer {
-  display: none;
+.pad-5 {
+  padding-left: 2%;
 }
 
 .page-wrapper {
   margin-top: 65px;
   display: none;
-  
+
   @media screen and (max-width: 992px) {
     margin-top: 0;
   }
@@ -68,8 +68,9 @@ img {
       margin-top: 0;
       margin-left: 100px;
       font-size: 1.8rem;
-      margin-bottom: 0px;
+      margin-bottom: 40px;
       font-weight: 200;
+      font-size: 2rem;
     }
 
     p {
@@ -92,4 +93,8 @@ img {
     margin-top: 0;
     font-weight: 100;
   }
+}
+.section-s {
+  @extend .section;
+  padding: 2rem 0;
 }
