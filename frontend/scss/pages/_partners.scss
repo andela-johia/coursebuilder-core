@@ -2,6 +2,10 @@
   background-color: $white-d;
   .card {
     position: relative;
+    &.small
+    {
+      250px;
+    }
   }
 
   .card-image {
