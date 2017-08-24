@@ -6,8 +6,8 @@
   }
   .card {
     position: relative;
-
-    &.small {
+    .small
+    {
       height: 250px;
     }
   }

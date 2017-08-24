@@ -1,0 +1,74 @@
+#feedback
+{
+.blue-section
+{
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	z-index: 0;
+	height: 196px;
+}
+.container .row .offset-l1
+{
+	margin-top: 150px;
+}
+.tabs
+{
+	height: 80px;
+}
+.collapsible li
+{
+	width: 100%;
+}
+#general h3
+{
+	font-size: 1.375em;
+	margin: 1.9em 0 0.9em; 
+	color: #4054B2;
+}
+#content h3
+{
+	font-size: 1.375em;
+	margin: 1.9em 0 0.9em; 
+	color: #4054B2;
+}
+#report-bug h3
+{
+	font-size: 1.375em;
+	margin: 1.9em 0 0.9em; 
+	color: #4054B2;
+}
+.blue-section-inner h3
+{
+	margin-top: 0;
+	margin-left: 80px;
+	font-size: 1rem;
+	margin-bottom: 20px;
+	font-weight: 300;
+}
+.tab
+{
+	text-transform: capitalize;
+}
+.footer-div p
+{
+	padding-left: 4px; 
+	line-height: 200%; 
+	font-weight: 300;
+	color: #757575;
+}
+.footer-div p a
+{
+	color: #4233FF;
+}
+.card-action a
+{
+	color: #4054b2; 
+	font-weight: 700; 
+	font-family: Roboto,Arial,sans-serif;
+}
+li .active
+{
+	color: blue;
+}
+}
