@@ -4,17 +4,10 @@
 <dom-module id="course-cards">
   <template>
 
-
-
-
-                  <template is="dom-repeat" items="[[courses]]" as="course" sort="_compareCourses">
-                      <course-card course="[[course.node]]" width="[[cardWidth]]"></course-card>
-                  </template>
-
-
-
-
-
+    <template is="dom-repeat" items="[[courses]]" as="course" sort="_compareCourses">
+        <course-card course="[[course.node]]" width="[[cardWidth]]"></course-card>
+    </template>
+    
   </template>
   <script>
     Polymer({
