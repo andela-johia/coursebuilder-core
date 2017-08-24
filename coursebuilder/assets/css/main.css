@@ -688,7 +688,6 @@ table.gcb-student-data-table {
 
 /* A box that surrounds read-only assessments. */
 .gcb-border-box {
-  margin: 20px 0;
   padding: 10px;
 }
 

@@ -181,3 +181,17 @@
 .course-content .gcb-bio-headers {
   display: none !important;
 }
+
+ul#share-dropdown {
+  min-width: 150px;
+  margin-top: 55px;
+ }
+ 
+ img {
+   margin-right: 20px;
+   color: #808080;
+ }
+ .dropdown-content li>a, .dropdown-content li>span
+ {
+   color: #808080;
+ }
