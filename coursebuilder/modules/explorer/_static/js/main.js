@@ -41,7 +41,7 @@ window.addEventListener('WebComponentsReady', function documentReady() {
   var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback', 'faqs', 'events'];
 
   pageLinks.forEach(function (name) {
-    $('a[href="#!' + name + '"]').on('click', function () {
+    $('body').on('click', 'a[href="#!' + name + '"]', function () {
       showPage(name);
     });
 

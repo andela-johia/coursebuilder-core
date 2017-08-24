@@ -183,14 +183,28 @@
                 </div>
 
             </div>
-            <!--  Create a plan -->
 
-            <a href="#!">
-                <div class="continue-learning">
-                    <p class="tiny-text">Continue learning</p>
-                    <h3>View your Dashboard <i class="material-icons">arrow_forward</i></h3>
-                </div>
-            </a>
+            <!--  Continue Learning -->
+            <template is="dom-if" if="[[!currentUser.loggedIn]]">
+                <a href="[[currentUser.loginUrl]]">
+                    <div class="continue-learning">
+                        <p class="tiny-text">Create a plan</p>
+
+                        <h3>Sign up <i class="material-icons">arrow_forward</i></h3>
+                    </div>
+                </a>
+            </template>
+
+            <template is="dom-if" if="[[currentUser.loggedIn]]">
+                <a href="#!explorer">
+                    <div class="continue-learning">
+                        <p class="tiny-text">Continue learning</p>
+
+                        <h3>View Courses <i class="material-icons">arrow_forward</i></h3>
+                    </div>
+                </a>
+            </template>
+
         </div>
     </template>
 
