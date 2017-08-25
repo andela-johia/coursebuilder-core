@@ -12,19 +12,40 @@
     <style type="text/css">
       .tab i
       {
-        width: 1.8em; 
-        height: 1.8em; 
-        padding-top: 0.25em;
+        width: 1.8em;
+        height: 1.8em;
+        padding-top: 0em;
+        padding-bottom: 0.1em;
         margin-top: 0.5em;
         margin-left: auto;
         margin-right: auto;
-        padding-bottom: 0.25em;
-        border: 1px solid black; 
+        margin-bottom: 0.5em;
+        box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12);
         border-radius: 2px;
+      }
+      .tab .active i
+      {
+        background-color: #4054B2;
       }
       .tabs
       {
         min-height: 7rem;
+      }
+      nav i
+      {
+        display: block;
+        font-size: 24px;
+        line-height: 1.8rem; 
+      }
+      .tab h3
+      {
+        color: black;
+        font-weight: 200;
+        font-size: 1em;
+      }
+      .line
+      {
+        border-right: 1px solid black;
       }
     </style>
   </head>
@@ -115,11 +136,11 @@
             <nav>
               <ul id="tabs-swipe-demo" class="tabs">
                 <li class="tab col s4 line"><a class="active" href="#general">
-                  <i class="material-icons grey-text">feedback</i><h3>General</h3></a></li>
+                  <i class="material-icons grey-text">feedback</i></a><h3>General</h3></li>
                 <li class="tab col s4 line"><a href="#content">
-                  <i class="material-icons grey-text">book</i><h3>Content</h3></a></li>
+                  <i class="material-icons grey-text">book</i></a><h3>Content</h3></li>
                 <li class="tab col s4"><a href="#report-bug">
-                  <i class="material-icons grey-text">bug_report</i><h3>Report a bug</h3></a></li>
+                  <i class="material-icons grey-text">bug_report</i></a><h3>Report a bug</h3></li>
               </ul>
 
               <div id="general" class="col s12 blue-text">
