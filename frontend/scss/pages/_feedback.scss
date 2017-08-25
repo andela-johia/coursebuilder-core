@@ -8,6 +8,10 @@
 	z-index: 0;
 	height: 196px;
 }
+.blue-section-inner h2
+{
+	font-size: 1.75em;
+}
 .container .row .offset-l1
 {
 	margin-top: 150px;
@@ -41,9 +45,11 @@
 {
 	margin-top: 0;
 	margin-left: 80px;
+	padding-left: 20px;
 	font-size: 1rem;
 	margin-bottom: 20px;
-	font-weight: 300;
+	font-weight: 200;
+	line-height: 300%;
 }
 .tab
 {
