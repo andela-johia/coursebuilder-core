@@ -13,10 +13,9 @@
 	margin-top: 150px;
 }
 .tabs
-{
-	height: 80px;
-}
-.collapsible li
+      {
+        min-height: 7rem;
+      }.collapsible li
 {
 	width: 100%;
 }
@@ -71,4 +70,48 @@ li .active
 {
 	color: blue;
 }
+ .tab i
+{
+	width: 1.8em;
+	height: 1.8em;
+	padding-top: 0.4em;
+	padding-bottom: 0.2em;
+	margin-top: 0.2em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+	border-bottom: 1px solid;
+	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12);
+	border-radius: 2px;
+}
+.tab .active i
+  {
+    background-color: #4054B2;
+  }
+  nav i
+  {
+    display: block;
+    font-size: 24px;
+    line-height: 1.8rem; 
+  }
+  .tab h3
+  {
+    color: black;
+    font-weight: 200;
+    font-size: 1em;
+    line-height: 0%;
+  }
+  .line
+  {
+    border-right: 1px solid black;
+  }
+  /* label focus color */
+ .input-field input:focus + label {
+   color: #03A9F4 !important;
+ }
+ /* label underline focus color */
+     .row .input-field input:focus {
+       border-bottom: 1px solid #03A9F4 !important;
+       box-shadow: 0 1px 0 0 #03A9F4 !important
+     }
 }
