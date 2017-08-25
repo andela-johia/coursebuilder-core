@@ -33,16 +33,34 @@
         <button class="course-bookmark waves-effect waves-light btn">
           <i class="material-icons">star_border</i> BOOKMARK
         </button>
-        <button class="course-share waves-effect waves-light btn">
+        <button class="dropdown-button nav-link" href="#!" data-activates="share-dropdown">
           <i class="material-icons">share</i>
           SHARE
         </button>
+
+  <!--  Dropdown(s) -->
+  <ul id='share-dropdown' class='dropdown-content'>
+    <li><a href="https://plus.google.com/share?url=https://courses.academy.africa">
+       <img src="/modules/explorer/_static/images/google-plus.png" alt="" width="25" height="22">
+       Google +
+   </a></li>
+    <li class="divider"></li>
+    <li><a href="https://twitter.com/share?url=https://courses.academy.africa">
+      <img src="/modules/explorer/_static/images/twitter.png" alt="twitter" widht="25" height="22">
+      twitter</a></li>
+    <li><a href="http://www.facebook.com/sharer/sharer.php?url=https://courses.academy.africa">
+      <img src="/modules/explorer/_static/images/facebook.png" alt="FB" widht="22" height="22">
+      Facebook</a></li>
+    <li><a href="https://www.linkedin.com/in/share?url=https://courses.academy.africa">
+      <img src="/modules/explorer/_static/images/linkedln.png" alt="Linkedln" widht="22" height="22">
+      Linkedln</a></li>
+    <li class="divider"></li>
       </div>
 
       <h2>{{ course_info.course.title }}</h2>
       <h3>Syllabus</h3>
 
-    </div>
+  </div>
 
 
     <div class="course-content">

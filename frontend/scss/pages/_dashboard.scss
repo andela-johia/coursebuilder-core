@@ -48,10 +48,14 @@
   background-color: $dashboard-bg;
 
   .card {
+
     .card-action {
       border-top: none;
       text-align: right;
       background-color: $white-d;
+    }
+    .card-content {
+      min-height: 180px;
     }
 
     h3 {
