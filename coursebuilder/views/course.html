@@ -1,113 +1,121 @@
 {% extends 'base_course.html' %}
 
 {% block gcb_page_info %}
-  if ('gcbSetPageInfo' in window) {
+    if ('gcbSetPageInfo' in window) {
     gcbSetPageInfo({
-      'page_type': 'course',
+    'page_type': 'course',
     });
-  }
+    }
 {% endblock %}
 
 {% block top_content %}
-  <script>
-    {# I18N: This is shown to the student in a popup after registration. #}
-    var regConfirmationMsg = "{{ gettext('Thank you for registering for the course. Click the Announcements tab for important information.') | js_string }}";
-    if(window.location.hash == '#registration_confirmation') {
-      cbShowMsgAutoHide(regConfirmationMsg);
-    }
-    {# I18N: This is shown to the student in a popup if registrations for the course are not open. #}
-    var regClosedMsg = "{{ gettext('Registrations for this course are not open.') | js_string }}";
-    if(window.location.hash == '#registration_closed') {
-      cbShowMsgAutoHide(regClosedMsg);
-    }
-  </script>
+    <script>
+        {# I18N: This is shown to the student in a popup after registration. #}
+        var regConfirmationMsg = "{{ gettext('Thank you for registering for the course. Click the Announcements tab for important information.') | js_string }}";
+        if (window.location.hash == '#registration_confirmation') {
+            cbShowMsgAutoHide(regConfirmationMsg);
+        }
+        {# I18N: This is shown to the student in a popup if registrations for the course are not open. #}
+        var regClosedMsg = "{{ gettext('Registrations for this course are not open.') | js_string }}";
+        if (window.location.hash == '#registration_closed') {
+            cbShowMsgAutoHide(regClosedMsg);
+        }
+    </script>
 {% endblock %}
 
 {% block main_content %}
-  {% import 'macros.html' as macros %}
+    {% import 'macros.html' as macros %}
 
 
-  <div id="course-page" class="page-wrapper active-page">
-    <div class="green-section">
-      <div class="course-links">
-        <button class="course-bookmark waves-effect waves-light btn">
-          <i class="material-icons">star_border</i> BOOKMARK
-        </button>
-        <button class="dropdown-button nav-link" href="#!" data-activates="share-dropdown">
-          <i class="material-icons">share</i>
-          SHARE
-        </button>
+    <div id="course-page" class="page-wrapper active-page">
+        <div class="green-section">
+            <div class="course-links">
+                <button class="course-bookmark waves-effect waves-light btn">
+                    <i class="material-icons">star_border</i> BOOKMARK
+                </button>
+                <button class="dropdown-button nav-link" href="#!" data-activates="share-dropdown">
+                    <i class="material-icons">share</i>
+                    SHARE
+                </button>
 
-  <!--  Dropdown(s) -->
-  <ul id='share-dropdown' class='dropdown-content'>
-    <li><a href="https://plus.google.com/share?url=https://courses.academy.africa">
-       <img src="/modules/explorer/_static/images/google-plus.png" alt="" width="25" height="22">
-       Google +
-   </a></li>
-    <li class="divider"></li>
-    <li><a href="https://twitter.com/share?url=https://courses.academy.africa">
-      <img src="/modules/explorer/_static/images/twitter.png" alt="twitter" widht="25" height="22">
-      twitter</a></li>
-    <li><a href="http://www.facebook.com/sharer/sharer.php?url=https://courses.academy.africa">
-      <img src="/modules/explorer/_static/images/facebook.png" alt="FB" widht="22" height="22">
-      Facebook</a></li>
-    <li><a href="https://www.linkedin.com/in/share?url=https://courses.academy.africa">
-      <img src="/modules/explorer/_static/images/linkedln.png" alt="Linkedln" widht="22" height="22">
-      Linkedln</a></li>
-    <li class="divider"></li>
-      </div>
-
-      <h2>{{ course_info.course.title }}</h2>
-      <h3>Syllabus</h3>
-
-  </div>
-
-
-    <div class="course-content">
-      <div class="row">
-
-
-        <div class="course-accordion col l5 xl4 m12">
-
-          {% if course_outline %}
-            <h3>
-              Topic Overview
-            </h3>
-                <ul class="collapsible" data-collapsible="accordion">
-                  {% for outline_element in course_outline recursive %}
-                    <div class="collapsible-header {{ element_class }}"><i class="material-icons">star_border</i>
-                    {{ macros.render_outline_element(
-                         outline_element, can_see_drafts, course_availability,
-                         'span', '', 'span', 'gcb-top-content') }}
-                    {% if show_lessons_in_syllabus and outline_element.contents %}
-                      <ul>
-                        {{ loop(outline_element.contents) }}
-                      </ul>
-                    {% endif %}
-                    </div>
-                  {% endfor %}
+                <!--  Dropdown(s) -->
+                <ul id='share-dropdown' class='dropdown-content'>
+                    <li><a href="https://plus.google.com/share?url=https://courses.academy.africa">
+                        <img src="/modules/explorer/_static/images/google-plus.png" alt=""
+                             width="25" height="22">
+                        Google +
+                    </a></li>
+                    <li class="divider"></li>
+                    <li><a href="https://twitter.com/share?url=https://courses.academy.africa">
+                        <img src="/modules/explorer/_static/images/twitter.png" alt="twitter"
+                             widht="25" height="22">
+                        twitter</a></li>
+                    <li>
+                        <a href="http://www.facebook.com/sharer/sharer.php?url=https://courses.academy.africa">
+                            <img src="/modules/explorer/_static/images/facebook.png" alt="FB"
+                                 widht="22" height="22">
+                            Facebook</a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/share?url=https://courses.academy.africa">
+                            <img src="/modules/explorer/_static/images/linkedln.png" alt="Linkedln"
+                                 widht="22" height="22">
+                            Linkedln</a></li>
+                    <li class="divider"></li>
                 </ul>
-              {% for item in extra_content %}
-                {{ item }}
-              {% endfor %}
-          {% endif %}
-
-        </div>
-
-        <div class="course-card col l7 xl8 m12">
-          <div class="card">
-
-            <div class="gcb-cols">
-                {% include 'summary.html' %}
-
-                {% if transient_student %}
-                  {% include 'registration_module.html' %}
-                {% endif %}
             </div>
 
-          </div>
+                <h2>{{ course_info.course.title }}</h2>
+                <h3>Syllabus</h3>
+
         </div>
-      </div>
+
+
+        <div class="course-content">
+            <div class="row">
+
+
+                <div class="course-accordion col l5 xl4 m12">
+
+                    {% if course_outline %}
+                        <h3>
+                            Topic Overview
+                        </h3>
+                        <ul class="collapsible" data-collapsible="accordion">
+                            {% for outline_element in course_outline recursive %}
+                                <div class="collapsible-header {{ element_class }}"><i
+                                        class="material-icons">star_border</i>
+                                    {{ macros.render_outline_element(
+                         outline_element, can_see_drafts, course_availability,
+                         'span', '', 'span', 'gcb-top-content') }}
+                                    {% if show_lessons_in_syllabus and outline_element.contents %}
+                                        <ul>
+                                            {{ loop(outline_element.contents) }}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </ul>
+                        {% for item in extra_content %}
+                            {{ item }}
+                        {% endfor %}
+                    {% endif %}
+
+                </div>
+
+                <div class="course-card col l7 xl8 m12">
+                    <div class="card">
+
+                        <div class="gcb-cols">
+                            {% include 'summary.html' %}
+
+                            {% if transient_student %}
+                                {% include 'registration_module.html' %}
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 {% endblock %}
