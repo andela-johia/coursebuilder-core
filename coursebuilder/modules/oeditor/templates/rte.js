@@ -716,6 +716,7 @@ function bindEditorField(Y) {
         function() {
           that.setEditorType(that.PREVIEW_EDITOR);
         });
+    this.tabbar.addTab('carouselHelp');
     var buttonbarDiv = this.fieldContainer.querySelector('.buttonbar-div');
     buttonbarDiv.appendChild(this.tabbar.getRoot());
 
