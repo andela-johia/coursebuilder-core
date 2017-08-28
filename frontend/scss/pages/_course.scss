@@ -91,6 +91,8 @@
             background-color: $brown-l;
           }
         }
+
+        & > span { max-width: 330px; }
       }
       .collapsible-header.active {
         .expand-less { display: block; }
@@ -201,7 +203,7 @@ ul#share-dropdown {
   min-width: 150px;
   margin-top: 55px;
  }
- 
+
  img {
    margin-right: 20px;
    color: #808080;
