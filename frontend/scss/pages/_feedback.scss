@@ -125,23 +125,27 @@ li .active
    color: #03A9F4 !important;
  }
  /* label underline focus color */
-     .row .input-field textarea:focus {
-       border-bottom: 1px solid #03A9F4 !important;
-       box-shadow: 0 1px 0 0 #03A9F4 !important;
-     }
+ .row .input-field textarea:focus {
+   border-bottom: 1px solid #03A9F4 !important;
+   box-shadow: 0 1px 0 0 #03A9F4 !important;
+ }
 
-  .input-field textarea
-      {
-        height: 270px;
-      }
-      form
-      {
-        font-weight: 300;
-      }
-      .collapsible
-      {
-        font-weight: 300;
-        line-height: 200%;
-        font-family: "Roboto Slab",Georgia,serif;
-      }
+.input-field textarea
+  {
+    height: 270px;
+  }
+  form
+  {
+    font-weight: 300;
+  }
+  .collapsible
+  {
+    font-weight: 300;
+    line-height: 200%;
+    font-family: "Roboto Slab",Georgia,serif;
+  }
+.white
+{
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
+}
 }
