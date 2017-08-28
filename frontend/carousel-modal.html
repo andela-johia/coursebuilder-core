@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body>
+  <button id="openCarouselHelp">carousel</button>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close-modal">&times;</span>
+        <h2>How to add course carousel</h2>
+      </div>
+      <div class="modal-body">
+        <p>1. Click the 'code' icon at the very top <img class="explain-img-sm" src="../coursebuilder/modules/explorer/_static/images/code_btn.jpg" alt=""></p>
+        <p>2. Click where you wish to insert the carousel and paste the code below there:</p>
+
+        <pre>
+          &lt;div class=&quot;owl-carousel owl-theme course-carousel&quot;&gt;<br/>           <br/>            &lt;div class=&quot;item&quot;&gt;<br/>              content1<br/>            &lt;/div&gt;<br/>            <br/>            &lt;div class=&quot;item&quot;&gt;<br/>              content2<br/>            &lt;/div&gt;<br/>            <br/>            &lt;div class=&quot;item&quot;&gt;<br/>              content3<br/>            &lt;/div&gt;<br/>            <br/>          &lt;/div&gt;
+        </pre>
+
+        <p>3. Replace 'content1', 'content2' ... with the content to be displayed to the user</p>
+        <p>4. You can delete or add additional 'items' as desired. Simply delete or duplicate:</p>
+        <pre>
+          &lt;div class=&quot;item&quot;&gt;<br/>            content<br/>          &lt;/div&gt;
+        </pre>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!-- Modal Script -->
+  <script>
+    $(document).ready(function () {
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close-modal")[0];
+
+      // When the user clicks the button, open the modal
+      $('body').on('click', '#openCarouselHelp', function () {
+        modal.style.display = "block";
+      });
+
+
+      // When the user clicks on <span> (x), close the modal
+      $('body').on('click', '.close-modal', function () {
+        modal.style.display = "none";
+      });
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    });
+
+  </script>
+</body>
+</html>

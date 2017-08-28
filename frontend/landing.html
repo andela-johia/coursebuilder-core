@@ -123,6 +123,22 @@
                   <p>I am a very simple card. I am good at containing small bits of information.
                     I am convenient because I require little markup to use effectively.</p>
                 </div>
+
+                <div class="owl-carousel owl-theme course-carousel">
+
+                  <div class="item">
+                    content1
+                  </div>
+
+                  <div class="item">
+                    content2
+                  </div>
+
+                  <div class="item">
+                    content3
+                  </div>
+
+                </div>
               </div>
 
               <div class="course-navigation">
@@ -219,5 +235,16 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+
+
+    <script>
+      $('.course-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: ['<i class="material-icons">chevron_left</i>', '<i class="material-icons">chevron_right</i>'],
+        items: 1
+      });
+    </script>
   </body>
 </html>

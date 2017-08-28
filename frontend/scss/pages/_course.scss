@@ -159,6 +159,21 @@
   color: $text-color-l;
 }
 
+.course-carousel {
+  .owl-nav {
+    min-height: 40px;
+    position: relative;
+  }
+  .owl-prev, .owl-next {
+    font-size: 1rem !important;
+    z-index: 500;
+  }
+  .owl-dots {bottom: 15px;}
+  .item {
+    position: relative;
+  }
+}
+
 // App specific styles
 .gcb-edit-lesson-button { display: none !important; }
 .gcb-video-container iframe { min-height: 300px; }
