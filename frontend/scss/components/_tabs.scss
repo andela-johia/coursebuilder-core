@@ -77,6 +77,16 @@
   }
 }
 
+.tabs .tab a {
+ color: rgba(0,0,0,0.54);
+ font-weight: 500;
+}
+
+.testimonials .testimonials-card-tab{
+  max-width : 300px;
+  margin: 0 auto;
+}
+
 // Fixed sideNav hide on smaller
 @media #{$medium-and-down} {
   .tabs {

@@ -192,6 +192,10 @@
   }
 }
 
+.testimonials .testimonials-card-tabs{
+  max-width : 300px;
+  margin: 0 auto;
+}
 
 // Testimonials
 .testimonials {
@@ -225,7 +229,7 @@
     position: absolute;
     background-color: $color-white;
     padding: 15px;
-    top: 15%;
+    top: 20%;
     left: 10%;
     
     @include thin-paragraph;
