@@ -1,164 +1,138 @@
-#feedback
-{
-background-color: #f5f5f5;
-#email
-{
-	color: black;
-}
-.materialize-textarea
-{
-	color: black;
-}
-i
-{
-	color: rgba(0,0,0,0.54);
-}
-.blue-section
-{
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	z-index: 0;
-	height: 196px;
-}
-.blue-section-inner h2
-{
-	font-size: 1.75em;
-}
-.container .row .offset-l1
-{
-	margin-top: 150px;
-}
-.tabs
-      {
-        min-height: 7rem;
-      }.collapsible li
-{
-	width: 100%;
-}
-#general h3
-{
-	font-size: 1.375em;
-	margin: 1.9em 0 0.9em; 
-	color: #4054B2;
-}
-#content h3
-{
-	font-size: 1.375em;
-	margin: 1.9em 0 0.9em; 
-	color: #4054B2;
-}
-#report-bug h3
-{
-	font-size: 1.375em;
-	margin: 1.9em 0 0.9em; 
-	color: #4054B2;
-}
-.blue-section-inner h3
-{
-	margin-top: 0;
-	margin-left: 80px;
-	padding-left: 20px;
-	font-size: 1rem;
-	margin-bottom: 20px;
-	font-weight: 200;
-	line-height: 300%;
-}
-.tab
-{
-	text-transform: capitalize;
-}
-.footer-div p
-{
-	padding-left: 4px; 
-	line-height: 200%; 
-	font-weight: 300;
-	color: #757575;
-}
-.footer-div p a
-{
-	color: #4233FF;
-}
-.card-action a
-{
-	color: #4054b2; 
-	font-weight: 700; 
-	font-family: Roboto,Arial,sans-serif;
-}
-li .active
-{
-	color: blue;
-}
- .tab i
-{
-	width: 1.8em;
-	height: 1.8em;
-	padding-top: 0.4em;
-	padding-bottom: 0.2em;
-	margin-top: 0.2em;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: auto;
-	border-bottom: 1px solid;
-	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12);
-	border-radius: 2px;
-}
-.tab .active i
-  {
+#feedback {
+  background-color: #f5f5f5;
+  #email {
+    color: black;
+  }
+  .materialize-textarea {
+    color: black;
+  }
+  i {
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .blue-section {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 0;
+    height: 196px;
+  }
+  .blue-section-inner h2 {
+    font-size: 1.75em;
+  }
+  .container .row .offset-l1 {
+    margin-top: 150px;
+  }
+  .tabs {
+    min-height: 7rem;
+  }
+  .collapsible li {
+    width: 100%;
+  }
+  #general h3 {
+    font-size: 1.375em;
+    margin: 1.9em 0 0.9em;
+    color: #4054B2;
+  }
+  #content h3 {
+    font-size: 1.375em;
+    margin: 1.9em 0 0.9em;
+    color: #4054B2;
+  }
+  #report-bug h3 {
+    font-size: 1.375em;
+    margin: 1.9em 0 0.9em;
+    color: #4054B2;
+  }
+  .blue-section-inner h3 {
+    margin-top: 0;
+    margin-left: 80px;
+    padding-left: 20px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight: 200;
+    line-height: 300%;
+  }
+  .tab {
+    text-transform: capitalize;
+  }
+  .footer-div p {
+    padding-left: 4px;
+    line-height: 200%;
+    font-weight: 300;
+    color: #757575;
+  }
+  .footer-div p a {
+    color: #4233FF;
+  }
+  .card-action a {
+    color: #4054b2;
+    font-weight: 700;
+    font-family: Roboto, Arial, sans-serif;
+  }
+  li .active {
+    color: blue;
+  }
+  .tab i {
+    width: 1.8em;
+    height: 1.8em;
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+    margin-top: 0.2em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    border-bottom: 1px solid;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+  }
+  .tab .active i {
     background-color: #4054B2;
   }
-  nav i
-  {
+  nav i {
     display: block;
     font-size: 24px;
-    line-height: 1.8rem; 
+    line-height: 1.8rem;
   }
-  .tab h3
-  {
+  .tab h3 {
     color: black;
     font-weight: 200;
     font-size: 1em;
     line-height: 0%;
   }
-  .line
-  {
+  .line {
     border-right: 1px solid black;
   }
   /* label focus color */
- .input-field input:focus + label {
-   color: #03A9F4 !important;
- }
- /* label underline focus color */
-     .row .input-field input:focus {
-       border-bottom: 1px solid #03A9F4 !important;
-       box-shadow: 0 1px 0 0 #03A9F4 !important;
-     }
-/* label focus color */
- .input-field textarea:focus + label {
-   color: #03A9F4 !important;
- }
- /* label underline focus color */
- .row .input-field textarea:focus {
-   border-bottom: 1px solid #03A9F4 !important;
-   box-shadow: 0 1px 0 0 #03A9F4 !important;
- }
+  .input-field input:focus + label {
+    color: #03A9F4 !important;
+  }
+  /* label underline focus color */
+  .row .input-field input:focus {
+    border-bottom: 1px solid #03A9F4 !important;
+    box-shadow: 0 1px 0 0 #03A9F4 !important;
+  }
+  /* label focus color */
+  .input-field textarea:focus + label {
+    color: #03A9F4 !important;
+  }
+  /* label underline focus color */
+  .row .input-field textarea:focus {
+    border-bottom: 1px solid #03A9F4 !important;
+    box-shadow: 0 1px 0 0 #03A9F4 !important;
+  }
 
-.input-field textarea
-  {
+  .input-field textarea {
     height: 270px;
   }
-  form
-  {
+  form {
     font-weight: 300;
   }
-  .collapsible
-  {
+  .collapsible {
     font-weight: 300;
     line-height: 200%;
-    font-family: "Roboto Slab",Georgia,serif;
+    font-family: "Roboto Slab", Georgia, serif;
   }
-.white
-{
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
-}
+  .white {
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  }
 }

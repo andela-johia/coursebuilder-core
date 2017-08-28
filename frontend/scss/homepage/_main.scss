@@ -9,25 +9,27 @@
     max-width: $context-width;
     margin: 0 auto;
     padding: 70px 15px;
-    
-    h1, p { max-width: 470px; }
-    
+
+    h1, p {
+      max-width: 470px;
+    }
+
     h1 {
       color: $text-color-l;
     }
-    
+
     p {
       font-weight: 400;
       font-size: 18px;
       margin: 40px 0;
     }
   }
-  
+
   @media screen and (max-width: 992px) {
     background: $white-d;
     .hero-banner-content {
       padding: 50px 15px;
-      
+
       h1 {
         font-size: 3rem;
       }
@@ -37,12 +39,13 @@
         font-size: 1.2rem;
         margin: 30px 0;
       }
-      
-      .btn-large { margin-top: 30px; }
+
+      .btn-large {
+        margin-top: 30px;
+      }
     }
   }
 }
-
 
 // Mission
 .mission {
@@ -52,17 +55,16 @@
   }
 }
 
-
 // Awards & How it works
 .awards, .how-it-works {
   padding: 4.4rem 30px;
-  
+
   .carousel-section-wrapper {
     display: block;
     max-width: $context-width;
     margin: 0 auto;
   }
-  
+
   @include thin-paragraph;
 }
 
@@ -70,31 +72,30 @@
 .awards {
   text-align: center;
   background-color: $white-d;
-  
+
   .item {
     min-height: 100px;
     text-align: center;
-    
+
     img {
       max-width: 200px;
       margin: 0 auto;
     }
   }
-  
 }
 
 // How it works
 .how-it-works {
   margin-bottom: 20px;
-  
+
   .section-label {
     margin-bottom: 4.4rem
   }
-  
+
   .how-it-works-text {
     max-width: 300px;
   }
-  
+
   .how-it-works-img {
     text-align: right;
     img {
@@ -102,29 +103,30 @@
       display: inline-block;
     }
   }
-  
+
   .how-it-works-heading {
     color: $hover-blue;
     font-size: $sub-text-size;
     font-weight: 300;
     letter-spacing: 1px;
   }
-  
+
   @media screen and (max-width: 600px) {
     text-align: center;
-    .how-it-works-img { text-align: center; }
+    .how-it-works-img {
+      text-align: center;
+    }
     .how-it-works-text {
       display: inline-block;
     }
   }
 }
 
-
 // Question cards
 .question-cards {
   background-color: $white-d;
   padding: 20px 15px;
-  
+
   .card {
     display: inline-block;
     position: relative;
@@ -136,52 +138,54 @@
     align-items: center;
     width: 100%;
   }
-  
+
   .question-card-media {
     width: 66.66%;
   }
   .question-card-text {
     width: 33.2%;
     padding: 20px;
-    
+
     h2 {
       font-weight: 300;
     }
   }
-  
+
   .responsive-media-wrapper {
     position: relative;
     width: 100%;
     padding-bottom: 56%;
     height: 0;
   }
-  
+
   .flex-reverse {
     flex-direction: row-reverse;
-    
+
     .question-card-text {
       padding-bottom: 30px;
       align-self: flex-end;
-      
+
       a {
-        font-weight:500;
+        font-weight: 500;
         color: $hover-blue;
       }
-      p { margin-bottom: 80px; }
+      p {
+        margin-bottom: 80px;
+      }
     }
   }
-  
+
   iframe {
     position: absolute;
   }
-  
+
   h2 {
     margin-top: 0;
     font-size: 1.75rem;
     margin-bottom: 40px;
   }
   @include thin-paragraph;
-  
+
   @media screen and (max-width: 1072px) {
     .question-card-div {
       flex-direction: column;
@@ -192,34 +196,37 @@
   }
 }
 
-
 // Testimonials
 .testimonials {
   padding-bottom: 0;
-  
+
   .section-label {
     margin-top: 5rem;
   }
-  
-  .row { margin: 0; }
-  .card-tabs { border: none; }
-  
+
+  .row {
+    margin: 0;
+  }
+  .card-tabs {
+    border: none;
+  }
+
   .testimonials-card-tabs {
     max-width: 500px;
     margin: 0 auto;
   }
-  
+
   .testimonial-div {
     position: relative;
     width: 100%;
     overflow: hidden;
     transition: all 1s;
-    
+
     img {
       min-width: 800px;
     }
   }
-  
+
   .testimonial-card {
     width: 350px;
     position: absolute;
@@ -227,13 +234,12 @@
     padding: 15px;
     top: 15%;
     left: 10%;
-    
+
     @include thin-paragraph;
-    
+
     @include sub-heading;
   }
 }
-
 
 // Continue learing
 .continue-learning {
@@ -242,11 +248,11 @@
   background-color: $green;
   color: $color-white;
   @include transition();
-  
+
   &:hover {
     background-color: lighten($green, 5%);
   }
-  
+
   p {
     margin-top: 0;
   }

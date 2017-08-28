@@ -38,7 +38,16 @@ window.addEventListener('WebComponentsReady', function documentReady() {
     $('.home-main-menu a[href="#!' + pageName + '"]').addClass('active-link');
   }
 
-  var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback', 'faqs', 'events'];
+  var pageLinks = [
+    'explorer',
+    'certification',
+    'homepage',
+    'tools',
+    'partners',
+    'feedback',
+    'faqs',
+    'events'
+  ];
 
   pageLinks.forEach(function (name) {
     $('body').on('click', 'a[href="#!' + name + '"]', function () {

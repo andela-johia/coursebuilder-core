@@ -1,5 +1,4 @@
 footer {
-
   .card {
     padding: 10px 5%;
     margin: 0;
@@ -32,7 +31,9 @@ footer {
       width: 50px;
     }
 
-    .row { margin: 0; }
+    .row {
+      margin: 0;
+    }
 
     .col:first-child p {
       display: inline-block;
