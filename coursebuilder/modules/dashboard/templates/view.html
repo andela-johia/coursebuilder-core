@@ -50,6 +50,107 @@
         });
       </script>
     {% endif %}
+
+
+      <style>
+          /* Modal Style */
+          .modal {
+              display: none;
+              position: fixed;
+              z-index: 1;
+              padding-top: 100px;
+              left: 12%;
+              top: 0;
+              width: 90%;
+              height: 100%;
+              overflow: auto;
+              background-color: rgb(0, 0, 0);
+              background-color: rgba(0, 0, 0, 0.4);
+          }
+
+          /* Modal Content */
+          .modal-content {
+              position: relative;
+              background-color: #fefefe;
+              margin: auto;
+              padding: 0;
+              border: 1px solid #888;
+              width: 70%;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+              -webkit-animation-name: animatetop;
+              -webkit-animation-duration: 0.4s;
+              animation-name: animatetop;
+              animation-duration: 0.4s
+          }
+
+          /* Add Animation */
+          @-webkit-keyframes animatetop {
+              from {
+                  top: -300px;
+                  opacity: 0
+              }
+              to {
+                  top: 0;
+                  opacity: 1
+              }
+          }
+
+          @keyframes animatetop {
+              from {
+                  top: -300px;
+                  opacity: 0
+              }
+              to {
+                  top: 0;
+                  opacity: 1
+              }
+          }
+
+          /* The Close Button */
+          .close-modal {
+              color: white;
+              float: right;
+              font-size: 28px;
+              font-weight: bold;
+          }
+
+          .close-modal:hover,
+          .close-modal:focus {
+              color: #ccc;
+              text-decoration: none;
+              cursor: pointer;
+          }
+
+          .modal-header {
+              padding: 2px 16px;
+              background-color: #009686;
+              color: white;
+          }
+
+          .modal-body {
+              padding: 2px 16px;
+          }
+
+          .explain-img-sm {
+              height: 30px;
+          }
+
+          .modal-body pre {
+              background-color: #eee;
+              border-radius: 5px;
+              padding-top: 15px;
+          }
+
+          .CodeMirror-scroll {
+              z-index: 1;
+          }
+
+          #openCarouselHelp {
+              float: right;
+          }
+      </style>
+
+
   </head>
   <body>
     {% for header in page_headers %}
@@ -189,6 +290,36 @@
             {% if main_content %}
                 {{ main_content }}
             {% endif %}
+              <!-- The Modal -->
+              <div id="courseCarouselHelp" class="modal">
+
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <span class="close-modal">&times;</span>
+                          <h2>How to add course carousel</h2>
+                      </div>
+                      <div class="modal-body">
+                          <p>1. Click the 'code' icon at the very top <img class="explain-img-sm"
+                                                                           src="/modules/explorer/_static/images/code_btn.jpg"
+                                                                           alt=""></p>
+                          <p>2. Click where you wish to insert the carousel and paste the code below there:</p>
+
+                          <pre>
+          &lt;div class=&quot;owl-carousel owl-theme course-carousel&quot;&gt;<br/>           <br/>            &lt;div class=&quot;item&quot;&gt;<br/>              content1<br/>            &lt;/div&gt;<br/>            <br/>            &lt;div class=&quot;item&quot;&gt;<br/>              content2<br/>            &lt;/div&gt;<br/>            <br/>            &lt;div class=&quot;item&quot;&gt;<br/>              content3<br/>            &lt;/div&gt;<br/>            <br/>          &lt;/div&gt;
+        </pre>
+
+                          <p>3. Replace 'content1', 'content2' ... with the content to be displayed to the user</p>
+                          <p>4. You can delete or add additional 'items' as desired. Simply delete or duplicate:</p>
+                          <pre>
+          &lt;div class=&quot;item&quot;&gt;<br/>            content<br/>          &lt;/div&gt;
+        </pre>
+
+                          <p><b>Note: </b> please use iframes when embedding youtube videos in the carousel (visit the video on youtube, click share, embed and copy the iframe).</p>
+                      </div>
+                  </div>
+
+              </div>
           </div>
 
         </div>
@@ -210,6 +341,33 @@
         </div>
       </div>
     </div>
+
+
+    <!-- Modal Script -->
+    <script>
+        $(document).ready(function () {
+            var modal = document.getElementById('courseCarouselHelp');
+
+            // When the user clicks the button, open the modal
+            $('body').on('click', '#openCarouselHelp', function () {
+                modal.style.display = "block";
+            });
+
+            // When the user clicks on .close-modal, close the modal
+            $('body').on('click', '.close-modal', function () {
+                modal.style.display = "none";
+            });
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+
+
 
     <!-- Deprecated: Prefer modules/core_ui Lightbox -->
     <div id='modal-window'>
