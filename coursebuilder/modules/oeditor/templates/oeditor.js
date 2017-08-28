@@ -88,14 +88,21 @@ function TabBar(className) {
  *     button is clicked.
  */
 TabBar.prototype.addTab = function(label, className, onclick) {
-  var that = this;
-  var button = $('<button></button>');
-  button.click(function() {
-    that._select($(this));
-    onclick();
-    return false;
-  });
-  button.addClass(className).text(label);
+  if (label === 'carouselHelp') {
+    var button = $(
+      '<a id="openCarouselHelp" href="javascript:void(0)" class="add-carousel-help right">' +
+      'carousel</a>'
+    );
+  } else {
+    var that = this;
+    var button = $('<button></button>');
+    button.click(function () {
+      that._select($(this));
+      onclick();
+      return false;
+    });
+    button.addClass(className).text(label);
+  }
   this.root.append(button);
 };
 /**

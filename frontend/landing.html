@@ -62,15 +62,15 @@
             <i class="material-icons">star_border</i> BOOKMARK
           </button>
           <button class="course-share waves-effect waves-light btn">
-            <i class="material-icons">share</i> 
+            <i class="material-icons">share</i>
             SHARE
           </button>
         </div>
-        
+
         <h2>1. The world goes digital</h2>
         <h3><span class="light-text">Topic: </span> The online opportunity</h3>
       </div>
-      
+
       <div class="course-content">
         <div class="row">
           <div class="course-accordion col l5 xl3 m12">
@@ -110,10 +110,10 @@
                 </div>
               </li>
             </ul>
-            
+
             <button class="quiz-btn waves-effect waves-dark btn-large">Skip to quiz</button>
           </div>
-          
+
           <div class="course-card col l7 xl9 m12">
               <div class="card">
                 <div class="video-container">
@@ -123,19 +123,35 @@
                   <p>I am a very simple card. I am good at containing small bits of information.
                     I am convenient because I require little markup to use effectively.</p>
                 </div>
+
+                <div class="owl-carousel owl-theme course-carousel">
+
+                  <div class="item">
+                    content1
+                  </div>
+
+                  <div class="item">
+                    content2
+                  </div>
+
+                  <div class="item">
+                    content3
+                  </div>
+
+                </div>
               </div>
-              
+
               <div class="course-navigation">
                 <a href="#" class="btn right">Next</a><a href="#" class="btn">Prev</a>
               </div>
           </div>
         </div>
       </div>
-      
-      
 
-      
-      
+
+
+
+
     </div>
 
     <div id="explorer" class="page-wrapper">
@@ -152,7 +168,7 @@
       <div class="card footer-top">
         <div class="row">
           <div class="col l6 m12">
-            <img src="images/logo.png" alt="Google" aria-label="Google" draggable="false"> 
+            <img src="images/logo.png" alt="Google" aria-label="Google" draggable="false">
             <p>A Growth Engine for Digital Skills</p>
           </div>
 
@@ -217,5 +233,16 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+
+
+    <script>
+      $('.course-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: ['<i class="material-icons">chevron_left</i>', '<i class="material-icons">chevron_right</i>'],
+        items: 1
+      });
+    </script>
   </body>
 </html>
