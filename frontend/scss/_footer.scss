@@ -46,10 +46,16 @@ footer {
     .row {
       margin-bottom: 0;
     }
+
     .footer-appstores {
       img {
-        width: 150px;
+        height: 30px;
         margin-right: 20px;
+        margin-bottom: 10px;
+      }
+      .cfa-footer-logo {
+        height: 50px;
+        margin-bottom: 0;
       }
     }
 

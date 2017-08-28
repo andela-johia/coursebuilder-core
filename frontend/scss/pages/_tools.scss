@@ -1,9 +1,7 @@
 
 .tools-page {
 
-  .tools-first-section {
-    padding-top: 2rem;
-  }
+  .tools-first-section 
 
   .section-label {
     margin-top: 5rem;
@@ -17,14 +15,15 @@
 #tools {
   background-color: $white-d;
   .section {
-    padding: 4.4rem 0;
+    padding: 1.2rem 0;
 
     .tools-section-label {
       text-align: left;
       font-weight: 300;
       color: #616161;
-      font-size: 1.1rem;
-      margin-left: 10px;
+      font-size: 1.3rem;
+      margin-top: -10px;
+      margin-left: 15px;
       line-height: 1.77778;
     }
   }
@@ -68,6 +67,7 @@
     .visit-link a {
       font-size: 1rem;
       font-weight: 500;
+      margin-left: 265px
     }
 
     // Card Sizes
@@ -123,6 +123,7 @@
       display: flex;
 
       .tools-card-image {
+        margin-left: -15px;
         max-width: 15%;
         img {
           border-radius: 2px 0 0 2px;
@@ -173,7 +174,7 @@
 
       h2 {
         display: inline !important;
-        margin-left: 55px !important;
+        margin-left: 40px !important;
         font-size: 1.2rem;
         font-weight: 600;
       }

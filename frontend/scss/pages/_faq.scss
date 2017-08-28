@@ -43,8 +43,9 @@
   }
   span
   {
-    font-size: 1.3rem;
-    line-height: 2.8rem;
+    font-size: 1rem;
+    line-height: 100%;
+    font-weight: 100;
   }
   #expand
   {
@@ -63,7 +64,7 @@
     position: relative;
     width: 100%;
     font-family: Roboto,Arial,sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     padding: 1.6rem 15px 2.4rem;
     border-bottom: 1px solid rgba(0,0,0,0.12);
     height: 5.6rem;
@@ -83,5 +84,17 @@
   }
   .faq-collapsible {
     display: none;
+  }
+  .blue-section
+  {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 0;
+    height: 175px;
+  }
+  #mainContent
+  {
+    margin-top: 130px;
   }
 }

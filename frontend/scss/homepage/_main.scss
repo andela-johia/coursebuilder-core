@@ -13,12 +13,11 @@
     h1, p { max-width: 470px; }
     
     h1 {
-      margin: 0;
       color: $text-color-l;
     }
     
     p {
-      font-weight: 500;
+      font-weight: 400;
       font-size: 18px;
       margin: 40px 0;
     }
@@ -99,7 +98,7 @@
   .how-it-works-img {
     text-align: right;
     img {
-      max-width: 265px;
+      max-width: 500px;
       display: inline-block;
     }
   }
@@ -107,7 +106,7 @@
   .how-it-works-heading {
     color: $hover-blue;
     font-size: $sub-text-size;
-    font-weight: 200;
+    font-weight: 300;
     letter-spacing: 1px;
   }
   
@@ -146,7 +145,7 @@
     padding: 20px;
     
     h2 {
-      font-weight: 100;
+      font-weight: 300;
     }
   }
   
@@ -165,9 +164,10 @@
       align-self: flex-end;
       
       a {
+        font-weight:500;
         color: $hover-blue;
       }
-      p { margin-bottom: 40px; }
+      p { margin-bottom: 80px; }
     }
   }
   

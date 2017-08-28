@@ -27,8 +27,7 @@ nav {
   i.material-icons {
     display: block;
     font-size: 24px;
-    height: $navbar-height-mobile;
-    line-height: $navbar-line-height-mobile;
+    line-height: 36px;
   }
 
   .nav-wrapper {
@@ -123,9 +122,10 @@ nav {
     a {
       transition: background-color .3s;
       font-size: $navbar-font-size;
+      font-weight: 300;
       color: $navbar-font-color;
       display: block;
-      padding: 0 15px;
+      padding-right: 38px;
       cursor: pointer;
 
       &.btn, &.btn-large, &.btn-flat, &.btn-floating {

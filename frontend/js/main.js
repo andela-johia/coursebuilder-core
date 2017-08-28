@@ -34,6 +34,8 @@ $(document).ready(function () {
   function showPage(pageName) {
     $('.page-wrapper').hide();
     $('#' + pageName).show();
+    $('.nav-link').removeClass('active-link');
+    $('.home-main-menu a[href="#!' + pageName + '"]').addClass('active-link');
   }
 
   var pageLinks = ['explorer', 'certification', 'homepage', 'tools', 'partners', 'feedback', 'faqs', 'events'];
@@ -61,7 +63,4 @@ $(document).ready(function () {
       $('#mainContent').fadeIn();
     });
   });
-  setTimeout(function () {
-    $('#courseCategorySelector').dropdown();
-  }, 200);
 });
