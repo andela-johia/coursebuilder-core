@@ -16,7 +16,6 @@
 {% endblock %}
 
 {% block main_content %}
-
 <div id="gcb-main">
   <div id="student-dashboard">
 
@@ -33,31 +32,7 @@
                 <i class="material-icons">settings</i>Share
               </a>
 
-              <!--  Dropdown(s) -->
-              <ul id='share-dropdown' class='dropdown-content'>
-                <li><a href="https://plus.google.com/share?url=https://courses.academy.africa">
-                  <img src="/modules/explorer/_static/images/google-plus.png" alt=""
-                       width="25" height="22">
-                  Google +
-                </a></li>
-                <li class="divider"></li>
-                <li><a href="https://twitter.com/share?url=https://courses.academy.africa">
-                  <img src="/modules/explorer/_static/images/twitter.png" alt="twitter"
-                       widht="25" height="22">
-                  twitter</a></li>
-                <li>
-                  <a
-                    href="http://www.facebook.com/sharer/sharer.php?url=https://courses.academy.africa">
-                    <img src="/modules/explorer/_static/images/facebook.png" alt="FB"
-                         widht="22" height="22">
-                    Facebook</a></li>
-                <li>
-                  <a href="https://www.linkedin.com/in/share?url=https://courses.academy.africa">
-                    <img src="/modules/explorer/_static/images/linkedln.png" alt="Linkedln"
-                         widht="22" height="22">
-                    Linkedln</a></li>
-                <li class="divider"></li>
-              </ul>
+              {% include 'share_dropdown.html' %}
 
             </div>
           </div>
