@@ -91,6 +91,8 @@
             background-color: $brown-l;
           }
         }
+
+        & > span { max-width: 330px; }
       }
       .collapsible-header.active {
         .expand-less { display: block; }
@@ -159,11 +161,33 @@
   color: $text-color-l;
 }
 
+.course-carousel {
+  .owl-nav {
+    min-height: 40px;
+    position: relative;
+  }
+  .owl-prev, .owl-next {
+    font-size: 1rem !important;
+    z-index: 500;
+  }
+  .owl-dots {bottom: 15px;}
+  .item {
+    position: relative;
+  }
+}
+
 // App specific styles
 .gcb-edit-lesson-button { display: none !important; }
 .gcb-video-container iframe { min-height: 300px; }
 .gcb-progress-empty,
 .gcb-progress-icon{ display: none; }
+
+.gcb-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
 .gcb-border-box {
   border: 1px solid $brown-l;
@@ -186,7 +210,7 @@ ul#share-dropdown {
   min-width: 150px;
   margin-top: 55px;
  }
- 
+
  img {
    margin-right: 20px;
    color: #808080;
