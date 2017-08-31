@@ -65,6 +65,7 @@
     }
 
     .course-accordion {
+      position: relative;
       color: $text-color-l;
       background-color: $color-white;
       border-bottom: 1px solid $brown-l;
@@ -82,7 +83,6 @@
           color: $text-color;
         }
       }
-
       li {
         padding: 0;
       }
@@ -176,6 +176,30 @@
       }
     }
   }
+
+  #hideCourseSidenav {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 16px;
+    background-color: $color-white;
+    border: 1px solid $brown-l;
+    @include transition();
+  }
+
+  .course-accordion.hide-sidenav {
+    #hideCourseSidenav {
+      right: -50px;
+      z-index: 500;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    #hideCourseSidenav {
+      display: none;
+    }
+  }
 }
 
 .course-navigation {
@@ -257,11 +281,7 @@ ul#share-dropdown {
   margin-top: 55px;
 }
 
-img {
-  margin-right: 20px;
-  color: #808080;
-}
-
 .dropdown-content li > a, .dropdown-content li > span {
   color: #808080;
 }
+
