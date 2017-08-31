@@ -1,0 +1,69 @@
+//Hero Banner
+.hero-banner-certificate {
+  display: block;
+  background: url('../images/hero-banner.png');
+  background-position: center;
+  background-size: cover;
+
+  .hero-banner-certificate-content {
+    max-width: $context-width;
+    margin: 0 auto;
+    padding: 70px 15px;
+
+    h1, p {
+      max-width: 470px;
+      color: $white-d;
+    }
+
+    h1 {
+      color: $white-d;
+      font-size: 3.8em;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 18px;
+      margin: 40px 0;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    background: $white-d;
+    .hero-banner-content {
+      padding: 50px 15px;
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-weight: 300;
+        font-size: 1.2rem;
+        margin: 30px 0;
+      }
+
+      .btn-large {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  // Mission
+  .mission {
+    .certification-blue-section-inner {
+      max-width: 800px;
+      text-align: center;
+    }
+  }
+  // Awards & How it works
+  .awards, .how-it-works {
+    padding: 4.4rem 30px;
+
+    .carousel-section-wrapper {
+      display: block;
+      max-width: $context-width;
+      margin: 0 auto;
+    }
+
+    @include thin-paragraph;
+  }
+}

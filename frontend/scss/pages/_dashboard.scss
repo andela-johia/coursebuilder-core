@@ -1,5 +1,7 @@
 #student-dashboard {
-  .row { margin-bottom: 0; }
+  .row {
+    margin-bottom: 0;
+  }
   .section-label {
     text-align: left;
   }
@@ -12,10 +14,12 @@
 .sd-top-left {
   display: flex;
   align-items: flex-start;
-  &.col { padding: 35px 0 25px }
+  &.col {
+    padding: 35px 0 25px
+  }
   color: $color-white;
 
-  img {
+  & > img {
     width: 55px;
     margin-right: 15px;
   }
@@ -25,22 +29,29 @@
     margin: 0 0 10px 0;
     font-weight: 200;
   }
+
   p {
     margin: 0 0 10px;
     font-weight: 200;
     font-size: 0.9rem;
     color: $brown-l;
   }
+
   i {
     vertical-align: text-top;
     color: $brown-l;
     margin-right: 5px;
     font-size: 1.1rem;
   }
+
   a {
     color: $color-white;
     font-size: 1rem;
     text-transform: uppercase;
+  }
+
+  ul#share-dropdown {
+    min-width: 250px;
   }
 }
 
@@ -48,10 +59,14 @@
   background-color: $dashboard-bg;
 
   .card {
+
     .card-action {
       border-top: none;
       text-align: right;
       background-color: $white-d;
+    }
+    .card-content {
+      min-height: 180px;
     }
 
     h3 {

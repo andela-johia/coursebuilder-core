@@ -1,26 +1,29 @@
 // === SCREENS ===
-@mixin tiny-screen(){
+@mixin tiny-screen() {
   @media (max-width: 320px) {
     @content;
   }
 }
-@mixin small-screen(){
+
+@mixin small-screen() {
   @media (max-width: 480px) {
     @content;
   }
 }
-@mixin medium-screen(){
+
+@mixin medium-screen() {
   @media (max-width: 680px) {
     @content;
   }
 }
-@mixin large-screen(){
+
+@mixin large-screen() {
   @media (max-width: 960px) {
     @content;
   }
 }
 
-@mixin transition($time: 0.2s){
+@mixin transition($time: 0.2s) {
   -webkit-transition: all $time;
   -moz-transition: all $time;
   -ms-transition: all $time;
@@ -28,7 +31,7 @@
   transition: all $time;
 }
 
-@mixin  google-font($font){
+@mixin google-font($font) {
   $font: unquote($font);
   @import url(https://fonts.googleapis.com/css?family=#{$font}:100,300);
 }
@@ -40,7 +43,7 @@
     letter-spacing: 0.8px;
     line-height: 25px;
     color: #616161;
-  }  
+  }
 }
 
 @mixin sub-heading() {

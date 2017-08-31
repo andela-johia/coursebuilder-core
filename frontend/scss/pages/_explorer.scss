@@ -1,5 +1,4 @@
 .topic-library {
-
   .simple-container {
     padding: 0 15px;
   }
@@ -79,15 +78,16 @@
   }
 }
 
-
 //  Affects the main app
 paper-radio-button {
   float: left;
   margin-right: 15px;
 }
+
 .underline.paper-input-container {
   display: none;
 }
+
 input.style-scope.paper-input {
   border-bottom: 1px solid #ececec !important;
 }
@@ -95,4 +95,3 @@ input.style-scope.paper-input {
 h2.style-scope.filter-sidebar {
   margin-top: 0 !important;
 }
-

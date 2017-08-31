@@ -2,9 +2,9 @@
 
 {% block gcb_page_info %}
   if ('gcbSetPageInfo' in window) {
-    gcbSetPageInfo({
-      'page_type': 'course',
-    });
+  gcbSetPageInfo({
+  'page_type': 'course',
+  });
   }
 {% endblock %}
 
@@ -12,12 +12,12 @@
   <script>
     {# I18N: This is shown to the student in a popup after registration. #}
     var regConfirmationMsg = "{{ gettext('Thank you for registering for the course. Click the Announcements tab for important information.') | js_string }}";
-    if(window.location.hash == '#registration_confirmation') {
+    if (window.location.hash == '#registration_confirmation') {
       cbShowMsgAutoHide(regConfirmationMsg);
     }
     {# I18N: This is shown to the student in a popup if registrations for the course are not open. #}
     var regClosedMsg = "{{ gettext('Registrations for this course are not open.') | js_string }}";
-    if(window.location.hash == '#registration_closed') {
+    if (window.location.hash == '#registration_closed') {
       cbShowMsgAutoHide(regClosedMsg);
     }
   </script>
@@ -33,10 +33,12 @@
         <button class="course-bookmark waves-effect waves-light btn">
           <i class="material-icons">star_border</i> BOOKMARK
         </button>
-        <button class="course-share waves-effect waves-light btn">
+        <button class="dropdown-button nav-link" href="#!" data-activates="share-dropdown">
           <i class="material-icons">share</i>
           SHARE
         </button>
+
+        {% include 'share_dropdown.html' %}
       </div>
 
       <h2>{{ course_info.course.title }}</h2>
@@ -55,23 +57,24 @@
             <h3>
               Topic Overview
             </h3>
-                <ul class="collapsible" data-collapsible="accordion">
-                  {% for outline_element in course_outline recursive %}
-                    <div class="collapsible-header {{ element_class }}"><i class="material-icons">star_border</i>
-                    {{ macros.render_outline_element(
+            <ul class="collapsible" data-collapsible="accordion">
+              {% for outline_element in course_outline recursive %}
+                <div class="collapsible-header {{ element_class }}"><i
+                  class="material-icons">star_border</i>
+                  {{ macros.render_outline_element(
                          outline_element, can_see_drafts, course_availability,
                          'span', '', 'span', 'gcb-top-content') }}
-                    {% if show_lessons_in_syllabus and outline_element.contents %}
-                      <ul>
-                        {{ loop(outline_element.contents) }}
-                      </ul>
-                    {% endif %}
-                    </div>
-                  {% endfor %}
-                </ul>
-              {% for item in extra_content %}
-                {{ item }}
+                  {% if show_lessons_in_syllabus and outline_element.contents %}
+                    <ul>
+                      {{ loop(outline_element.contents) }}
+                    </ul>
+                  {% endif %}
+                </div>
               {% endfor %}
+            </ul>
+            {% for item in extra_content %}
+              {{ item }}
+            {% endfor %}
           {% endif %}
 
         </div>
@@ -80,11 +83,11 @@
           <div class="card">
 
             <div class="gcb-cols">
-                {% include 'summary.html' %}
+              {% include 'summary.html' %}
 
-                {% if transient_student %}
-                  {% include 'registration_module.html' %}
-                {% endif %}
+              {% if transient_student %}
+                {% include 'registration_module.html' %}
+              {% endif %}
             </div>
 
           </div>
