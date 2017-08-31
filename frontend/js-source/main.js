@@ -71,4 +71,14 @@ $(document).ready(() => {
       $('#mainContent').fadeIn();
     });
   });
+
+  let sidebarToggle = false;
+  $('body').on('click', '#hideCourseSidenav', () => {
+    sidebarToggle = !sidebarToggle;
+    const sidebarWidth = sidebarToggle ? $('.course-accordion').width() : 0;
+
+    $('.course-accordion').toggleClass('hide-sidenav');
+    $('.course-card').animate({ 'margin-left': `${sidebarWidth / 2}px` }, 300);
+    $('.course-accordion').animate({ 'margin-left': `-${sidebarWidth}px` }, 300);
+  });
 });
