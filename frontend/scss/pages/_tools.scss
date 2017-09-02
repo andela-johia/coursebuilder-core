@@ -1,15 +1,13 @@
-
 .tools-page {
 
-  .tools-first-section 
-
+  .tools-first-section
   .section-label {
     margin-top: 5rem;
     text-align: left;
   }
-    .simple-container {
-        padding: 0 15px;
-    }
+  .simple-container {
+    padding: 0 15px;
+  }
 }
 
 #tools {
@@ -28,7 +26,6 @@
     }
   }
 
-
   .card-panel {
     transition: box-shadow .25s;
     padding: $card-padding;
@@ -44,8 +41,6 @@
     margin: 0 auto;
   }
 
-
-
   .tools-card {
     position: relative;
     margin: $element-top-margin 0 $element-bottom-margin 0;
@@ -54,7 +49,6 @@
     border-radius: 2px;
     @extend .z-depth-1;
     padding: 15px;
-
 
     .card-title {
       font-size: 24px;
@@ -148,9 +142,6 @@
       }
     }
 
-
-
-
     .tools-card-image {
       position: absolute;
 
@@ -190,6 +181,3 @@
     }
   }
 }
-
-
-

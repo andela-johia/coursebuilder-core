@@ -2,16 +2,16 @@
 
 {% block gcb_page_info %}
   if ('gcbSetPageInfo' in window) {
-    gcbSetPageInfo({
-      'page_type': '{{ page_type }}',
-      'unit_id': '{{ unit.unit_id }}',
-      {% if lesson %}
-        'lesson_id': '{{ lesson.lesson_id }}',
-      {% endif %}
-      {% if assessment %}
-        'assessment_id': '{{ assessment.unit_id }}',
-      {% endif %}
-    });
+  gcbSetPageInfo({
+  'page_type': '{{ page_type }}',
+  'unit_id': '{{ unit.unit_id }}',
+  {% if lesson %}
+    'lesson_id': '{{ lesson.lesson_id }}',
+  {% endif %}
+  {% if assessment %}
+    'assessment_id': '{{ assessment.unit_id }}',
+  {% endif %}
+  });
   }
 {% endblock %}
 
@@ -28,58 +28,37 @@
     {{ super() }}
     <script src="/modules/dashboard/resources/js/in_place_lesson_editor.js"></script>
     <link rel="stylesheet" href="/modules/dashboard/_static/css/in_place_lesson_editor.css">
-    <link rel="stylesheet" href="/static/material-design-icons/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet"
+          href="/static/material-design-icons/css/material-design-iconic-font.min.css">
   {% endblock %}
 {% endif %}
 
 {% block main_content %}
 
-<script>
-  var questionData = {};
-  questionData.scored = true;
-</script>
+  <script>
+    var questionData = {};
+    questionData.scored = true;
+  </script>
 
 
-<div id="gcb-main">
+  <div id="gcb-main">
 
-  <div id="course-page" class="page-wrapper active-page">
-    <div class="green-section">
+    <div id="course-page" class="page-wrapper active-page">
+      <div class="green-section">
         <div class="course-links">
-            <button class="course-bookmark waves-effect waves-light btn">
-                <i class="material-icons">star_border</i> BOOKMARK
-            </button>
-            <button class="dropdown-button nav-link" href="#!" data-activates="share-dropdown">
-                <i class="material-icons">share</i>
-                SHARE
-            </button>
+          <button class="course-bookmark waves-effect waves-light btn">
+            <i class="material-icons">star_border</i> BOOKMARK
+          </button>
+          <button class="dropdown-button nav-link" href="#!" data-activates="share-dropdown">
+            <i class="material-icons">share</i>
+            SHARE
+          </button>
 
-            <!--  Dropdown(s) -->
-            <ul id='share-dropdown' class='dropdown-content'>
-                <li><a href="https://plus.google.com/share?url=https://courses.academy.africa">
-                    <img src="/modules/explorer/_static/images/google-plus.png" alt=""
-                         width="25" height="22">
-                    Google +
-                </a></li>
-                <li class="divider"></li>
-                <li><a href="https://twitter.com/share?url=https://courses.academy.africa">
-                    <img src="/modules/explorer/_static/images/twitter.png" alt="twitter"
-                         widht="25" height="22">
-                    twitter</a></li>
-                <li>
-                    <a href="http://www.facebook.com/sharer/sharer.php?url=https://courses.academy.africa">
-                        <img src="/modules/explorer/_static/images/facebook.png" alt="FB"
-                             widht="22" height="22">
-                        Facebook</a></li>
-                <li>
-                    <a href="https://www.linkedin.com/in/share?url=https://courses.academy.africa">
-                        <img src="/modules/explorer/_static/images/linkedln.png" alt="Linkedln"
-                             widht="22" height="22">
-                        Linkedln</a></li>
-                <li class="divider"></li>
-            </ul>
+          {% include 'share_dropdown.html' %}
+
         </div>
 
-      <h2>{{ display_short_unit_title(unit) }}</h2>
+        <h2>{{ display_short_unit_title(unit) }}</h2>
         <h3>
           <ul id="gcb-breadcrumb" class="gcb-breadcrumb">
             {# I18N: Navigation breadcrumb. #}
@@ -99,53 +78,53 @@
             {% endif %}
           </ul>
         </h3>
-    </div>
+      </div>
 
 
-    <div class="course-content">
-      <div class="row">
+      <div class="course-content">
+        <div class="row">
 
 
-        <div class="course-accordion col l5 xl4 m12">
+          <div class="course-accordion col l5 xl4 m12">
 
-          {% if course_outline %}
-            {% include 'lesson_navbar.html' %}
-          {% endif %}
-
-        </div>
-
-        <div class="course-card col l7 xl8 m12">
-          <div class="card">
-
-            {{ html_hooks.insert('unit.after_content_begins') | safe }}
-            {% if not display_content %}
-            <div>
-              {# I18N: Text shown for a unit that contains no assessments, lessons, header or footer. #}
-              {{ gettext('This unit has no content.') }}
-            </div>
-            {% else %}
-            {% for item in display_content %}
-              <div>
-                {{ item }}
-              </div><!-- /gcb-aside -->
-            {% endfor %}
-            {% for item in extra_content %}
-              <div class="gcb-aside gcb-button-box">
-                {{ item }}
-              </div><!-- /gcb-aside -->
-            {% endfor %}
-          {% endif %}
+            {% if course_outline %}
+              {% include 'lesson_navbar.html' %}
+            {% endif %}
 
           </div>
 
-          <div class="course-navigation">
-            {% if unit.show_contents_on_one_page or
+          <div class="course-card col l7 xl8 m12">
+            <div class="card">
+
+              {{ html_hooks.insert('unit.after_content_begins') | safe }}
+              {% if not display_content %}
+                <div>
+                  {# I18N: Text shown for a unit that contains no assessments, lessons, header or footer. #}
+                  {{ gettext('This unit has no content.') }}
+                </div>
+              {% else %}
+                {% for item in display_content %}
+                  <div>
+                    {{ item }}
+                  </div><!-- /gcb-aside -->
+                {% endfor %}
+                {% for item in extra_content %}
+                  <div class="gcb-aside gcb-button-box">
+                    {{ item }}
+                  </div><!-- /gcb-aside -->
+                {% endfor %}
+              {% endif %}
+
+            </div>
+
+            <div class="course-navigation">
+              {% if unit.show_contents_on_one_page or
               (lesson and
                course_info.unit.hide_lesson_navigation_buttons) or
               (assessment and
                not is_confirmation and
                course_info.unit.hide_assessment_navigation_buttons) %}
-            {% else %}
+              {% else %}
                 {% if back_button_url %}
                   <a href="{{ back_button_url }}" class="btn">{{ gettext('Prev') }}</a>
                 {% endif %}
@@ -155,14 +134,14 @@
                 {% else %}
                   <a href="course" class="btn right"> {{ gettext('End') }} </a>
                 {% endif %}
-            {% endif %}
-          </div>
+              {% endif %}
+            </div>
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-</div>
+  </div>
 
 {% endblock %}

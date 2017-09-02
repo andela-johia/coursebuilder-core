@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
 }
+
 body {
   font-size: $text-size;
   overflow-x: hidden;
@@ -55,7 +56,6 @@ img {
   }
 }
 
-// Blue section
 .blue-section {
   background-color: $hover-blue;
   color: #fff;
@@ -93,6 +93,7 @@ img {
     font-weight: 100;
   }
 }
+
 .section-s {
   @extend .section;
   padding: 2rem 0;

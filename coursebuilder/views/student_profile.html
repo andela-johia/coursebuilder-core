@@ -16,7 +16,6 @@
 {% endblock %}
 
 {% block main_content %}
-
 <div id="gcb-main">
   <div id="student-dashboard">
 
@@ -29,7 +28,12 @@
             <div class="sd-top-details">
               <h3>{{ student_name }}</h3>
               <p>{{ student.email }}</p>
-              <a href="#!"><i class="material-icons">settings</i>Share</a>
+              <a href="#!" class="dropdown-button" data-activates="share-dropdown">
+                <i class="material-icons">settings</i>Share
+              </a>
+
+              {% include 'share_dropdown.html' %}
+
             </div>
           </div>
           <div class="col l6 m12"></div>
