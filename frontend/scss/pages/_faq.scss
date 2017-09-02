@@ -3,7 +3,6 @@
   padding-bottom: 30px;
   min-height: 500px;
 
-
   .img {
     position: relative;
     top: 50%;
@@ -13,12 +12,12 @@
     display: block;
     max-width: 100%;
     align-self: center;
-    max-width:20%;
-    max-height:20%;
+    max-width: 20%;
+    max-height: 20%;
   }
 
-  .card-content{
-    min-height: 18.5 rem;
+  .card-content {
+    min-height: 18.5rem;
     padding-bottom: 0;
     padding-top: 0;
     display: flex;
@@ -28,27 +27,24 @@
     padding-right: 2rem;
   }
 
-  #wizard
-  {
+  #wizard {
     font-size: 0.5rem;
     text-transform: none;
     text-align: left;
     position: relative;
     width: 100%;
-    font-family: Roboto,Arial,sans-serif;
+    font-family: Roboto, Arial, sans-serif;
     font-weight: 100;
     padding: 1.6rem 15px 2.4rem;
     height: 5.6rem;
     color: rgba(0, 0, 0, 0.87);
   }
-  span
-  {
+  span {
     font-size: 1rem;
     line-height: 100%;
     font-weight: 100;
   }
-  #expand
-  {
+  #expand {
     position: absolute;
     top: 20px;
     right: 2rem;
@@ -57,72 +53,61 @@
     line-height: 4.8rem;
     margin: -0.9rem 0 0;
   }
-  .collapsible-header
-  {
+  .collapsible-header {
     text-transform: none;
     text-align: left;
     position: relative;
     width: 100%;
-    font-family: Roboto,Arial,sans-serif;
+    font-family: Roboto, Arial, sans-serif;
     font-weight: 300;
     padding: 1.6rem 15px 2.4rem;
-    border-bottom: 1px solid rgba(0,0,0,0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     height: 5.6rem;
     color: rgba(0, 0, 0, 0.87);
   }
-  .collapsible-body
-  {
+  .collapsible-body {
     text-transform: none;
     width: 100%;
     padding: 1.6rem 15px 2.4rem;
     color: rgba(0, 0, 0, 0.87);
     background-color: white;
   }
-  #h2
-  {
-    padding-left: 50px; border: 30px
+  #h2 {
+    padding-left: 50px;
+    border: 30px
   }
   .faq-collapsible {
     display: none;
   }
-  .blue-section
-  {
+  .blue-section {
     position: absolute;
     left: 0px;
     right: 0px;
     z-index: 0;
     height: 175px;
   }
-  #mainContent
-  {
+  #mainContent {
     margin-top: 130px;
   }
-  #generalContent
-  {
+  #generalContent {
     margin-top: 130px;
   }
-  #accountSetup
-  {
+  #accountSetup {
     margin-top: 130px;
   }
-  #topicscontent
-  {
+  #topicscontent {
     margin-top: 130px;
   }
-  #eventscontent
-  {
+  #eventscontent {
     margin-top: 130px;
   }
-   #badgescontent
-  {
+  #badgescontent {
     margin-top: 130px;
   }
-  #certificatescontent
-  {
+  #certificatescontent {
     margin-top: 130px;
   }
-  #supportcontent
-  {
+  #supportcontent {
     margin-top: 130px;
   }
 }
