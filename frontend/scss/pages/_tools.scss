@@ -41,6 +41,11 @@
     margin: 0 auto;
   }
 
+  h2.tools-section-label.style-scope.tools-page {
+    padding-top: 23px;
+}
+
+
   .tools-card {
     position: relative;
     margin: $element-top-margin 0 $element-bottom-margin 0;
@@ -63,6 +68,7 @@
       font-weight: 500;
       margin-left: 265px
     }
+
 
     // Card Sizes
     &.small, &.medium, &.large {
