@@ -197,3 +197,26 @@
   font-weight: 400;
   padding-left: 40px;
 }
+
+.hr-sect {
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.35);
+  margin: 8px 0px;
+  padding-top: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 35px;
+  font-weight: 300;
+}
+.hr-sect::before,
+.hr-sect::after {
+	content: "";
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+	margin: 0px 8px;
+}
