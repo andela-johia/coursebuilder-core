@@ -57,7 +57,10 @@ img {
 }
 
 .blue-section {
-  background-color: $hover-blue;
+  background-image: url(../images/news-lab.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
   color: #fff;
   .blue-section-inner {
     max-width: $context-width;

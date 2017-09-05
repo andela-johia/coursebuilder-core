@@ -12,6 +12,7 @@
 
 #tools {
   background-color: $white-d;
+  
   .section {
     padding: 1.2rem 0;
 
@@ -68,7 +69,6 @@
       font-weight: 500;
       margin-left: 265px
     }
-
 
     // Card Sizes
     &.small, &.medium, &.large {
@@ -165,7 +165,7 @@
         margin-left: 30px;
       }
     }
-
+  
     .tools-card-content {
       padding: $card-padding;
 
@@ -187,3 +187,4 @@
     }
   }
 }
+
