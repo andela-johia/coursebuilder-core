@@ -59,6 +59,19 @@ window.addEventListener('WebComponentsReady', function documentReady() {
     }
   });
 
+  function countChars(textarea1, counter, max) {
+    var count = document.getElementById(textarea1).value.length;
+      document.getElementById(counter).innerHTML = count; 
+  }
+  function countChars(textarea2, counter, max) {
+    var count = document.getElementById(textarea2).value.length;
+      document.getElementById(counter).innerHTML = count; 
+  }
+  function countChars(textarea3, counter, max) {
+    var count = document.getElementById(textarea3).value.length;
+      document.getElementById(counter).innerHTML = count; 
+  }
+
   $('select').material_select();
 
   $('.faq-switch').on('click', function (e) {
