@@ -1,5 +1,6 @@
 #feedback {
   background-color: #f5f5f5;
+  margin-bottom: 80px;
   #email {
     color: black;
   }
@@ -69,9 +70,7 @@
     font-weight: 700;
     font-family: Roboto, Arial, sans-serif;
   }
-  li .active {
-    color: blue;
-  }
+
   .tab i {
     width: 1.8em;
     height: 1.8em;
@@ -87,6 +86,7 @@
   }
   .tab .active i {
     background-color: #4054B2;
+    color: $color-white;
   }
   nav i {
     display: block;
@@ -98,9 +98,6 @@
     font-weight: 200;
     font-size: 1em;
     line-height: 0%;
-  }
-  .line {
-    border-right: 1px solid black;
   }
   /* label focus color */
   .input-field input:focus + label {
@@ -134,5 +131,21 @@
   }
   .white {
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  }
+  #tabs-swipe-demo {
+    position: relative;
+
+    .tab::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 30%;
+      bottom: 30%;
+      width: 2px;
+      background-color: $brown-l;
+    }
+    .tab:first-child::after {
+      background-color: transparent;
+    }
   }
 }

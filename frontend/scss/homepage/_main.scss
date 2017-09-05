@@ -1,7 +1,7 @@
 //Hero Banner
 .hero-banner {
   display: block;
-  background: url('../images/hero-banner.png');
+  background: url('../images/hero-banner.jpg');
   background-position: center;
   background-size: cover;
 
@@ -196,6 +196,11 @@
   }
 }
 
+.testimonials .testimonials-card-tabs {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
 // Testimonials
 .testimonials {
   padding-bottom: 0;
@@ -232,7 +237,7 @@
     position: absolute;
     background-color: $color-white;
     padding: 15px;
-    top: 15%;
+    top: 20%;
     left: 10%;
 
     @include thin-paragraph;

@@ -96,9 +96,9 @@
           <div class="col l10 offset-l1">
             <nav>
               <ul id="tabs-swipe-demo" class="tabs">
-                <li class="tab col s4 line"><a class="active" href="#general">
+                <li class="tab col s4"><a class="active" href="#general">
                   <i class="material-icons">feedback</i></a><h3>General</h3></li>
-                <li class="tab col s4 line"><a href="#content">
+                <li class="tab col s4"><a href="#content">
                   <i class="material-icons">book</i></a><h3>Content</h3></li>
                 <li class="tab col s4"><a href="#report-bug">
                   <i class="material-icons">bug_report</i></a><h3>Report a bug</h3></li>
@@ -129,24 +129,24 @@
                 </h3>
 
                 <div class="row white">
-                  <form class="col s12" style="">
+                  <form class="col s12" action="https://formspree.io/test@gmail.com" method="post">
                     <div class="row">
                       <div class="input-field col s12">
-                        <input id="email" type="email" class="validate" style="border-bottom: 1px solid grey;">
+                        <input id="email" type="email" class="validate" style="border-bottom: 1px solid grey;" name="email">
                         <label for="email">Email</label>
                       </div>
                     </div>
                     <div class="row">
                       <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <textarea id="textarea1" class="materialize-textarea" onfocus="countChars('textarea1', 'char_count', 1000)" onkeydown="countChars('textarea1', 'char_count', 1000)" onkeyup="countChars('textarea1', 'char_count', 1000)" name="textarea"></textarea>
                         <label for="textarea1">Tell us about content ideas or feedback you'd like to share</label>
                       </div>
                       <div class="col s12" style="text-align: right; font-size: 12px; color: black;">
-                        0 / 1000
+                        <span id="char_count">0</span>
                       </div>
                     </div>
                     <div class="card-action col s12">
-                      <a href="https://freeformers.com/" class="right">SHARE</a>
+                      <button class="right" type="submit">SHARE</button>
                     </div>
                   </form>
                 </div>
@@ -157,7 +157,7 @@
                   Content feedback
                 </h3>
                 <div class="row white">
-                  <form class="col s12">
+                  <form class="col s12" action="mailto:test@gmail.com" method="post">
                     <div class="row">
                       <div class="input-field col s12">
                         <input id="email" type="email" class="validate" style="border-bottom: 1px solid grey;">
@@ -166,15 +166,15 @@
                     </div>
                     <div class="row">
                       <div class="input-field col s12">
-                        <textarea id="textarea2" class="materialize-textarea"></textarea>
+                        <textarea id="textarea2" class="materialize-textarea" onfocus="countChars('textarea2', 'char_count', 1000)" onkeydown="countChars('textarea2', 'char_count', 1000)" onkeyup="countChars('textarea2', 'char_count', 1000)"></textarea>
                         <label for="textarea2">Tell us about content ideas or feedback you'd like to share</label>
                       </div>
-                       <div class="col s12" style="text-align: right; font-size: 12px; color: black;">
-                        0 / 1000
+                      <div class="col s12" style="text-align: right; font-size: 12px; color: black;">
+                        <span id="char_count">0</span>
                       </div>
                     </div>
                     <div class="card-action col s12">
-                      <a href="https://freeformers.com/" class="right">SHARE</a>
+                      <button class="right" type="submit">SHARE</button>
                     </div>
                   </form>
                 </div>
@@ -204,7 +204,7 @@
                 </h3>
 
                 <div class="row white">
-                  <form class="col s12">
+                  <form class="col s12" action="mailto:test@gmail.com" method="post">
                     <div class="row">
                       <div class="input-field col s12">
                         <input id="email" type="email" class="validate" style="border-bottom: 1px solid grey;">
@@ -213,15 +213,15 @@
                     </div>
                     <div class="row">
                       <div class="input-field col s12">
-                        <textarea id="textarea3" class="materialize-textarea"></textarea>
-                        <label for="textarea3">Tell us about content ideas or feedback you'd like to share</label>
+                        <textarea id="textarea1" class="materialize-textarea" onfocus="countChars('textarea1', 'char_count', 1000)" onkeydown="countChars('textarea1', 'char_count', 1000)" onkeyup="countChars('textarea1', 'char_count', 1000)"></textarea>
+                        <label for="textarea1">Tell us about content ideas or feedback you'd like to share</label>
                       </div>
-                       <div class="col s12" style="text-align: right; font-size: 12px; color: black;">
-                        0 / 1000
+                      <div class="col s12" style="text-align: right; font-size: 12px; color: black;">
+                        <span id="char_count">0</span>
                       </div>
                     </div>
-                    <div class="card-action col s12">
-                      <a href="https://freeformers.com/" class="right">SHARE</a>
+                    <div class="card-action col s12" style="background-color: white; color: #4054B2; border: none;">
+                      <button class="right" type="submit">SHARE</button>
                     </div>
                   </form>
                 </div>
@@ -484,14 +484,18 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
 <script type="text/javascript">
- $(document).ready(function(){
-  $('#textarea1').val('');
-  $('#textarea1').trigger('autoresize');
-  $('#textarea2').val('');
-  $('#textarea2').trigger('autoresize');
-  $('#textarea3').val('');
-  $('#textarea3').trigger('autoresize');
- });
+  function countChars(textarea1, counter, max) {
+  var count = document.getElementById(textarea1).value.length;
+    document.getElementById(counter).innerHTML = count; 
+}
+function countChars(textarea2, counter, max) {
+  var count = document.getElementById(textarea2).value.length;
+    document.getElementById(counter).innerHTML = count; 
+}
+function countChars(textarea3, counter, max) {
+  var count = document.getElementById(textarea3).value.length;
+    document.getElementById(counter).innerHTML = count; 
+}
 </script>
 
   </body>
