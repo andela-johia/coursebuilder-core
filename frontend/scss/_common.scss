@@ -60,7 +60,7 @@ img {
   background-image: url(../images/news-lab.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 70vh;
+  height: 80vh;
   color: #fff;
   .blue-section-inner {
     max-width: $context-width;
@@ -100,4 +100,8 @@ img {
 .section-s {
   @extend .section;
   padding: 2rem 0;
+}
+
+.section.mission.blue-section.style-scope.home-page {
+  display: none;
 }
