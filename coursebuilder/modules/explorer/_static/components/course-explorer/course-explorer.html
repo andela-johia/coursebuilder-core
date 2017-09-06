@@ -1,9 +1,10 @@
 <link rel="import" href="/static/polymer-1.2.0/polymer/polymer.html">
-<link rel="import" href="/static/polymer-1.2.0/iron-ajax/iron-ajax.html" />
-<link rel="import" href="/static/polymer-1.2.0/paper-spinner/paper-spinner.html" />
+<link rel="import" href="/static/polymer-1.2.0/iron-ajax/iron-ajax.html"/>
+<link rel="import" href="/static/polymer-1.2.0/paper-spinner/paper-spinner.html"/>
 <link rel="import" href="/modules/explorer/_static/components/utility/unsafe-html.html">
 <link rel="import" href="/modules/explorer/_static/components/utility/floating-sidebar.html">
-<link rel="import" href="/modules/explorer/_static/components/course-cards/course-card-grouper.html">
+<link rel="import"
+      href="/modules/explorer/_static/components/course-cards/course-card-grouper.html">
 <link rel="import" href="/modules/explorer/_static/components/filter-sidebar/filter-sidebar.html">
 <link rel="import" href="/modules/explorer/_static/components/top-bar/top-bar.html">
 
@@ -17,100 +18,120 @@
 
 
 <dom-module id="course-explorer">
-    <template>
-        <top-bar current-user="[[currentUser]]"></top-bar>
+  <template>
+    <top-bar current-user="[[currentUser]]"></top-bar>
 
-        <home-page current-user="[[currentUser]]"></home-page>
+    <home-page current-user="[[currentUser]]"></home-page>
 
-        <certification-page current-user="[[currentUser]]"></certification-page>
+    <certification-page current-user="[[currentUser]]"></certification-page>
 
-        <tools-page></tools-page>
+    <tools-page></tools-page>
 
-        <partners-page></partners-page>
+    <partners-page></partners-page>
 
-        <feedback-page></feedback-page>
+    <feedback-page></feedback-page>
 
-        <help-page></help-page>
+    <help-page></help-page>
 
-        <events-page></events-page>
-
-
-      <div id="explorer" class="page-wrapper">
-
-          <style>
-              #top-content {
-                  background: white;
-                  border-bottom: 1px solid rgb(229, 229, 229);
-              }
-              paper-spinner {
-                  position: absolute;
-                  left: 32px;
-                  top: 32px;
-              }
-          </style>
-
-          <iron-ajax
-                  auto url="/modules/gql/query"
-                  params="[[_getCoursesQuery()]]"
-                  handle-as="json"
-                  json-prefix=")]}'"
-                  on-response="_onCoursesResponse"
-          ></iron-ajax>
-
-          <iron-ajax
-                  auto url="/modules/gql/query"
-                  params="[[_getBasicQuery()]]"
-                  handle-as="json"
-                  json-prefix=")]}'"
-                  on-response="_onBasicResponse"
-          ></iron-ajax>
+    <events-page></events-page>
 
 
-          <!--  Topic Library  -->
-          <div class="section blue-section">
-              <div class="blue-section-inner">
-                  <h2>Topic Library</h2>
-                  <p>The Digital Garage is your one-stop shop for mastering digital marketing. If you have what it takes
-                      to
-                      complete<br> each of the 23 topics and unlock every badge, you can earn the esteemed Digital Garage
-                      Certificate
-                      of Online <br>Proficiency.</p>
-              </div>
-          </div>
+    <div id="explorer" class="page-wrapper">
 
-          <div id="main">
+      <style>
+        #top-content {
+          background: white;
+          border-bottom: 1px solid rgb(229, 229, 229);
+        }
+
+        paper-spinner {
+          position: absolute;
+          left: 32px;
+          top: 32px;
+        }
+      </style>
+
+      <iron-ajax
+        auto url="/modules/gql/query"
+        params="[[_getCoursesQuery()]]"
+        handle-as="json"
+        json-prefix=")]}'"
+        on-response="_onCoursesResponse"
+      ></iron-ajax>
+
+      <iron-ajax
+        auto url="/modules/gql/query"
+        params="[[_getBasicQuery()]]"
+        handle-as="json"
+        json-prefix=")]}'"
+        on-response="_onBasicResponse"
+      ></iron-ajax>
 
 
-              <div id="content">
-                  <paper-spinner active="{{!coursesLoaded}}"></paper-spinner>
-                  <div class="section topic-library">
-                      <div class="simple-container">
-
-                        <h3 class="explorer-title">Featured Courses</h3>
-
-                              <filter-sidebar
-                                      filter-options="{{ filterOptions }}"
-                                      categories="[[categories]]"
-                              ></filter-sidebar>
-
-                          <div class="row">
-                              <course-card-grouper
-                                      id="grouper"
-                                      courses="[[_filter(courses.edges, filterOptions.*)]]"
-                              ></course-card-grouper>
-
-                          </div>
-
-                      </div>
-                  </div>
-
-              </div>
-          </div>
+      <!--  Topic Library  -->
+      <div class="section blue-section">
+        <div class="blue-section-inner">
+          <h2>Topic Library</h2>
+          <p>The Digital Garage is your one-stop shop for mastering digital marketing. If you have
+            what it takes
+            to
+            complete<br> each of the 23 topics and unlock every badge, you can earn the esteemed
+            Digital Garage
+            Certificate
+            of Online <br>Proficiency.</p>
+        </div>
       </div>
-    </template>
+
+      <div id="main">
+
+
+        <div id="content">
+          <paper-spinner active="{{!coursesLoaded}}"></paper-spinner>
+          <div class="section topic-library">
+            <div class="simple-container">
+
+              <h3 class="explorer-title">Featured Courses</h3>
+
+              <filter-sidebar
+                filter-options="{{ filterOptions }}"
+                categories="[[categories]]"
+              ></filter-sidebar>
+
+              <div class="row">
+                <course-card-grouper
+                  id="grouper"
+                  courses="[[_filter(courses.edges, filterOptions.*)]]"
+                ></course-card-grouper>
+              </div>
+
+              <template is="dom-if" if="[[!coursesLoaded]]">
+                <div class="loading-icon center">
+                  <div class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-teal-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="gap-patch">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </template>
   <script>
 
-    var _textMatch = function(needle, haystack) {
+    var _textMatch = function (needle, haystack) {
       return haystack.toUpperCase().indexOf(needle.toUpperCase()) != -1;
     }
 
@@ -144,32 +165,32 @@
         }
       },
 
-      _getBasicQuery: function() {
-        return {q:
-            '{site {title, logo {url, altText},' +
-            '  courseExplorer {extraContent}}, ' +
-            'currentUser {' +
-            '  email, loggedIn, canViewDashboard, loginUrl (destUrl: "/#!explorer"),' +
-            '  logoutUrl (destUrl: "/")}}'
+      _getBasicQuery: function () {
+        return {
+          q: '{site {title, logo {url, altText},' +
+          '  courseExplorer {extraContent}}, ' +
+          'currentUser {' +
+          '  email, loggedIn, canViewDashboard, loginUrl (destUrl: "/#!explorer"),' +
+          '  logoutUrl (destUrl: "/")}}'
         }
       },
 
-      _onBasicResponse: function(event) {
+      _onBasicResponse: function (event) {
         this.set('site', event.detail.response.data.site);
         this.set('currentUser', event.detail.response.data.currentUser);
       },
 
-      _getCoursesQuery: function() {
+      _getCoursesQuery: function () {
         return {
           q: '{allCourses {edges {node {' +
-             '  id, title, url, abstract, instructorDetails,' +
-             '  enrollment {enrolled}, openForRegistration, showInExplorer,' +
-             '  startDate, endDate, estimatedWorkload, category {name} }}}}',
+          '  id, title, url, abstract, instructorDetails,' +
+          '  enrollment {enrolled}, openForRegistration, showInExplorer,' +
+          '  startDate, endDate, estimatedWorkload, category {name} }}}}',
           expanded_gcb_tags: 'gcb-markdown'
         };
       },
 
-      _onCoursesResponse: function(event) {
+      _onCoursesResponse: function (event) {
         this.set('courses', event.detail.response.data.allCourses);
         this.set(
           'filterOptions.status', 'all'); // Todo:  this._enrolledInAny() ? 'enrolled' : 'all'
@@ -177,29 +198,29 @@
         this.set('coursesLoaded', true);
       },
 
-      _enrolledInAny: function() {
-        return this.courses.edges.some(function(course) {
+      _enrolledInAny: function () {
+        return this.courses.edges.some(function (course) {
           return course.node.enrollment.enrolled;
         })
       },
 
-      _getCategories: function() {
+      _getCategories: function () {
         var categories = []
-        this.courses.edges.forEach(function(edge) {
+        this.courses.edges.forEach(function (edge) {
           if (
-              edge.node.category &&
-              edge.node.category.name &&
-              categories.indexOf(edge.node.category.name) == -1 ) {
+            edge.node.category &&
+            edge.node.category.name &&
+            categories.indexOf(edge.node.category.name) == -1) {
             categories.push(edge.node.category.name);
           }
         })
         return categories;
       },
 
-      _filter: function(courses, filterOptionsPath) {
+      _filter: function (courses, filterOptionsPath) {
         var filterOptions = filterOptionsPath.base;
         var that = this;
-        return courses.filter(function(course) {
+        return courses.filter(function (course) {
           if (!course.node.showInExplorer) {
             return false;
           }
@@ -210,21 +231,21 @@
           // institution if it is visible but registration is no longer allowed
           // (it it's now "over").
           if (
-              filterOptions.status == 'enrolled' &&
-              !course.node.enrollment.enrolled) {
+            filterOptions.status == 'enrolled' &&
+            !course.node.enrollment.enrolled) {
             return false;
           } else if (
-              filterOptions.status == 'ended' &&
-              course.node.openForRegistration) {
+            filterOptions.status == 'ended' &&
+            course.node.openForRegistration) {
             return false;
           }
 
           // Filter by category
           if (
-              filterOptions.category != 'all' && (
-              !course.node.category ||
-              !course.node.category.name ||
-              course.node.category.name != filterOptions.category)) {
+            filterOptions.category != 'all' && (
+            !course.node.category ||
+            !course.node.category.name ||
+            course.node.category.name != filterOptions.category)) {
             return false;
           }
 
@@ -235,9 +256,11 @@
               course.node.abstract,
               course.node.instructorDetails,
             ]
+
             function match(field) {
               return field && _textMatch(filterOptions.filter, field);
             }
+
             if (!text_fields.some(match)) {
               return false;
             }
