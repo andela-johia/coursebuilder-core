@@ -239,14 +239,13 @@ p.card-text {
 
 a.card-link {
   margin-left: 1.8rem;
+  font-size: 1.0rem;
 }
 
 img {
   max-width: 100%;
   vertical-align: bottom;
   max-height: 30%;
-  margin-left: 7.5rem;
-  margin-top: 2.5rem;
 }
 
 .row {
@@ -254,4 +253,31 @@ img {
   margin-right: auto;
   margin-bottom: 0px;
   padding-left: 20px;
+}
+
+img.card-img-top {
+  margin-left: 7.9rem;
+  margin-top: 2.5rem;
+}
+
+.row box{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  padding-left: 30px;
+}
+
+img.cards-img-top {
+  margin-left: 7.9rem;
+  margin-top: 3.5rem;
+  max-width: 14.3rem;
+  margin-left: 5.2rem;
+}
+
+.card .cards-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-left: 1.8rem;
+  margin-top: 3.4rem;
+  margin-top: 6.6rem;
 }
