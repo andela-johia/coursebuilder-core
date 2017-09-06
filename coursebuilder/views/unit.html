@@ -58,25 +58,13 @@
 
         </div>
 
-        <h2>{{ display_short_unit_title(unit) }}</h2>
+        <h2><a href="course">{{ course_info.course.title }}</a></h2>
         <h3>
-          <ul id="gcb-breadcrumb" class="gcb-breadcrumb">
-            {# I18N: Navigation breadcrumb. #}
-            <li><a href="course">{{ gettext('Course') }}</a></li>
-            <li><a href="unit?unit={{ unit.unit_id }}">
-              {{ display_short_unit_title(unit) }}</a></li>
-            {% if lesson %}
-              <li>
-                {% if activity %}
-                  <a href="unit?unit={{ unit.unit_id }}&lesson={{ lesson.lesson_id }}">
-                {% endif %}
-                {# I18N: Navigation breadcrumb. #}
-                {{ gettext('Lesson') }} {{ lesson.index }}{% if activity %}</a>{% endif %}</li>
-              {% if activity %}
-                <li>{# I18N: Navigation breadcrumb. #} {{ gettext('Activity') }}</li>
-              {% endif %}
-            {% endif %}
-          </ul>
+        {% if lesson %}
+          <span class="light-text">Topic: </span>  {{ lesson.title }}
+        {% else %}
+          &nbsp;
+        {% endif %}
         </h3>
       </div>
 
