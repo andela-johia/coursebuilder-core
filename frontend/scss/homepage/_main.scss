@@ -217,10 +217,7 @@
 // Testimonials
 .testimonials {
   padding-bottom: 0;
-
-  .section-label {
-    margin-top: 5rem;
-  }
+  background-color: $white-l;
 
   .row {
     margin: 0;
@@ -232,6 +229,10 @@
   .testimonials-card-tabs {
     max-width: 500px;
     margin: 0 auto;
+
+    .tab {
+      background-color: $white-l;
+    }
   }
 
   .testimonial-div {
