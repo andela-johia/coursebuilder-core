@@ -1,7 +1,10 @@
 //Hero Banner
+.hero-banner .hero-banner-content h1{
+      color: white;
+    }
 .hero-banner {
   display: block;
-  background: url('../images/hero-banner.png');
+  background: url('../images/hero-banner.jpg');
   background-position: center;
   background-size: cover;
 
@@ -9,16 +12,18 @@
     max-width: $context-width;
     margin: 0 auto;
     padding: 70px 15px;
+    color: white;
 
     h1, p {
       max-width: 470px;
     }
 
     h1 {
-      color: $text-color-l;
+      color: white;
     }
 
     p {
+      color: $color-white;
       font-weight: 400;
       font-size: 18px;
       margin: 40px 0;
@@ -196,6 +201,11 @@
   }
 }
 
+.testimonials .testimonials-card-tabs {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
 // Testimonials
 .testimonials {
   padding-bottom: 0;
@@ -232,7 +242,7 @@
     position: absolute;
     background-color: $color-white;
     padding: 15px;
-    top: 15%;
+    top: 20%;
     left: 10%;
 
     @include thin-paragraph;
