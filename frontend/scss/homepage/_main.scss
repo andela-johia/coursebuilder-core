@@ -15,10 +15,10 @@
     color: white;
 
     h1, p {
-      max-width: 470px;
+      max-width: 700px;
     }
-
     h1 {
+      font-size: 3rem;
       color: white;
     }
 
@@ -35,6 +35,9 @@
     .hero-banner-content {
       padding: 50px 15px;
 
+      h1, p {
+        color: $text-color;
+      }
       h1 {
         font-size: 3rem;
       }
@@ -55,8 +58,13 @@
 // Mission
 .mission {
   .blue-section-inner {
-    max-width: 800px;
+    max-width: 1000px;
     text-align: center;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
   }
 }
 
