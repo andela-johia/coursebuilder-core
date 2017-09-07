@@ -93,6 +93,7 @@
           color: $text-color;
         }
       }
+
       li {
         padding: 0;
       }
@@ -254,6 +255,11 @@
   display: none !important;
 }
 
+.gcb-progress-empty,
+.gcb-progress-icon {
+  display: none;
+}
+
 .gcb-video-container iframe {
   min-height: 300px;
 }
@@ -292,4 +298,3 @@ ul#share-dropdown {
 .dropdown-content li > a, .dropdown-content li > span {
   color: #808080;
 }
-
