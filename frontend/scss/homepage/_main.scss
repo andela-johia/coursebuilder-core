@@ -1,4 +1,7 @@
 //Hero Banner
+.hero-banner .hero-banner-content h1{
+      color: white;
+    }
 .hero-banner {
   display: block;
   background: url('../images/hero-banner.jpg');
@@ -9,13 +12,14 @@
     max-width: $context-width;
     margin: 0 auto;
     padding: 70px 15px;
+    color: white;
 
     h1, p {
       max-width: 470px;
     }
 
     h1 {
-      color: $color-white;
+      color: white;
     }
 
     p {
