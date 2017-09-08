@@ -11,7 +11,15 @@
           <p>Kickstart your career with an impressive digital<br> certification. Our free online
             courses will guide you<br> through everything from search engines, to social <br>media
             and beyond.</p>
-          <a href="#!" class="waves-effect waves-light btn-large">Start Learning</a>
+
+          <template is="dom-if" if="[[!currentUser.loggedIn]]">
+            <a href="[[currentUser.loginUrl]]" class="waves-effect waves-light btn-large">Start
+              Learning</a>
+          </template>
+
+          <template is="dom-if" if="[[currentUser.loggedIn]]">
+            <a href="#!explorer" class="waves-effect waves-light btn-large">Keep Learning</a>
+          </template>
         </div>
 
       </div>
@@ -95,7 +103,7 @@
             <div class="item">
               <div class="row">
                 <div class="col m6 s12 how-it-works-img">
-                  <img src="/modules/explorer/_static/images/how4.png" alt="">
+                  <img src="/modules/explorer/_static/images/how4.jpg" alt="">
                 </div>
                 <div class="col m6 s12">
                   <h3 class="how-it-works-heading">Who is it for?</h3>
@@ -107,7 +115,7 @@
             <div class="item">
               <div class="row">
                 <div class="col m6 s12 how-it-works-img">
-                  <img src="/modules/explorer/_static/images/step_two.png" alt="">
+                  <img src="/modules/explorer/_static/images/how5.jpg" alt="">
                 </div>
                 <div class="col m6 s12">
                   <h3 class="how-it-works-heading">How it works</h3>
@@ -122,7 +130,7 @@
             <div class="item">
               <div class="row">
                 <div class="col m6 s12 how-it-works-img">
-                  <img src="/modules/explorer/_static/images/how2.png" alt="">
+                  <img src="/modules/explorer/_static/images/how2.jpg" alt="">
                 </div>
                 <div class="col m6 s12">
                   <h3 class="how-it-works-heading">Learn from experience</h3>
@@ -136,7 +144,7 @@
             <div class="item">
               <div class="row">
                 <div class="col m6 s12 how-it-works-img">
-                  <img src="/modules/explorer/_static/images/how2.png" alt="">
+                  <img src="/modules/explorer/_static/images/how1.jpg" alt="">
                 </div>
                 <div class="col m6 s12">
                   <h3 class="how-it-works-heading">Apply your knowledge</h3>
@@ -148,7 +156,7 @@
             <div class="item">
               <div class="row">
                 <div class="col m6 s12 how-it-works-img">
-                  <img src="/modules/explorer/_static/images/how3.png" alt="">
+                  <img src="/modules/explorer/_static/images/how3.jpg" alt="">
                 </div>
                 <div class="col m6 s12">
                   <h3 class="how-it-works-heading">Keep going!</h3>
