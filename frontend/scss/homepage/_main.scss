@@ -1,4 +1,7 @@
 //Hero Banner
+.hero-banner .hero-banner-content h1{
+      color: white;
+    }
 .hero-banner {
   display: block;
   background: url('../images/hero-banner.jpg');
@@ -9,13 +12,14 @@
     max-width: $context-width;
     margin: 0 auto;
     padding: 70px 15px;
+    color: white;
 
     h1, p {
-      max-width: 470px;
+      max-width: 700px;
     }
-
     h1 {
-      color: $color-white;
+      font-size: 3rem;
+      color: white;
     }
 
     p {
@@ -31,6 +35,9 @@
     .hero-banner-content {
       padding: 50px 15px;
 
+      h1, p {
+        color: $text-color;
+      }
       h1 {
         font-size: 3rem;
       }
@@ -51,8 +58,13 @@
 // Mission
 .mission {
   .blue-section-inner {
-    max-width: 800px;
+    max-width: 1000px;
     text-align: center;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
   }
 }
 
@@ -205,10 +217,7 @@
 // Testimonials
 .testimonials {
   padding-bottom: 0;
-
-  .section-label {
-    margin-top: 5rem;
-  }
+  background-color: $white-l;
 
   .row {
     margin: 0;
@@ -221,6 +230,10 @@
   .testimonials-card-tabs {
     max-width: 500px;
     margin: 0 auto;
+
+    .tab {
+      background-color: $white-l;
+    }
   }
 
   .testimonial-div {

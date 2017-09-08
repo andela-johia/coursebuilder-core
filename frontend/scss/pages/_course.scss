@@ -13,12 +13,22 @@
     font-weight: 400;
     text-transform: capitalize;
   }
+
   h3 {
     font-size: 1rem;
     margin-top: 15px;
   }
+
   .light-text {
-    font-weight: 200;
+    font-weight: 400;
+    color: $brown-l;
+  }
+
+  a {
+    color: $color-white;
+    &:hover {
+      color: $brown-l;
+    }
   }
 
   .course-links {
@@ -255,7 +265,8 @@
 }
 
 .gcb-progress-empty,
-.gcb-progress-icon {
+.gcb-progress-icon,
+.gcb-lesson-title {
   display: none;
 }
 
