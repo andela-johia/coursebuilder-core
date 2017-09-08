@@ -12,7 +12,7 @@
 
 #tools {
   background-color: $white-d;
-  
+
   .section {
     padding: 1.2rem 0;
 
@@ -165,7 +165,7 @@
         margin-left: 30px;
       }
     }
-  
+
     .tools-card-content {
       padding: $card-padding;
 
@@ -186,99 +186,99 @@
       }
     }
   }
-}
 
-.navbar-course {
-  background-color: #fff;
-}
+  .navbar-course {
+    background-color: #fff;
+  }
 
-.navbar-course li a {
-  color: #000;
-  font-weight: 400;
-  padding-left: 40px;
-}
+  .navbar-course li a {
+    color: #000;
+    font-weight: 400;
+    padding-left: 40px;
+  }
 
-.hr-sect {
-	display: flex;
-	flex-basis: 100%;
-	align-items: center;
-	color: rgba(0, 0, 0, 0.35);
-  margin: 8px 0px;
-  padding-top: 80px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 30px;
-  font-size: 35px;
-  font-weight: 300;
-}
-.hr-sect::before,
-.hr-sect::after {
-  content: "";
-	flex-grow: 1;
-	background: rgba(0, 0, 0, 0.35);
-	height: 1px;
-	font-size: 0px;
-	line-height: 0px;
-	margin: 0px 8px;
-}
+  .hr-sect {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.35);
+    margin: 8px 0px;
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    font-size: 35px;
+    font-weight: 300;
+  }
+  .hr-sect::before,
+  .hr-sect::after {
+    content: "";
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 8px;
+  }
 
-.card .card-title {
-  font-size: 24px;
-  font-weight: 400;
-  margin-left: 1.8rem;
-  margin-top: 3.4rem;
-  margin-top: 4.6rem;
-}
+  .card .card-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-left: 1.8rem;
+    margin-top: 3.4rem;
+    margin-top: 4.6rem;
+  }
 
-p.card-text {
-  margin-left: 1.8rem;
-  margin-bottom: 2.6rem;
-  margin-right: 1.4rem;
-  font-weight: 300;
-}
+  p.card-text {
+    margin-left: 1.8rem;
+    margin-bottom: 2.6rem;
+    margin-right: 1.4rem;
+    font-weight: 300;
+  }
 
-a.card-link {
-  margin-left: 1.8rem;
-  font-size: 1.0rem;
-}
+  a.card-link {
+    margin-left: 1.8rem;
+    font-size: 1.0rem;
+  }
 
-img {
-  max-width: 100%;
-  max-height: 100%;
-  vertical-align: bottom;
-  max-height: 30%;
-}
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: bottom;
+    max-height: 30%;
+  }
 
-.row {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0px;
-  padding-left: 20px;
-}
+  .row {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    padding-left: 20px;
+  }
 
-img.card-img-top {
-  margin-left: 7.9rem;
-  margin-top: 2.5rem;
-}
+  img.card-img-top {
+    margin-left: 7.9rem;
+    margin-top: 2.5rem;
+  }
 
-.row box{
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0px;
-  padding-left: 30px;
-}
+  .row box {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    padding-left: 30px;
+  }
 
-img.cards-img-top {
-  margin-left: 7.9rem;
-  margin-top: 3.5rem;
-  max-width: 14.3rem;
-  margin-left: 5.2rem;
-}
+  img.cards-img-top {
+    margin-left: 7.9rem;
+    margin-top: 3.5rem;
+    max-width: 14.3rem;
+    margin-left: 5.2rem;
+  }
 
-.card .cards-title {
-  font-size: 24px;
-  font-weight: 400;
-  margin-left: 1.8rem;
-  margin-top: 3.4rem;
-  margin-top: 6.6rem;
+  .card .cards-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-left: 1.8rem;
+    margin-top: 3.4rem;
+    margin-top: 6.6rem;
+  }
 }
