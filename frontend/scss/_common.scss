@@ -56,13 +56,29 @@ img {
   }
 }
 
-.blue-section {
+.section {
+  padding: 3.8rem 0;
+
+  .section-label {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 0;
+    font-weight: 100;
+  }
+}
+
+.section-s {
+  @extend .section;
+  padding: 2rem 0;
+}
+
+.training-center {
   background-image: url(../images/news-lab.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 80vh;
   color: #fff;
-  .blue-section-inner {
+  .training-section-inner {
     max-width: $context-width;
     margin: 0 auto;
     padding: 0 15px;
@@ -84,24 +100,4 @@ img {
       text-align: left;
     }
   }
-}
-
-.section {
-  padding: 3.8rem 0;
-
-  .section-label {
-    text-align: center;
-    font-size: 1.6rem;
-    margin-top: 0;
-    font-weight: 100;
-  }
-}
-
-.section-s {
-  @extend .section;
-  padding: 2rem 0;
-}
-
-.section.mission.blue-section.style-scope.home-page {
-  display: none;
 }
