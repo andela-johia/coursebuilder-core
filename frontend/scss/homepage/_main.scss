@@ -95,6 +95,14 @@
       margin: 0 auto;
     }
   }
+
+  .owl-nav {
+    min-height: 0;
+
+    .owl-prev, .owl-next {
+      padding: 20px;
+    }
+  }
 }
 
 // How it works
