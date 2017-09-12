@@ -33,6 +33,9 @@
   .card-action {
     border: none;
     padding-right: 7px;
+    max-width: 100px;
+    max-height: 50px;
+    margin: 0 auto;
   }
 
   .blue-section-inner h2 {
@@ -56,7 +59,7 @@
 
 }
 
-.partners-containter {
+.partners-container {
   max-width: 800px;
   margin: 0 auto;
 }
@@ -91,4 +94,10 @@ p.rectangle {
 }
 p.impact {
   padding-top: 25px;
+}
+
+.awards .img-item img {
+  max-width: 100px;
+  // max-height: 50px;
+  margin: 0 auto;
 }
