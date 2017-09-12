@@ -72,3 +72,23 @@
   max-height: 400px;
   margin: 0 auto;
 }
+
+.item-rectangle-large {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.awards p, .how-it-works p {
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 0.8px;
+    line-height: 25px;
+    padding-top: 11px;
+    color: #616161;
+}
+p.rectangle {
+  padding-top: 20px;
+}
+p.impact {
+  padding-top: 25px;
+}
