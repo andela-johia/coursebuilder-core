@@ -53,12 +53,10 @@ footer {
         height: 30px;
         margin-right: 20px;
         margin-bottom: 10px;
-        filter: grayscale(100%);
       }
       .cfa-footer-logo {
         height: 50px;
         margin-bottom: 0;
-        border-right: 1px solid grey;
       }
       .footer-captions
       {
@@ -72,6 +70,9 @@ footer {
       text-align: right;
       img {
         margin-left: 30px;
+      }
+      a{
+        color: black;
       }
     }
   }
