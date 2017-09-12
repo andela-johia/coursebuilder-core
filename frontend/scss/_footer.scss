@@ -58,6 +58,11 @@ footer {
         height: 50px;
         margin-bottom: 0;
       }
+      .footer-captions
+      {
+        font-size: 10px; 
+        color: grey;
+      }
     }
 
     .footer-social-icons {
@@ -65,6 +70,9 @@ footer {
       text-align: right;
       img {
         margin-left: 30px;
+      }
+      a{
+        color: black;
       }
     }
   }
