@@ -64,11 +64,11 @@
   margin: 0 auto;
 }
 
-.awards .item img {
-  max-width: 100px;
-  max-height: 50px;
-  margin: 0 auto;
-}
+// .awards .item img {
+//   max-width: 100px;
+//   max-height: 50px;
+//   margin: 0 auto;
+// }
 
 .awards .item-rectangle img {
   max-width: 200px;
@@ -89,15 +89,19 @@
     padding-top: 11px;
     color: #616161;
 }
-p.rectangle {
-  padding-top: 20px;
-}
-p.impact {
-  padding-top: 25px;
-}
-
 .awards .img-item img {
   max-width: 100px;
   // max-height: 50px;
   margin: 0 auto;
 }
+
+.partner-img {
+  height: 100px;
+  display: flex;
+  align-items: center;
+
+  img {
+    max-height: 100%;
+  }
+}
+
