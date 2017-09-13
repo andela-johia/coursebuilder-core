@@ -95,6 +95,14 @@
       margin: 0 auto;
     }
   }
+
+  .owl-nav {
+    min-height: 0;
+
+    .owl-prev, .owl-next {
+      padding: 20px;
+    }
+  }
 }
 
 // How it works
@@ -254,7 +262,7 @@
   }
 }
 
-// Continue learing
+// Continue learning
 .continue-learning {
   padding: 30px 5% 30px 5%;
   text-align: right;
@@ -280,4 +288,37 @@
     color: #fff;
   }
   @include sub-heading;
+}
+
+.join {
+  margin-top: 1.8rem;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  background-color: #1477d6;
+  color: #fff;
+  text-align: center;
+}
+
+p.tiny-text {
+  font-weight: 200;
+  font-size: 1.0rem;
+}
+
+button.btn.btn-default {
+  margin-top: 2.6rem;
+  color: #000;
+  margin-right: 2.5rem;
+  background-color: #fff;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+button.btn.btn-default img {
+ max-height:100px;
+ margin-bottom: 0.5rem;
+}
+
+.awards .owl-nav .owl-prev, .awards .owl-nav .owl-next {
+  padding: 20px;
+  margin-left: -10px;
+  margin-right: -10px;
 }

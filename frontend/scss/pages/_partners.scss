@@ -10,7 +10,6 @@
       height: 250px;
     }
   }
-
   .card-image {
     height: 80%;
     max-height: 100%;
@@ -29,10 +28,12 @@
       }
     }
   }
-
   .card-action {
     border: none;
     padding-right: 7px;
+    max-width: 100px;
+    max-height: 50px;
+    margin: 0 auto;
   }
 
   .blue-section-inner h2 {
@@ -48,15 +49,37 @@
     font-weight: 300;
   }
 }
-
 #feedback {
   .blue-section-inner h2 {
     margin-bottom: 0;
   }
 
 }
-
-.partners-containter {
+.partners-container {
   max-width: 800px;
   margin: 0 auto;
 }
+
+.awards p, .how-it-works p {
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 0.8px;
+    line-height: 25px;
+    padding-top: 11px;
+    color: #616161;
+}
+.awards .img-item img {
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+.partner-img {
+  height: 100px;
+  display: flex;
+  align-items: center;
+
+  img {
+    max-height: 100%;
+  }
+}
+
