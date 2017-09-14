@@ -57,10 +57,14 @@
 
 // Mission
 .mission {
+  background: white;
   .blue-section-inner {
     max-width: 1000px;
     text-align: center;
-
+    color: black;
+    h2{
+      color: red;
+    }
     p {
       margin: 0;
       padding: 0;
