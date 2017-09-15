@@ -12,6 +12,8 @@
     max-width: $context-width;
     color: white;
     height: 100%;
+    position: relative;
+    width: 100%;
 
     h1 {
       font-size: 2rem;
@@ -25,11 +27,13 @@
     a{
       background: red;
       position: absolute;
-      bottom: 50;
-      left: 50;
       float: right;
+      position: absolute;
+      top: 50%;
+      left: 50%;
     }
   }
+
 
   @media screen and (max-width: 992px) {
     background: $white-d;
