@@ -11,21 +11,23 @@
   .hero-banner-content {
     max-width: $context-width;
     color: white;
+    height: 100%;
 
-    h1, p {
-      max-width: 500px;
-    }
     h1 {
       font-size: 2rem;
       font-family: Trebuchet MS;
       color: white;
       background: rgba(0, 0, 0, 0.5);
       padding: 30px;
+      max-width: 500px;
+      margin: 2.1rem 0 0 0;
     }
     a{
       background: red;
-      margin-left: 50%;
-      text-align: center;
+      position: absolute;
+      bottom: 50;
+      left: 50;
+      float: right;
     }
   }
 
