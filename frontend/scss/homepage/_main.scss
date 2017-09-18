@@ -10,25 +10,29 @@
 
   .hero-banner-content {
     max-width: $context-width;
-    margin: 0 auto;
-    padding: 70px 15px;
     color: white;
+    position: relative;
 
-    h1, p {
-      max-width: 700px;
-    }
     h1 {
-      font-size: 3rem;
+      font-size: 2rem;
+      font-family: Trebuchet MS;
       color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      max-width: 500px;
+      margin: 0 0 0 0;
     }
 
-    p {
-      color: $color-white;
-      font-weight: 400;
-      font-size: 18px;
-      margin: 40px 0;
+    a {
+      background: red;
+      position: absolute;
+      float: right;
+      position: absolute;
+      top: 50%;
+      left: 50%;
     }
   }
+
 
   @media screen and (max-width: 992px) {
     background: $white-d;
@@ -38,6 +42,7 @@
       h1, p {
         color: $text-color;
       }
+
       h1 {
         font-size: 3rem;
       }
@@ -57,9 +62,12 @@
 
 // Mission
 .mission {
+  background: white;
+
   .blue-section-inner {
     max-width: 1000px;
     text-align: center;
+    color: black;
 
     p {
       margin: 0;
@@ -163,6 +171,7 @@
   .question-card-media {
     width: 66.66%;
   }
+
   .question-card-text {
     width: 33.2%;
     padding: 20px;
@@ -190,6 +199,7 @@
         font-weight: 500;
         color: $hover-blue;
       }
+
       p {
         margin-bottom: 80px;
       }
@@ -208,8 +218,10 @@
   @include thin-paragraph;
 
   @media screen and (max-width: 1072px) {
+
     .question-card-div {
       flex-direction: column;
+
       .question-card-media, .question-card-text {
         width: 100%;
       }
@@ -225,6 +237,7 @@
   .row {
     margin: 0;
   }
+
   .card-tabs {
     border: none;
   }
@@ -277,16 +290,20 @@
   p {
     margin-top: 0;
   }
+
   h3 {
     margin: 0;
   }
+
   i {
     position: absolute;
     right: -30px;
   }
+
   a {
     color: #fff;
   }
+
   @include sub-heading;
 }
 
@@ -312,6 +329,7 @@ button.btn.btn-default {
   font-size: 0.9rem;
   text-transform: capitalize;
 }
+
 button.btn.btn-default img {
  max-height:100px;
  margin-bottom: 0.5rem;
