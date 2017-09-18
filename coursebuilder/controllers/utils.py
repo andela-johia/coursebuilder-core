@@ -606,7 +606,7 @@ class ApplicationHandler(webapp2.RequestHandler):
             carousel_markup = {
                 '[start_carousel]': '<div class="owl-carousel owl-theme course-carousel"><div class="item">',
                 '[split]': '</div><div class="item">',
-                '[end_carousel]': '</div></div>'
+                '[stop_carousel]': '</div></div>'
             }
             for keyword, markup in carousel_markup.iteritems():
                 content = content.replace(keyword, markup)

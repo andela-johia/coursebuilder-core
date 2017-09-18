@@ -350,6 +350,9 @@ function bindEditorField(Y) {
     'gcb-iframe',
     'createlink',
     'text-file-upload-tag',
+    'startCarousel',
+    'breakCarousel',
+    'stopCarousel',
   ];
 
   RichTextEditor.prototype.isReady = function() {
@@ -443,6 +446,24 @@ function bindEditorField(Y) {
         label: 'Image',
         value: 'insertimage',
         disabled: false
+      },
+      {
+        type: 'push',
+        label: 'Start Carousel',
+        value: 'startCarousel',
+        disabled: false
+      },
+      {
+        type: 'push',
+        label: 'Break Carousel (new carousel item)',
+        value: 'breakCarousel',
+        disabled: false
+      },
+      {
+        type: 'push',
+        label: 'Stop Carousel',
+        value: 'stopCarousel',
+        disabled: false
       }
     ];
     for (var i = 0; i < RTE_TAG_DATA.length; i++) {
@@ -464,6 +485,15 @@ function bindEditorField(Y) {
     }
 
     this.editor.toolbar.on('buttonClick', function(evt) {
+      if (evt.button.value === 'startCarousel') {
+        that.editor.execCommand('inserthtml', '[start_carousel]');
+      }
+      if (evt.button.value === 'breakCarousel') {
+        that.editor.execCommand('inserthtml', '[split]');
+      }
+      if (evt.button.value === 'stopCarousel') {
+        that.editor.execCommand('inserthtml', '[stop_carousel]');
+      }
       that._onAddCustomComponentButtonClicked(evt);
     });
   };
