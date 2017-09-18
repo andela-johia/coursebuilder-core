@@ -12,9 +12,11 @@
   .tabs {
     background-color: transparent;
     margin: 0 0;
+
     a {
       color: #fff;
     }
+
     .indicator {
       background-color: $green;
       height: 4px;
@@ -34,10 +36,12 @@
 
   .event-content {
     padding: 20px 20px 0 20px;
+
     .event-register {
       color: $primary-color;
       font-size: 1rem;
     }
+    
     p {
       font-weight: 300;
       font-size: 1rem;
