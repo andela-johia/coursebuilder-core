@@ -602,8 +602,15 @@ class ApplicationHandler(webapp2.RequestHandler):
         models.MemcacheManager.begin_readonly()
         try:
             template = self.get_template(template_file, additional_dirs)
-            return jinja2.utils.Markup(
-                template.render(template_values, autoescape=True))
+            content = template.render(template_values, autoescape=True)
+            carousel_markup = {
+                '[start_carousel]': '<div class="owl-carousel owl-theme course-carousel"><div class="item">',
+                '[split]': '</div><div class="item">',
+                '[end_carousel]': '</div></div>'
+            }
+            for keyword, markup in carousel_markup.iteritems():
+                content = content.replace(keyword, markup)
+            return jinja2.utils.Markup(content)
         finally:
             models.MemcacheManager.end_readonly()
             courses.Course.clear_current()
