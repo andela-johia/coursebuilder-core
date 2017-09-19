@@ -94,7 +94,7 @@
   background-color: $white-d;
 
   .item {
-    
+
     img {
       max-width: 200px;
       margin: 0 auto;
@@ -104,7 +104,9 @@
   }
 
   .item-rectangle {
-
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
     img {
       max-width: 200px;
       margin: 0 auto;
