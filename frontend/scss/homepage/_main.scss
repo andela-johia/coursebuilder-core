@@ -78,7 +78,6 @@
 
 // Awards & How it works
 .awards, .how-it-works {
-  padding: 4.4rem 30px;
 
   .carousel-section-wrapper {
     display: block;
@@ -93,12 +92,9 @@
 .awards {
   text-align: center;
   background-color: $white-d;
-  min-height: 10px;
 
   .item {
-    min-height: 100px;
-    text-align: center;
-
+    
     img {
       max-width: 200px;
       margin: 0 auto;
@@ -108,8 +104,6 @@
   }
 
   .item-rectangle {
-    min-height: 100px;
-    text-align: center;
 
     img {
       max-width: 200px;
