@@ -25,6 +25,7 @@ import string
 import sys
 import traceback
 import zipfile
+from lxml import html
 
 import appengine_config
 from google.appengine.api import namespace_manager
@@ -339,3 +340,22 @@ def find_youtube_video_id(text):
         if match:
             return match.group(1)
     return None
+
+
+def embed_carousel(content):
+    start_key = '[start_carousel]'
+    stop_key = '[stop_carousel]'
+    check = True
+
+    while check:
+        start = content.find(start_key)
+        end = content.find(stop_key, start)
+        if start != -1 and end != -1:
+            to_be_formatted = content[start + len(start_key):end].split('[split]')
+            to_be_formatted = '<div class="owl-carousel owl-theme course-carousel"><div class="item">' + '</div><div class="item">'.join(
+                map(lambda item: html.tostring(html.fromstring(item)),
+                    to_be_formatted)) + '</div></div>'
+            content = content[:start] + to_be_formatted + content[end + len(stop_key):]
+        else:
+            check = False
+    return content

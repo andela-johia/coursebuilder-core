@@ -486,13 +486,13 @@ function bindEditorField(Y) {
 
     this.editor.toolbar.on('buttonClick', function(evt) {
       if (evt.button.value === 'startCarousel') {
-        that.editor.execCommand('inserthtml', '<br>[start_carousel]<br>');
+        that.editor.execCommand('inserthtml', '[start_carousel]');
       }
       if (evt.button.value === 'breakCarousel') {
-        that.editor.execCommand('inserthtml', '<br>[split]<br>');
+        that.editor.execCommand('inserthtml', '[split]');
       }
       if (evt.button.value === 'stopCarousel') {
-        that.editor.execCommand('inserthtml', '<br>[stop_carousel]<br>');
+        that.editor.execCommand('inserthtml', '[stop_carousel]');
       }
       that._onAddCustomComponentButtonClicked(evt);
     });

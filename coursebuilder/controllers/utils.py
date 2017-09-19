@@ -30,7 +30,6 @@ import jinja2
 import sites
 import webapp2
 from webob import multidict
-from lxml import html
 
 import appengine_config
 from common import jinja_utils
@@ -603,19 +602,7 @@ class ApplicationHandler(webapp2.RequestHandler):
         models.MemcacheManager.begin_readonly()
         try:
             template = self.get_template(template_file, additional_dirs)
-            content = template.render(template_values, autoescape=True)
-            try:
-                start_key = '[start_carousel]'
-                stop_key = '[stop_carousel]'
-                start = content.index(start_key) + len(start_key)
-                end = content.index(stop_key)
-                to_be_formatted = content[start:end].split('[split]')
-                to_be_formatted = '<div class="owl-carousel owl-theme course-carousel"><div class="item">' + '</div><div class="item">'.join(
-                    map(lambda item: html.tostring(html.fromstring(item)),
-                        to_be_formatted)) + '</div></div>'
-                content = content[:start - len(start_key)] + to_be_formatted + content[end + len(stop_key):]
-            except ValueError:
-               pass
+            content = common_utils.embed_carousel(template.render(template_values, autoescape=True))
             return jinja2.utils.Markup(content)
         finally:
             models.MemcacheManager.end_readonly()
