@@ -10,7 +10,6 @@ $(document).ready(function () {
     autoplay: true,
     autoplayTimeout: 1000,
     autoplayHoverPause: false,
-    nav: true,
     dots: false,
     items: 4
   });
