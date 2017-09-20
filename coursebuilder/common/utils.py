@@ -345,17 +345,24 @@ def find_youtube_video_id(text):
 def embed_carousel(content):
     start_key = '[start_carousel]'
     stop_key = '[stop_carousel]'
-    check = True
 
-    while check:
+    while True:
         start = content.find(start_key)
         end = content.find(stop_key, start)
-        if start != -1 and end != -1:
-            to_be_formatted = content[start + len(start_key):end].split('[split]')
-            to_be_formatted = '<div class="owl-carousel owl-theme course-carousel"><div class="item">' + '</div><div class="item">'.join(
-                map(lambda item: html.tostring(html.fromstring(item)),
-                    to_be_formatted)) + '</div></div>'
-            content = content[:start] + to_be_formatted + content[end + len(stop_key):]
+        next_start = content.find(start_key, start + len(start_key))
+        not_recursive = True if next_start == -1 or next_start > end else False
+
+        # Ensure that only valid pairs are rendered
+        if start != -1 and end != -1 and not_recursive:
+            in_carousel = content[start + len(start_key):end].split('[split]')
+
+            # Parse the html for each item obtained from the split.
+            in_carousel = map(lambda item: html.tostring(html.fromstring(item)), in_carousel)
+
+            # Add the carousel start and end html with the content in-between
+            result = '<div class="owl-carousel owl-theme course-carousel"><div class="item">'
+            result += '</div><div class="item">'.join(in_carousel) + '</div></div>'
+            content = content[:start] + result + content[end + len(stop_key):]
         else:
-            check = False
+            break
     return content
