@@ -13,14 +13,14 @@
     color: white;
     position: relative;
 
-    @media screen and (max-width: 1024px){}
+    @media screen and (max-width: 992px){
     h1 {
       font-size: 2rem;
       font-family: Trebuchet MS;
       color: white;
       background: rgba(0, 0, 0, 0.5);
       padding: 80px;
-      max-width: 500px;
+      min-width: 500px;
       margin: 0 0 0 0;
       min-height: 430px;
     }
@@ -32,6 +32,8 @@
       left: 50%;
     }
   }
+}
+}
 
 
   @media screen and (max-width: 992px) {
@@ -57,7 +59,6 @@
         margin-top: 30px;
       }
     }
-  }
 }
 
 // Mission
@@ -302,12 +303,12 @@
 .continue-learning {
   padding: 30px 5% 30px 5%;
   text-align: right;
-  background-color: $green;
+  background-color: #1968a8;
   color: $color-white;
   @include transition();
 
   &:hover {
-    background-color: lighten($green, 5%);
+    background-color: lighten(#1968a8, 5%);
   }
 
   p {
