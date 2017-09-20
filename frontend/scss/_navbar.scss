@@ -8,11 +8,13 @@
 
   a {
     color: #000;
+
     &:hover {
       color: $hover-blue;
       background-color: transparent;
       border: none;
     }
+
     font-size: 1rem;
   }
 
@@ -35,9 +37,11 @@
 
   .home-main-menu {
     border-top: 1px solid #ccc;
+
     .nav-link {
       padding: 0 20px;
     }
+
     .nav-link.active-link {
       border-bottom: 2px solid $primary-color;
     }
@@ -49,6 +53,7 @@
 
     a {
       color: #000;
+
       &:hover {
         color: $hover-blue;
       }
@@ -58,6 +63,7 @@
   .left > a:first-child {
     padding-left: 0;
   }
+  
   .right > a:last-child {
     margin-right: 0;
   }

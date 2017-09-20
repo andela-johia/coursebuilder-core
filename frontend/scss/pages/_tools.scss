@@ -59,6 +59,7 @@
     .card-title {
       font-size: 24px;
       font-weight: 300;
+
       &.activator {
         cursor: pointer;
       }
@@ -78,9 +79,11 @@
         max-height: 60%;
         overflow: hidden;
       }
+
       .tools-card-image + .card-content {
         max-height: 40%;
       }
+
       .tools-card-content {
         max-height: 100%;
         overflow: hidden;
@@ -125,17 +128,20 @@
       .tools-card-image {
         margin-left: -15px;
         max-width: 15%;
+
         img {
           border-radius: 2px 0 0 2px;
           max-width: 50%;
           width: auto;
         }
+
         .main-cards {
           max-width: 85.4rem;
           margin: 0 auto 4rem;
           position: relative;
         }
       }
+
       .tools-card-stacked {
         display: flex;
         flex-direction: column;
@@ -175,6 +181,7 @@
         font-size: 1.2rem;
         font-weight: 600;
       }
+
       .card-title {
         display: block;
         line-height: 32px;
@@ -210,6 +217,7 @@
     font-size: 35px;
     font-weight: 300;
   }
+
   .hr-sect::before,
   .hr-sect::after {
     content: "";
@@ -273,8 +281,9 @@ img.cards-img-top {
   margin-left: 1.8rem;
   margin-top: 3.4rem;
 }
+
 .row .card {
-  width: 25rem !important; 
+  width: 25rem !important;
   height: 30rem !important;
   margin-bottom: 3.0rem;
 }

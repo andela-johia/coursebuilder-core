@@ -10,25 +10,30 @@
 
   .hero-banner-content {
     max-width: $context-width;
-    margin: 0 auto;
-    padding: 70px 15px;
     color: white;
+    position: relative;
 
-    h1, p {
-      max-width: 700px;
-    }
+    @media screen and (max-width: 992px){}
     h1 {
-      font-size: 3rem;
+      font-size: 2rem;
+      font-family: Trebuchet MS;
       color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 80px;
+      max-width: 500px;
+      margin: 0 0 0 0;
+      min-height: 430px;
     }
 
-    p {
-      color: $color-white;
-      font-weight: 400;
-      font-size: 18px;
-      margin: 40px 0;
+    a {
+      background: red;
+      position: absolute;
+      top: 50%;
+      left: 50%;
     }
   }
+}
+
 
   @media screen and (max-width: 992px) {
     background: $white-d;
@@ -38,6 +43,7 @@
       h1, p {
         color: $text-color;
       }
+
       h1 {
         font-size: 3rem;
       }
@@ -52,14 +58,16 @@
         margin-top: 30px;
       }
     }
-  }
 }
 
 // Mission
 .mission {
+  background: white;
+
   .blue-section-inner {
     max-width: 1000px;
     text-align: center;
+    color: black;
 
     p {
       margin: 0;
@@ -70,7 +78,6 @@
 
 // Awards & How it works
 .awards, .how-it-works {
-  padding: 4.4rem 30px;
 
   .carousel-section-wrapper {
     display: block;
@@ -87,12 +94,36 @@
   background-color: $white-d;
 
   .item {
-    min-height: 100px;
-    text-align: center;
 
     img {
       max-width: 200px;
       margin: 0 auto;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+  }
+
+  .item-rectangle {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    img {
+      max-width: 200px;
+      margin: 0 auto;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+  }
+
+  .item-rectangle-large {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    img {
+      max-width: 200px;
+      margin: 0 auto;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
     }
   }
 
@@ -163,6 +194,7 @@
   .question-card-media {
     width: 66.66%;
   }
+
   .question-card-text {
     width: 33.2%;
     padding: 20px;
@@ -190,6 +222,7 @@
         font-weight: 500;
         color: $hover-blue;
       }
+
       p {
         margin-bottom: 80px;
       }
@@ -208,8 +241,10 @@
   @include thin-paragraph;
 
   @media screen and (max-width: 1072px) {
+
     .question-card-div {
       flex-direction: column;
+
       .question-card-media, .question-card-text {
         width: 100%;
       }
@@ -225,6 +260,7 @@
   .row {
     margin: 0;
   }
+
   .card-tabs {
     border: none;
   }
@@ -266,27 +302,20 @@
 .continue-learning {
   padding: 30px 5% 30px 5%;
   text-align: right;
-  background-color: $green;
+  background-color: #1968a8;
   color: $color-white;
+  text-align: center;
   @include transition();
 
   &:hover {
-    background-color: lighten($green, 5%);
+    background-color: lighten(#1968a8, 5%);
   }
 
-  p {
-    margin-top: 0;
-  }
-  h3 {
-    margin: 0;
-  }
-  i {
-    position: absolute;
-    right: -30px;
-  }
   a {
     color: #fff;
+    background-color: red;
   }
+
   @include sub-heading;
 }
 
@@ -312,6 +341,7 @@ button.btn.btn-default {
   font-size: 0.9rem;
   text-transform: capitalize;
 }
+
 button.btn.btn-default img {
  max-height:100px;
  margin-bottom: 0.5rem;

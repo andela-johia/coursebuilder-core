@@ -26,6 +26,7 @@
       margin: 40px 0;
     }
   }
+  
   @media screen and (max-width: 992px) {
     background: $white-d;
     .hero-banner-content {
@@ -67,5 +68,3 @@
     @include thin-paragraph;
   }
 }
-
-
