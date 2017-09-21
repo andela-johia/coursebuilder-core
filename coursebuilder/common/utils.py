@@ -364,5 +364,9 @@ def embed_carousel(content):
             result += '</div><div class="item">'.join(in_carousel) + '</div></div>'
             content = content[:start] + result + content[end + len(stop_key):]
         else:
+            if not not_recursive:
+                content = '<strong>== Please close an existing carousel before opening another one ==</strong><br>' + content
+            elif start != -1 or end != -1:
+                content = '<strong>== Please ensure that your carousel(s) have an opening and closing keyword(s) ==</strong><br>' + content
             break
     return content

@@ -35,6 +35,7 @@ from models import entities
 from models import models as m_models
 from models import roles
 from models import transforms
+from common import utils as common_utils
 
 from google.appengine.ext import db
 
@@ -325,7 +326,8 @@ class PreviewHandler(utils.BaseHandler):
             self.error(401)
             return
 
-        self.template_value['value'] = self.request.get('value', '')
+        self.template_value['value'] = common_utils.embed_carousel(self.request.get('value', ''))
+
         self.render('preview_editor.html', additional_dirs=[TEMPLATES_DIR])
 
 
