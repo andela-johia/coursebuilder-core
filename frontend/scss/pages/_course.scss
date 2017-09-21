@@ -45,6 +45,7 @@
         background-color: lighten($newslab-blue, 5%);
       }
     }
+
     i {
       vertical-align: bottom;
       padding-bottom: 1px;
@@ -60,13 +61,14 @@
       margin: 0;
       padding: 0;
     }
+
     .row {
       background-color: $white-d;
     }
+
     .collapsible {
       margin: 0 0 10px 0;
       box-shadow: none;
-
       border-right: none;
 
       & > li {
@@ -84,11 +86,14 @@
         font-size: 1.2rem;
         padding-left: 40px;
       }
+
       i {
         vertical-align: bottom;
       }
+
       a {
         color: $text-color-l;
+
         &:hover {
           color: $text-color;
         }
@@ -102,6 +107,7 @@
         &:hover {
           color: $text-color;
         }
+
         padding-left: 35px;
         border: none;
         position: relative;
@@ -110,9 +116,11 @@
           width: 100%;
           display: block;
         }
+
         .expand-less {
           display: none;
         }
+
         &:hover {
           .course-expand-btn {
             background-color: $brown-l;
@@ -127,10 +135,12 @@
         .expand-less {
           display: block;
         }
+
         .expand-more {
           display: none;
         }
       }
+
       .collapsible-body {
         padding: 0;
         font-size: 1rem;
@@ -143,10 +153,12 @@
           &:first-child {
             margin-top: 0;
           }
+
           &.active-course-item {
             background-color: #EEEEEE;
           }
         }
+
         i {
           padding-top: 10px;
         }
@@ -168,17 +180,21 @@
       h1 {
         font-size: 2rem;
       }
+
       h2,
       h3 {
         font-size: 1.6rem;
       }
+
       p {
         font-size: 1.2rem;
       }
+
       iframe {
         width: 100% !important;
         margin-bottom: 15px;
       }
+
       .card {
         width: 100%;
         max-width: 1000px;
@@ -238,13 +254,16 @@
     min-height: 40px;
     position: relative;
   }
+
   .owl-prev, .owl-next {
     font-size: 1rem !important;
     z-index: 500;
   }
+
   .owl-dots {
     bottom: 15px;
   }
+
   .item {
     position: relative;
   }
@@ -277,6 +296,7 @@
 
 .gcb-breadcrumb a {
   color: $brown-l;
+  
   &:hover {
     color: $color-white;
   }

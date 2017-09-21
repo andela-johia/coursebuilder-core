@@ -10,14 +10,17 @@
 
 .course-card {
   position: relative;
+
   img {
     width: 100%;
   }
+
   .free-course {
     font-size: 0.9rem;
     color: $green-l;
     margin: 0 0 20px;
   }
+
   .course-card-content {
     padding: 20px;
     min-height: 160px;
@@ -58,21 +61,26 @@
   .hidden-dropdown {
     display: none !important;
   }
+
   .dropdown-content {
     min-width: 180px;
   }
+
   .dropdown-button {
     margin-right: 30px;
     margin-top: 20px;
     text-transform: none;
   }
+
   paper-radio-group, paper-radio-button {
     width: 100%;
   }
+
   a.dropdown-button.btn {
     background-color: $color-white;
     color: $text-color;
   }
+  
   #radioContainer {
     display: none !important;
   }
