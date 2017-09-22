@@ -14,9 +14,19 @@
                       <div class="divider"></div>
                   </li>
 
-                  <li>
-                      <a href="#!explorer" class="waves-effect waves-light btn-large">Start Learning</a>
-                  </li>
+                  <template is="dom-if" if="[[!currentUser.loggedIn]]">
+                    <li>
+                      <a href="[[currentUser.loginUrl]]" class="waves-effect waves-light btn-large" target="_blank">Start
+                      Learning</a>
+                    </li>
+                  </template>
+
+                  <template is="dom-if" if="[[currentUser.loggedIn]]">
+                    <li>
+                      <a href="#!explorer" class="waves-effect waves-light btn-large" target="_blank">Keep Learning</a>
+                    </li>
+                  </template>
+
                   <li><a href="#!homepage"><i class="material-icons">home</i>Home</a></li>
                   <li><a href="#!explorer"><i class="material-icons">library_books</i>Courses</a></li>
                   <li><a href="#!certification"><i class="material-icons">school</i>Certification</a></li>
@@ -76,6 +86,13 @@
                         <li><a href="[[currentUser.loginUrl]]" class="waves-effect waves-light btn">Start Learning</a>
                         </li>
                     </ul>
+                </template>
+
+                <template is="dom-if" if="[[currentUser.loggedIn]]">
+                  <ul class="right hide-on-med-and-down log-out-nav">
+                    <li><a class="log-out-link" href="[[currentUser.logoutUrl]]">LOG OUT</a></li>
+                    <li><a href="#!explorer" class="waves-effect waves-light btn" target="_blank">Keep Learning</a></li>
+                  </ul>
                 </template>
             </div>
             </div>

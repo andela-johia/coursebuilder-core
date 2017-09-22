@@ -34,10 +34,27 @@
       padding-right: 15px;
       padding-left: 15px;
       color: $color-white;
-      background-color: $secondary-color;
+      background-color: red;
 
       &:hover {
-        background-color: lighten($secondary-color, 7%);
+        background-color: lighten(red, 7%);
+      }
+    }
+  }
+
+  .log-out-nav {
+    .log-out-link {
+      color: $primary-color;
+    }
+
+    .btn {
+      padding-right: 15px;
+      padding-left: 15px;
+      color: $color-white;
+      background-color: red;
+
+      &:hover {
+        background-color: lighten(red, 7%);
       }
     }
   }
