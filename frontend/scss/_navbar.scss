@@ -1,9 +1,16 @@
+.navbar-fixed {
+  height: auto;
+}
 .nav-extended {
   background-color: #fff;
 
   .brand-logo img {
     width: 150px;
     margin-bottom: 5px;
+  }
+
+  .navbar-links {
+    margin-left: 15%;
   }
 
   a {
@@ -63,7 +70,7 @@
   .left > a:first-child {
     padding-left: 0;
   }
-  
+
   .right > a:last-child {
     margin-right: 0;
   }
