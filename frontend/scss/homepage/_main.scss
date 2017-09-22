@@ -314,7 +314,12 @@
   a {
     color: #fff;
     background-color: red;
+
+    &:hover {
+      background-color: lighten(red, 7%);
+    }
   }
+
 
   @include sub-heading;
 }

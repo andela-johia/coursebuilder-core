@@ -186,7 +186,7 @@
       <template is="dom-if" if="[[!currentUser.loggedIn]]">
         <a href="[[currentUser.loginUrl]]">
           <div class="continue-learning">
-            <a class="waves-effect waves-light btn-large" target="_blank">Start Learning</a>
+            <a class="waves-effect waves-light btn-large" target="_blank" href="[[currentUser.loginUrl]]">Start Learning</a>
           </div>
         </a>
       </template>
@@ -194,7 +194,7 @@
       <template is="dom-if" if="[[currentUser.loggedIn]]">
         <a href="#!explorer">
           <div class="continue-learning">
-            <a class="waves-effect waves-light btn-large" target="_blank">Keep Learning</a>
+            <a class="waves-effect waves-light btn-large" target="_blank" href="#!explorer">Keep Learning</a>
           </div>
         </a>
       </template>
