@@ -92,6 +92,7 @@
 .awards {
   text-align: center;
   background-color: $white-d;
+  padding:0;
 
   .item {
 
@@ -124,14 +125,6 @@
       margin: 0 auto;
       -webkit-filter: grayscale(100%);
       filter: grayscale(100%);
-    }
-  }
-
-  .owl-nav {
-    min-height: 0;
-
-    .owl-prev, .owl-next {
-      padding: 20px;
     }
   }
 }
