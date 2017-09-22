@@ -302,13 +302,13 @@
 .continue-learning {
   padding: 30px 5% 30px 5%;
   text-align: right;
-  background-color: #1968a8;
+  background-color: white;
   color: $color-white;
   text-align: center;
   @include transition();
 
   &:hover {
-    background-color: lighten(#1968a8, 5%);
+    background-color: lighten(white, 5%);
   }
 
   a {
