@@ -1,0 +1,131 @@
+<link rel="import" href="/static/polymer-1.2.0/polymer/polymer.html">
+
+
+<dom-module id="student-dashboard">
+  <template>
+  <div id="student-dashboard" class="page-wrapper">
+
+      <!--  Top  -->
+      <div class="sd-top">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 m12 sd-top-left">
+              <div class="sd-top-details">
+                <h3>
+                  Learning Goals
+                </h3>
+              </div>
+            </div>
+            <div class="col l6 m12"></div>
+          </div>
+        </div>
+      </div>
+
+      <!--   Main  -->
+      <div class="container-cards">
+        <div class="container section">
+
+
+          <template is="dom-if" if="[[!loaded]]">
+            <div class="loading-icon center">
+              <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-teal-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <template is="dom-if" if="[[loaded]]">
+            <template is="dom-if" if="[[!_areCoursesAvailable()]]">
+              <h2>No registered courses.</h2>
+            </template>
+
+            <template is="dom-repeat" items="[[courses]]" as="course">
+
+                <ul class="collapsible" data-collapsible="accordion">
+                  <li>
+                    <div class="collapsible-header">
+                      <p>[[course.title]]</p>
+                    </div>
+                    <div class="collapsible-body">
+
+
+                      <template is="dom-repeat" items="[[course.allUnits.edges]]" as="unit">
+
+                        <div class="row">
+                          <div class="col m12 l6">
+                            <div class="card horizontal">
+                              <div class="card-image">
+                                <img class=sub-one src="images/course/get_online.png">
+                              </div>
+                              <div class="card-stacked">
+                                <div class="card-content">
+                                  <p>[[unit.node.title]]</p>
+                                  <p>
+                                    <template is="dom-repeat"
+                                              items="[[unit.node.detailedLessons.edges]]" as="lesson">
+                                      <template is="dom-if" if="[[lesson.node.progress]]">
+                                        <i class="material-icons teal-text">check_circle</i>
+                                      </template>
+                                      <template is="dom-if" if="[[!lesson.node.progress]]">
+                                        <i class="material-icons teal-text">radio_button_unchecked</i>
+                                      </template>
+                                    </template>
+                                  </p>
+                                </div>
+                                <div class="card-action">
+                                  <a class="start-link" href="#">START</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </template>
+
+
+                    </div>
+                  </li>
+                </ul>
+
+              </template>
+          </template>
+
+        </div>
+      </div>
+
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'student-dashboard',
+      properties: {
+        currentUser: Object,
+        site: Object,
+        loaded: Boolean,
+        courses: Array,
+        coursesAvailable: {
+          type: Boolean,
+          value: false,
+        },
+      },
+      _areCoursesAvailable: function () {
+        if (this.get('courses').length < 1) {
+          return false;
+        } else {
+          return true;
+        }
+      },
+    })
+  </script>
+</dom-module>

@@ -2,4 +2,5 @@
 **/*.idea
 **/*node_modules
 frontend/jinja
+venv
 frontend/package-lock.json
