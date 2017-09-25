@@ -346,6 +346,9 @@ def embed_carousel(content):
     start_key = '[start_carousel]'
     stop_key = '[stop_carousel]'
 
+    if not re.search(r'\[start_carousel\]|\[stop_carousel\]', content, re.M | re.I):
+        return content
+
     while True:
         start = content.find(start_key)
         end = content.find(stop_key, start)
