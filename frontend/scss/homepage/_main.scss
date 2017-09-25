@@ -12,6 +12,7 @@
     max-width: $context-width;
     color: white;
     position: relative;
+    padding: 70px 15px;
 
     @media screen and (max-width: 992px){}
     h1 {
@@ -92,6 +93,7 @@
 .awards {
   text-align: center;
   background-color: $white-d;
+  padding:0;
 
   .item {
 
@@ -124,14 +126,6 @@
       margin: 0 auto;
       -webkit-filter: grayscale(100%);
       filter: grayscale(100%);
-    }
-  }
-
-  .owl-nav {
-    min-height: 0;
-
-    .owl-prev, .owl-next {
-      padding: 20px;
     }
   }
 }
@@ -302,13 +296,13 @@
 .continue-learning {
   padding: 30px 5% 30px 5%;
   text-align: right;
-  background-color: #1968a8;
+  background-color: white;
   color: $color-white;
   text-align: center;
   @include transition();
 
   &:hover {
-    background-color: lighten(#1968a8, 5%);
+    background-color: lighten(white, 5%);
   }
 
   a {
