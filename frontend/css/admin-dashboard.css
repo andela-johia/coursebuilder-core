@@ -74,12 +74,3 @@
 .modal-body {
   padding: 2px 16px;
 }
-
-.explain-img-sm {
-  height: 30px;
-}
-
-.modal-body pre {
-  background-color: #eee;
-  border-radius: 5px;
-}
