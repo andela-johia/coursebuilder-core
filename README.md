@@ -5,6 +5,7 @@ URL: https://courses.academy.africa
 Academy.AFRICA's courses built on Google's Course builder. Learn more at https://academy.codeforafrica.org.
 
 ## Installation and Deployment
+The course-builder application was built with python 2.7, create a virtualenv with a python version of 2.7 if it's not the default version on your machine.
 
  - Create a google [cloud project](https://edu.google.com/openonline/course-builder/docs/1.11/set-up-course-builder/create-a-cloud-project.html)
  - Download and install [google-cloud-sdk](https://cloud.google.com/sdk/downloads)
@@ -20,6 +21,7 @@ See the [documentation on development](https://edu.google.com/openonline/course-
 - Install the python app-engine `gcloud components install app-engine-python`
 - Navigate to the root directory of the cloned repository on the terminal
 - Start the application: `dev_appserver.py coursebuilder`
+- Visit the homepage: http://localhost:8080/
 
 ## Tests
 
