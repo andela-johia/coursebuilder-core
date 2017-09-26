@@ -727,7 +727,10 @@ label.settings.gcb-toggle-button {
 }
 
 .explain-img-sm {
-  height: 30px;
+  float: right;
+  height: 120px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
 }
 
 .modal-body pre {

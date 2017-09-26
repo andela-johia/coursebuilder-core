@@ -602,8 +602,8 @@ class ApplicationHandler(webapp2.RequestHandler):
         models.MemcacheManager.begin_readonly()
         try:
             template = self.get_template(template_file, additional_dirs)
-            return jinja2.utils.Markup(
-                template.render(template_values, autoescape=True))
+            content = common_utils.embed_carousel(template.render(template_values, autoescape=True))
+            return jinja2.utils.Markup(content)
         finally:
             models.MemcacheManager.end_readonly()
             courses.Course.clear_current()

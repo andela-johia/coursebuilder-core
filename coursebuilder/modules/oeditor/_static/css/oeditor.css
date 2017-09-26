@@ -897,3 +897,21 @@ div.new-form-layout .inputEx-Field.embed-code-snippet-display textarea {
   text-decoration: none;
   cursor: pointer;
 }
+
+.yui-toolbar-startCarousel, .yui-toolbar-breakCarousel, .yui-toolbar-stopCarousel {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: 5px !important;
+}
+
+.yui-toolbar-startCarousel {
+  background-image: url('/modules/explorer/_static/images/oeditor/start-carousel.png') !important;
+}
+
+.yui-toolbar-breakCarousel {
+  background-image: url('/modules/explorer/_static/images/oeditor/break-carousel.png') !important;
+}
+
+.yui-toolbar-stopCarousel {
+  background-image: url('/modules/explorer/_static/images/oeditor/stop-carousel.png') !important;
+}
