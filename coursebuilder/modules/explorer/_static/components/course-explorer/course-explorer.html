@@ -173,7 +173,7 @@
           type: Boolean,
           value: false,
         },
-        registeredCourses: {
+        registeredCourseIds: {
           type: Array,
           value: [],
         },
@@ -230,7 +230,7 @@
           }
         });
         if (registeredCourseIds.length > 0) {
-          this.set('registeredCourses', registeredCourseIds);
+          this.set('registeredCourseIds', registeredCourseIds);
           this.set('loadDashboard', true);
         } else {
           this.set('dashboardLoaded', true);
@@ -240,7 +240,7 @@
       _getDetailedCoursesQuery: function () {
         var query = '{';
         var counter = 0;
-        this.get('registeredCourses').forEach(function (courseId) {
+        this.get('registeredCourseIds').forEach(function (courseId) {
           query += 'course' + counter + ': course(id:"' + courseId + '"){...courseDetails}';
           counter += 1;
         });
@@ -254,7 +254,7 @@
       _onDetailedCoursesResponse: function (event) {
         var response = event.detail.response.data;
         var courses = [];
-        this.get('registeredCourses').forEach(function (item, index) {
+        this.get('registeredCourseIds').forEach(function (item, index) {
           if (response['course' + index]) {
             courses.push(response['course' + index]);
           }
