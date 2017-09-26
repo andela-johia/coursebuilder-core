@@ -10,6 +10,7 @@ The course-builder application was built with python 2.7, create a virtualenv wi
  - Create a google [cloud project](https://edu.google.com/openonline/course-builder/docs/1.11/set-up-course-builder/create-a-cloud-project.html)
  - Download and install [google-cloud-sdk](https://cloud.google.com/sdk/downloads)
  - Initialize the gcloud environment: `gcloud init`
+ - Create the application: `gcloud app create`
  - Clone this repository from the terminal and navigate to the *"coursebuilder"* folder
  - Deploy the app following the [documentation](https://edu.google.com/openonline/course-builder/docs/1.11/set-up-course-builder/deploy-your-app.html)
  - [Visit your site](https://edu.google.com/openonline/course-builder/docs/1.11/set-up-course-builder/visit-your-site.html)
