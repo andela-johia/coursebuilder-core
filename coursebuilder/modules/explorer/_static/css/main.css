@@ -60,6 +60,7 @@ th, td, .th, .td {
 /* GCB-specific styles. */
 #gcb-main {
     /* This rule intentionally left blank. */
+    margin-top: 60px;
 }
 
 #gcb-header, #gcb-footer {
