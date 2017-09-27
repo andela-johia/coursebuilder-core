@@ -45,9 +45,11 @@ $(document).ready(function () {
 
   $('.faq-switch').on('click', function (e) {
     $('#mainContent').fadeOut(300, function () {
-      $('#' + $(e.target).data('switch')).fadeIn();
+      var divId = $(e.target).closest('.faq-switch').data('switch');
+      $('#' + divId).fadeIn();
     });
   });
+    
 
   $('.faq-collapsible-back').on('click', function (e) {
     $(e.target).closest('.faq-collapsible').fadeOut(300, function () {
