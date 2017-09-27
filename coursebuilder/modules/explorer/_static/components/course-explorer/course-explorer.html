@@ -32,7 +32,7 @@
     </template>
 
 
-      <student-dashboard loaded="[[dashboardLoaded]]" current-user="[[currentUser]]" courses="[[dashboardCourses]]">
+      <student-dashboard loaded="[[dashboardLoaded]]" current-user="[[currentUser]]" dashboardcourses="[[dashboardCourses]]">
       </student-dashboard>
 
 
@@ -245,7 +245,7 @@
           counter += 1;
         });
         query += '} fragment courseDetails on Course {'
-          + 'id, title, allUnits{edges{node{title, detailedLessons{edges{node{title, progress}}}}}} }';
+          + 'id, title, url, allUnits{edges{node{title, detailedLessons{edges{node{title, progress, link}}}}}} }';
         return {
           q: query
         }

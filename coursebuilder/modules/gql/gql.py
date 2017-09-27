@@ -194,12 +194,14 @@ class Lesson(CourseAwareObjectType, graphene.relay.Node):
     title = graphene.String()
     body = graphene.String()
     progress = graphene.String()
+    link = graphene.String()
 
-    def __init__(self, app_context, unit, lesson, lesson_progress=None, **kwargs):
+    def __init__(self, app_context, unit, lesson, lesson_progress=None, link=None, **kwargs):
         super(Lesson, self).__init__(app_context, **kwargs)
         self._lesson = lesson
         self._unit = unit
         self._lesson_progress = lesson_progress
+        self._link = link
 
     @classmethod
     def get_node(cls, node_id, info):
@@ -221,6 +223,9 @@ class Lesson(CourseAwareObjectType, graphene.relay.Node):
     def resolve_progress(self, args, info):
         return self._lesson_progress
 
+    def resolve_link(self, args, info):
+        return self._link
+
     @classmethod
     def _get_lesson_id(cls, course, unit, lesson):
         course_id = course.app_context.get_slug()
@@ -237,11 +242,12 @@ class Lesson(CourseAwareObjectType, graphene.relay.Node):
         course_view = cls.get_course_view(course, student)
         unit = course_view.find_element([unit_id]).course_element
         expanded_lesson = course_view.find_element([unit_id, lesson_id])
+        link = expanded_lesson.link
         progress = expanded_lesson.progress
         lesson = expanded_lesson.course_element
         if lesson:
             return Lesson(
-                course.app_context, unit, lesson, lesson_progress=progress,
+                course.app_context, unit, lesson, lesson_progress=progress, link=link,
                 course=course, course_view=course_view,
                 id=cls._get_lesson_id(course, unit, lesson))
         else:
