@@ -61,6 +61,10 @@
     }
 }
 
+.slider {
+  height: auto;  
+}
+
 // Mission
 .mission {
   background: white;
@@ -78,7 +82,7 @@
 }
 
 // Awards & How it works
-.awards, .how-it-works {
+.awards, .how-it-works .slider {
 
   .carousel-section-wrapper {
     display: block;
