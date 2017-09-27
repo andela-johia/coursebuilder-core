@@ -349,3 +349,40 @@ class ValidateYoutubeVideoRecognizer(unittest.TestCase):
 
         self.assertIsNone(utils.find_youtube_video_id(''))
         self.assertIsNone(utils.find_youtube_video_id(VIDEO_ID[1:]))
+
+
+class ValidateCarouselEmbedder(unittest.TestCase):
+    def test_replaces_keywords_with_carousel_components(self):
+        content = '[start_carousel] 1 [split] 2 [stop_carousel]'
+
+        self.assertEqual(
+            """<div class="owl-carousel owl-theme course-carousel"><div class="item"><p>1 </p></div><div class="item"><p>2 </p></div></div>""",
+            utils.embed_carousel(content))
+
+    def test_embeds_carousel_when_keywords_are_within_html_tags(self):
+        content = '[start_carousel] <div style="color: #fff;"><h2>1 [split]</h2></div> <p>2</p> [stop_carousel]'
+
+        self.assertEqual(
+            """<div class="owl-carousel owl-theme course-carousel"><div class="item"><div style="color: #fff;"><h2>1 </h2></div></div><div class="item"><p>2</p> </div></div>""",
+            utils.embed_carousel(content))
+
+    def test_embeds_multiple_carousels(self):
+        content = '[start_carousel] 1 [split] 2 [stop_carousel] [start_carousel] 3 [split] 4 [stop_carousel]'
+
+        self.assertEqual(
+            """<div class="owl-carousel owl-theme course-carousel"><div class="item"><p>1 </p></div><div class="item"><p>2 </p></div></div> <div class="owl-carousel owl-theme course-carousel"><div class="item"><p>3 </p></div><div class="item"><p>4 </p></div></div>""",
+            utils.embed_carousel(content))
+
+    def test_return_original_content_with_message_if_no_closing_keyword_was_added(self):
+        content = '[start_carousel] 1 [split] 2'
+
+        self.assertEqual(
+            '<strong>== Please ensure that your carousel(s) have an opening and closing keyword(s) ==</strong><br>[start_carousel] 1 [split] 2',
+            utils.embed_carousel(content))
+
+    def test_return_original_content_with_message_if_keyword_format_is_invalid(self):
+        content = '[start_carousel] 1 1 [split] [start_carousel] 2 1 [split] 2 2 [stop_carousel] [split] 1 2 [stop_carousel]'
+
+        self.assertEqual(
+            '<strong>== Please close an existing carousel before opening another one ==</strong><br>[start_carousel] 1 1 [split] [start_carousel] 2 1 [split] 2 2 [stop_carousel] [split] 1 2 [stop_carousel]',
+            utils.embed_carousel(content))
