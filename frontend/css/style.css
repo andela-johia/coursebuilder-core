@@ -3862,7 +3862,7 @@ h2.style-scope.filter-sidebar { margin-top: 0 !important; }
 
 .course-carousel .item { position: relative; }
 
-#courseMobileSidebar { min-width: 400px; }
+#courseMobileSidebar { min-width: 400px; padding-top: 30px; }
 
 #courseMobileSidebar .course-expand-btn { height: 50px; top: 0; width: 50px; border-radius: 25px; }
 
