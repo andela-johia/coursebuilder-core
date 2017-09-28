@@ -24,7 +24,9 @@ $(document).ready(function documentReady() {
     $('.course-accordion').animate({'margin-left': '-' + sidebarWidth + 'px'}, 300);
   });
 
-  console.log($('.course-accordion .collapsible').clone());
   $('.course-accordion .collapsible').clone().appendTo('#courseMobileSidebar');
   $('.collapsible').collapsible();
+  $('body').on('click', '#closeSideNav', function () {
+    $('.button-collapse').sideNav('hide');
+  });
 });
