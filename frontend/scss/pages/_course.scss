@@ -55,8 +55,7 @@
 }
 
 #course-page {
-  margin-top: 0;
-
+  
   .course-content {
     .row, .course-accordion {
       margin: 0;
@@ -319,3 +318,6 @@ ul#share-dropdown {
 .dropdown-content li > a, .dropdown-content li > span {
   color: #808080;
 }
+.page-wrapper {
+  margin-top: 65px;
+  }
