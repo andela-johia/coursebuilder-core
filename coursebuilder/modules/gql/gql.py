@@ -56,6 +56,7 @@ clients. The current model is:
                       +-- body
                 +-- allLessons
                       +--- Relay connection for lessons
+                +-- detailedLessons
           +-- allUnits
                 +-- Relay connection for units
           +-- enrollment
@@ -192,11 +193,15 @@ class CourseAwareObjectType(object):
 class Lesson(CourseAwareObjectType, graphene.relay.Node):
     title = graphene.String()
     body = graphene.String()
+    progress = graphene.String()
+    link = graphene.String()
 
-    def __init__(self, app_context, unit, lesson, **kwargs):
+    def __init__(self, app_context, unit, lesson, lesson_progress=None, link=None, **kwargs):
         super(Lesson, self).__init__(app_context, **kwargs)
         self._lesson = lesson
         self._unit = unit
+        self._lesson_progress = lesson_progress
+        self._link = link
 
     @classmethod
     def get_node(cls, node_id, info):
@@ -215,6 +220,12 @@ class Lesson(CourseAwareObjectType, graphene.relay.Node):
             return None
         return self.expand_tags(self._lesson.objectives, info)
 
+    def resolve_progress(self, args, info):
+        return self._lesson_progress
+
+    def resolve_link(self, args, info):
+        return self._link
+
     @classmethod
     def _get_lesson_id(cls, course, unit, lesson):
         course_id = course.app_context.get_slug()
@@ -230,10 +241,13 @@ class Lesson(CourseAwareObjectType, graphene.relay.Node):
         student = cls.get_student(course.app_context)
         course_view = cls.get_course_view(course, student)
         unit = course_view.find_element([unit_id]).course_element
-        lesson = course_view.find_element([unit_id, lesson_id]).course_element
+        expanded_lesson = course_view.find_element([unit_id, lesson_id])
+        link = expanded_lesson.link
+        progress = expanded_lesson.progress
+        lesson = expanded_lesson.course_element
         if lesson:
             return Lesson(
-                course.app_context, unit, lesson,
+                course.app_context, unit, lesson, lesson_progress=progress, link=link,
                 course=course, course_view=course_view,
                 id=cls._get_lesson_id(course, unit, lesson))
         else:
@@ -248,6 +262,14 @@ class Lesson(CourseAwareObjectType, graphene.relay.Node):
                 id=cls._get_lesson_id(course, unit, lesson))
             for lesson in course_view.get_lessons(unit.unit_id)]
 
+    # Getting the detailed lessons is expensive to build, call this method
+    # to get specifics for lessons (e.g the user's progress)
+    @classmethod
+    def get_detailed_lessons(cls, course, course_view, unit):
+        return [
+            cls.get_lesson(cls._get_lesson_id(course, unit, lesson))
+            for lesson in course_view.get_lessons(unit.unit_id)]
+
 
 # TODO(jorr): Introduce a ToplLevel interface and make Unit, Assessment etc
 # extend that
@@ -259,6 +281,7 @@ class Unit(CourseAwareObjectType, graphene.relay.Node):
     lesson = graphene.Field(Lesson, id=graphene.String())
     header = graphene.String()
     footer = graphene.String()
+    detailed_lessons = graphene.relay.ConnectionField(Lesson)
 
     def __init__(self, app_context, unit, **kwargs):
         super(Unit, self).__init__(app_context, **kwargs)
@@ -322,6 +345,9 @@ class Unit(CourseAwareObjectType, graphene.relay.Node):
 
     def resolve_all_lessons(self, args, info):
         return Lesson.get_all_lessons(self.course, self.course_view, self._unit)
+
+    def resolve_detailed_lessons(self, args, info):
+        return Lesson.get_detailed_lessons(self.course, self.course_view, self._unit)
 
     def resolve_lesson(self, args, info):
         try:
