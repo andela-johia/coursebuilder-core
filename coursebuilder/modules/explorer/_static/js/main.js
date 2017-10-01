@@ -8,7 +8,7 @@ window.addEventListener('WebComponentsReady', function documentReady() {
     loop: true,
     margin: 10,
     autoplay: true,
-    autoplayTimeout: 5000,
+    autoplayTimeout: 3000,
     autoplayHoverPause: false,
     dots: false,
     items: 1

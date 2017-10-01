@@ -3329,8 +3329,6 @@ img { max-width: 100%; vertical-align: bottom; }
 
 .light-text { font-weight: 300; }
 
-.pad-5 { padding-left: 2%; }
-
 .page-wrapper { margin-top: 65px; display: none; }
 
 @media screen and (max-width: 992px) { .page-wrapper { margin-top: 0; } }
@@ -3369,7 +3367,7 @@ img { max-width: 100%; vertical-align: bottom; }
 
 .nav-extended .brand-logo img { width: 150px; margin-bottom: 5px; }
 
-.nav-extended .navbar-links { margin-left: 15%; }
+.nav-extended .navbar-links { margin-left: 35%; }
 
 .nav-extended a { color: #000; font-size: 1rem; }
 
@@ -3442,15 +3440,17 @@ img { max-width: 100%; vertical-align: bottom; }
   .hero-banner-content p { font-weight: 300; font-size: 1.2rem; margin: 30px 0; }
   .hero-banner-content .btn-large { margin-top: 30px; } }
 
+.slider { height: auto; }
+
 .mission { background: white; }
 
 .mission .blue-section-inner { max-width: 1000px; text-align: center; color: black; }
 
 .mission .blue-section-inner p { margin: 0; padding: 0; }
 
-.awards .carousel-section-wrapper, .how-it-works .carousel-section-wrapper { display: block; max-width: 1200px; margin: 0 auto; }
+.awards .carousel-section-wrapper, .how-it-works .slider .carousel-section-wrapper { display: block; max-width: 1200px; margin: 0 auto; }
 
-.awards p, .how-it-works p { font-size: 1rem; font-weight: 100; letter-spacing: 0.8px; line-height: 25px; color: #616161; }
+.awards p, .how-it-works .slider p { font-size: 1rem; font-weight: 100; letter-spacing: 0.8px; line-height: 25px; color: #616161; }
 
 .awards { text-align: center; background-color: #F5F5F5; padding: 0; }
 
@@ -3746,7 +3746,7 @@ h2.style-scope.filter-sidebar { margin-top: 0 !important; }
 
 #tools a.card-link { margin-left: 8.8rem; font-size: 1.0rem; }
 
-#tools img { max-width: 100%; max-height: 100%; vertical-align: bottom; max-height: 50%; }
+#tools img { max-width: 100%; vertical-align: bottom; max-height: 50%; }
 
 #tools .row { margin-left: auto; margin-right: auto; margin-bottom: 0px; padding-left: 20px; }
 
