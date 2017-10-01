@@ -36,7 +36,8 @@ window.addEventListener('WebComponentsReady', function documentReady() {
     'tools',
     'feedback',
     'faqs',
-    'events'
+    'events',
+    'student-dashboard'
   ];
 
   pageLinks.forEach(function (name) {
@@ -70,6 +71,15 @@ window.addEventListener('WebComponentsReady', function documentReady() {
       $('#courseCategorySelector').dropdown();
       $('#courseCategorySelector').dropdown('open');
       courseSelectorInitialized = true;
+    }
+  });
+
+  var dashboardAccordionInitialized = false;
+  $('body').on('click', '#student-dashboard .collapsible', function () {
+    if (!dashboardAccordionInitialized) {
+      $(this).collapsible('open', 0);
+      dashboardAccordionInitialized = true;
+      $('.collapsible').collapsible();
     }
   });
 });

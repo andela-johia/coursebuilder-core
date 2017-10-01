@@ -378,6 +378,7 @@ class StudentCourseView(object):
         return [element]
 
     def _build_elements_for_link(self, unit, displayability):
+
         if displayability.is_content_available:
             self._accessible_units.append(unit)
         # Cast href to string to get rid of possible LazyTranslator wrapper.

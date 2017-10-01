@@ -109,10 +109,11 @@
         <li><a href="#!">Blog</a></li>
         <li class="divider"></li>
         <template is="dom-if" if="[[currentUser.loggedIn]]">
-            <template is="dom-if" if="[[currentUser.canViewDashboard]]">
-                <li><a href="/modules/admin">Dashboard</a></li>
-            </template>
-            <li><a href="[[currentUser.logoutUrl]]">Logout</a></li>
+          <li><a href="#!student-dashboard">Student Dashboard</a></li>
+          <template is="dom-if" if="[[currentUser.canViewDashboard]]">
+            <li><a href="/modules/admin">Dashboard</a></li>
+          </template>
+          <li><a href="[[currentUser.logoutUrl]]">Logout</a></li>
         </template>
       </ul>
   </template>
