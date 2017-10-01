@@ -1,0 +1,35 @@
+auth_links: [('dashboard', 'Dashboard')]
+available_locales: [{'name': u'U.S. English (en_US)', 'value': 'en_US'}]
+can_record_student_events: True
+can_register: True
+can_see_drafts: True
+course_availability: registration_optional
+course_outline: [{'......'}]
+email: test@example.com
+email_no_domain_name: test
+event_xsrf_token: 1506344660/SZ42uu1t-7lZIHBJm3XqKQ==
+extra_content: []
+extra_global_css_urls: ['/modules/i18n_dashboard/resources/css/global_i18n.css']
+extra_global_js_urls: []
+footer_items: [<common.safe_dom.Element object at 0x107a82850>]
+gcb_course_base: http://localhost:8080/aa/
+gcb_course_env: {'co ...'}
+gcb_os_env: {'...'}
+has_global_profile: True
+html_hooks: <controllers.utils.HtmlHooks object at 0x107e19a90>
+is_course_admin: True
+is_read_write_course: True
+is_super_admin: True
+left_links: []
+locale_xsrf_token: 1506344660/RWX5uMuoLBW24sC-HeUfzA==
+logoutUrl: /_ah/login?continue=http%3A//localhost%3A8080/aa&action=logout
+navbar: {'course': True}
+page_locale: en_US
+page_uuid: 0ba3ed8f-a1f2-11e7-b4d7-23207eeababb
+right_links: []
+selected_locale: en_US
+show_course_explorer_tab: True
+show_lessons_in_syllabus: False
+site_info: {'institution_name': None, 'privacy_terms_url': None, 'institution_url': None,'logo_alt_text': None, 'title': ''}
+student_preferences: <models.models.StudentPreferencesDTO object at 0x105c17350>
+transient_student: False
