@@ -4,24 +4,23 @@ $(document).ready(function () {
   $('ul.tabs').tabs();
   $('.collapsible').collapsible();
 
-  $('.slider-carousel').owlCarousel({
-    loop: true,
-    margin: 10,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: false,
-    dots: false,
-    items: 1
-  });
-
   $('.awards-carousel').owlCarousel({
     loop: true,
     margin: 10,
-    autoplay: true,
-    autoplayTimeout: 1000,
-    autoplayHoverPause: false,
+    nav: true,
     dots: false,
-    items: 4
+    navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 4
+      }
+    }
   });
 
   $('.how-carousel').owlCarousel({
