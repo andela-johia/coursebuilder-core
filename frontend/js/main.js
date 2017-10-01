@@ -23,7 +23,7 @@ $(document).ready(function () {
     dots: false,
     items: 4
   });
-
+  
   $('.how-carousel').owlCarousel({
     loop: true,
     margin: 10,
