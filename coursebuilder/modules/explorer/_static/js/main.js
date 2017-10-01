@@ -44,7 +44,6 @@ window.addEventListener('WebComponentsReady', function documentReady() {
     'certification',
     'homepage',
     'tools',
-    'partners',
     'feedback',
     'faqs',
     'events'

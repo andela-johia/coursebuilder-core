@@ -25,6 +25,7 @@ import string
 import sys
 import traceback
 import zipfile
+from lxml import html
 
 import appengine_config
 from google.appengine.api import namespace_manager
@@ -339,3 +340,36 @@ def find_youtube_video_id(text):
         if match:
             return match.group(1)
     return None
+
+
+def embed_carousel(content):
+    start_key = '[start_carousel]'
+    stop_key = '[stop_carousel]'
+
+    if not re.search(r'\[start_carousel\]|\[stop_carousel\]', content, re.M | re.I):
+        return content
+
+    while True:
+        start = content.find(start_key)
+        end = content.find(stop_key, start)
+        next_start = content.find(start_key, start + len(start_key))
+        not_recursive = True if next_start == -1 or next_start > end else False
+
+        # Ensure that only valid pairs are rendered
+        if start != -1 and end != -1 and not_recursive:
+            in_carousel = content[start + len(start_key):end].split('[split]')
+
+            # Parse the html for each item obtained from the split.
+            in_carousel = map(lambda item: html.tostring(html.fromstring(item)), in_carousel)
+
+            # Add the carousel start and end html with the content in-between
+            result = '<div class="owl-carousel owl-theme course-carousel"><div class="item">'
+            result += '</div><div class="item">'.join(in_carousel) + '</div></div>'
+            content = content[:start] + result + content[end + len(stop_key):]
+        else:
+            if not not_recursive:
+                content = '<strong>== Please close an existing carousel before opening another one ==</strong><br>' + content
+            elif start != -1 or end != -1:
+                content = '<strong>== Please ensure that your carousel(s) have an opening and closing keyword(s) ==</strong><br>' + content
+            break
+    return content

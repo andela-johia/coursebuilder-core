@@ -4,10 +4,10 @@ const gulp = require('gulp'),
 
 gulp.task('scss', () => {
   gulp.src('scss/*.scss')
-    .pipe(scss({ outputStyle: 'compact' }).on('error', scss.logError))
-    .pipe(autoprefixer())
-    .pipe(gulp.dest('css'))
-    .pipe(gulp.dest('../coursebuilder/modules/explorer/_static/css'));
+  .pipe(scss({ outputStyle: 'compact' }).on('error', scss.logError))
+  .pipe(autoprefixer())
+  .pipe(gulp.dest('css'))
+  .pipe(gulp.dest('../coursebuilder/modules/explorer/_static/css'));
 });
 
 gulp.task('watch', () => {

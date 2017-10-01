@@ -3,3 +3,5 @@
 **/*node_modules
 frontend/jinja
 frontend/package-lock.json
+venv/
+
