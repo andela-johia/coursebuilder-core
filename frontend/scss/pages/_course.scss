@@ -321,3 +321,7 @@ ul#share-dropdown {
 .page-wrapper {
   margin-top: 65px;
   }
+
+[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
+    border-radius: 9px;
+}  
