@@ -3895,6 +3895,8 @@ ul#share-dropdown { min-width: 150px; margin-top: 55px; }
 
 .page-wrapper { margin-top: 65px; }
 
+[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after { border-radius: 9px; }
+
 #faqs { background-color: #F5F5F5; padding-bottom: 30px; min-height: 500px; }
 
 #faqs .img { position: relative; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); display: block; max-width: 100%; -ms-flex-item-align: center; align-self: center; max-width: 20%; max-height: 20%; }
