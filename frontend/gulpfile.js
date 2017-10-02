@@ -1,7 +1,6 @@
 const gulp = require('gulp'),
   scss = require('gulp-sass'),
-  autoprefixer = require('gulp-autoprefixer'),
-  babel = require('gulp-babel');
+  autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('scss', () => {
   gulp.src('scss/*.scss')
@@ -13,13 +12,6 @@ gulp.task('scss', () => {
 
 gulp.task('watch', () => {
   gulp.watch('scss/**/*.scss', ['scss']);
-  gulp.watch('js-source/*.js', ['babel']);
 });
 
-gulp.task('default', ['scss', 'babel', 'watch']);
-
-gulp.task('babel', () =>
-    gulp.src('js-source/main.js')
-        .pipe(babel({ presets: ['es2015-script'] }))
-        .pipe(gulp.dest('js'))
-);
+gulp.task('default', ['scss', 'watch']);

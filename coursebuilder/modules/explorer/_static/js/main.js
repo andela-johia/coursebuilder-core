@@ -4,6 +4,16 @@ window.addEventListener('WebComponentsReady', function documentReady() {
   $('ul.tabs').tabs();
   $('.collapsible').collapsible();
 
+  $('.slider-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: false,
+    dots: false,
+    items: 1
+  });
+  
   $('.awards-carousel').owlCarousel({
     loop: true,
     margin: 10,

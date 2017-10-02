@@ -4,6 +4,16 @@ $(document).ready(function () {
   $('ul.tabs').tabs();
   $('.collapsible').collapsible();
 
+  $('.slider-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: false,
+    dots: false,
+    items: 1
+  });
+
   $('.awards-carousel').owlCarousel({
     loop: true,
     margin: 10,
@@ -13,7 +23,7 @@ $(document).ready(function () {
     dots: false,
     items: 4
   });
-
+  
   $('.how-carousel').owlCarousel({
     loop: true,
     margin: 10,
