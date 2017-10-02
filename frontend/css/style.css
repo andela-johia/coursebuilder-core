@@ -3423,24 +3423,24 @@ img { max-width: 100%; vertical-align: bottom; }
 
 .course-page-nav .button-collapse { display: block; position: relative !important; margin-right: 50px; }
 
-.hero-banner .hero-banner-content h1 { color: white; }
-
-.hero-banner { display: block; background: url("../images/hero-banner.jpg"); background-position: center; background-size: cover; }
-
-.hero-banner .hero-banner-content { max-width: 1200px; color: white; position: relative; padding: 70px 15px; }
-
-.hero-banner .hero-banner-content h1 { font-size: 2rem; font-family: Trebuchet MS; color: white; background: rgba(0, 0, 0, 0.5); padding: 80px; max-width: 500px; margin: 0 0 0 0; min-height: 430px; }
-
-.hero-banner .hero-banner-content a { background: red; position: absolute; top: 50%; left: 50%; }
-
-@media screen and (max-width: 992px) { background: #F5F5F5;
-  .hero-banner-content { padding: 50px 15px; }
-  .hero-banner-content h1, .hero-banner-content p { color: #424242; }
-  .hero-banner-content h1 { font-size: 3rem; }
-  .hero-banner-content p { font-weight: 300; font-size: 1.2rem; margin: 30px 0; }
-  .hero-banner-content .btn-large { margin-top: 30px; } }
-
 .slider { height: auto; }
+
+.slider .hero-banner .hero-banner-content h1 { color: white; }
+
+.slider .hero-banner { display: block; background: url("../images/hero-banner.jpg"); background-position: center; background-size: cover; }
+
+.slider .hero-banner .hero-banner-content { max-width: 1200px; color: white; position: relative; padding: 70px 15px; }
+
+.slider .hero-banner .hero-banner-content h1 { font-size: 2rem; font-family: Trebuchet MS; color: white; background: rgba(0, 0, 0, 0.5); padding: 80px; max-width: 500px; margin: 0 0 0 0; min-height: 430px; }
+
+.slider .hero-banner .hero-banner-content a { background: red; position: absolute; top: 50%; left: 50%; }
+
+@media screen and (max-width: 992px) { .slider { background: #F5F5F5; }
+  .slider .hero-banner-content { padding: 50px 15px; }
+  .slider .hero-banner-content h1, .slider .hero-banner-content p { color: #424242; }
+  .slider .hero-banner-content h1 { font-size: 3rem; }
+  .slider .hero-banner-content p { font-weight: 300; font-size: 1.2rem; margin: 30px 0; }
+  .slider .hero-banner-content .btn-large { margin-top: 30px; } }
 
 .mission { background: white; }
 
