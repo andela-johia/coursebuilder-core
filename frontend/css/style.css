@@ -1764,7 +1764,8 @@ nav .brand-logo { position: absolute; color: #fff; display: inline-block; font-s
 
 nav .brand-logo.center { left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); }
 
-@media only screen and (max-width: 992px) { nav .brand-logo { left: 60%; -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+@media only screen and (max-width: 992px) { nav .brand-logo { left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+
   nav .brand-logo.left, nav .brand-logo.right { padding: 0; -webkit-transform: none; transform: none; }
   nav .brand-logo.left { left: 0.5rem; }
   nav .brand-logo.right { right: 0.5rem; left: auto; } }
@@ -3329,8 +3330,6 @@ img { max-width: 100%; vertical-align: bottom; }
 
 .light-text { font-weight: 300; }
 
-.pad-5 { padding-left: 2%; }
-
 .page-wrapper { margin-top: 65px; display: none; }
 
 @media screen and (max-width: 992px) { .page-wrapper { margin-top: 0; } }
@@ -3369,7 +3368,7 @@ img { max-width: 100%; vertical-align: bottom; }
 
 .nav-extended .brand-logo img { width: 150px; margin-bottom: 5px; }
 
-.nav-extended .navbar-links { margin-left: 15%; }
+.nav-extended .navbar-links { margin-left: 35%; }
 
 .nav-extended a { color: #000; font-size: 1rem; }
 
@@ -3425,22 +3424,24 @@ img { max-width: 100%; vertical-align: bottom; }
 
 .course-page-nav .button-collapse { display: block; position: relative !important; margin-right: 50px; }
 
-.hero-banner .hero-banner-content h1 { color: white; }
+.slider { height: auto; }
 
-.hero-banner { display: block; background: url("../images/hero-banner.jpg"); background-position: center; background-size: cover; }
+.slider .hero-banner .hero-banner-content h1 { color: white; }
 
-.hero-banner .hero-banner-content { max-width: 1200px; color: white; position: relative; padding: 70px 15px; }
+.slider .hero-banner { display: block; background: url("../images/hero-banner.jpg"); background-position: center; background-size: cover; }
 
-.hero-banner .hero-banner-content h1 { font-size: 2rem; font-family: Trebuchet MS; color: white; background: rgba(0, 0, 0, 0.5); padding: 80px; max-width: 500px; margin: 0 0 0 0; min-height: 430px; }
+.slider .hero-banner .hero-banner-content { max-width: 1200px; color: white; position: relative; padding: 70px 15px; }
 
-.hero-banner .hero-banner-content a { background: red; position: absolute; top: 50%; left: 50%; }
+.slider .hero-banner .hero-banner-content h1 { font-size: 2rem; font-family: Trebuchet MS; color: white; background: rgba(0, 0, 0, 0.5); padding: 80px; max-width: 500px; margin: 0 0 0 0; min-height: 430px; }
 
-@media screen and (max-width: 992px) { background: #F5F5F5;
-  .hero-banner-content { padding: 50px 15px; }
-  .hero-banner-content h1, .hero-banner-content p { color: #424242; }
-  .hero-banner-content h1 { font-size: 3rem; }
-  .hero-banner-content p { font-weight: 300; font-size: 1.2rem; margin: 30px 0; }
-  .hero-banner-content .btn-large { margin-top: 30px; } }
+.slider .hero-banner .hero-banner-content a { background: red; position: absolute; top: 50%; left: 50%; }
+
+@media screen and (max-width: 992px) { .slider { background: #F5F5F5; }
+  .slider .hero-banner-content { padding: 50px 15px; }
+  .slider .hero-banner-content h1, .slider .hero-banner-content p { color: #424242; }
+  .slider .hero-banner-content h1 { font-size: 3rem; }
+  .slider .hero-banner-content p { font-weight: 300; font-size: 1.2rem; margin: 30px 0; }
+  .slider .hero-banner-content .btn-large { margin-top: 30px; } }
 
 .mission { background: white; }
 
@@ -3448,9 +3449,9 @@ img { max-width: 100%; vertical-align: bottom; }
 
 .mission .blue-section-inner p { margin: 0; padding: 0; }
 
-.awards .carousel-section-wrapper, .how-it-works .carousel-section-wrapper { display: block; max-width: 1200px; margin: 0 auto; }
+.awards .carousel-section-wrapper, .how-it-works .slider .carousel-section-wrapper { display: block; max-width: 1200px; margin: 0 auto; }
 
-.awards p, .how-it-works p { font-size: 1rem; font-weight: 100; letter-spacing: 0.8px; line-height: 25px; color: #616161; }
+.awards p, .how-it-works .slider p { font-size: 1rem; font-weight: 100; letter-spacing: 0.8px; line-height: 25px; color: #616161; }
 
 .awards { text-align: center; background-color: #F5F5F5; padding: 0; }
 
@@ -3758,7 +3759,7 @@ h2.style-scope.filter-sidebar { margin-top: 0 !important; }
 
 #tools .row .card { width: 25rem !important; height: 30rem !important; margin-bottom: 3.0rem; }
 
-.green-section { background-color: #1477D6; padding: 1.25rem 2.5rem; color: #FFF; }
+.green-section { margin-top: 60px; background-color: #1477D6; padding: 1.25rem 2.5rem; color: #FFF; }
 
 .green-section h2, .green-section h3 { margin: 0; }
 
@@ -3891,6 +3892,8 @@ h2.style-scope.filter-sidebar { margin-top: 0 !important; }
 ul#share-dropdown { min-width: 150px; margin-top: 55px; }
 
 .dropdown-content li > a, .dropdown-content li > span { color: #808080; }
+
+.page-wrapper { margin-top: 65px; }
 
 #faqs { background-color: #F5F5F5; padding-bottom: 30px; min-height: 500px; }
 
@@ -4042,7 +4045,7 @@ ul#share-dropdown { min-width: 150px; margin-top: 55px; }
 
 #student-dashboard .section-label { text-align: left; }
 
-.sd-top { background-color: #4054B2; }
+.sd-top { background-color: #4054B2; margin-top: 60px; }
 
 .sd-top-left { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; color: #FFF; }
 

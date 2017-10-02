@@ -13,11 +13,28 @@
 <link rel="import" href="/modules/explorer/_static/components/pages/feedback-page.html">
 <link rel="import" href="/modules/explorer/_static/components/pages/help-page.html">
 <link rel="import" href="/modules/explorer/_static/components/pages/events-page.html">
+<link rel="import" href="/modules/explorer/_static/components/pages/student-dashboard.html">
 
 
 <dom-module id="course-explorer">
   <template>
     <top-bar current-user="[[currentUser]]"></top-bar>
+
+
+    <template is="dom-if" if="[[loadDashboard]]">
+      <iron-ajax
+        auto url="/modules/gql/query"
+        params="[[_getDetailedCoursesQuery()]]"
+        handle-as="json"
+        json-prefix=")]}'"
+        on-response="_onDetailedCoursesResponse"
+      ></iron-ajax>
+    </template>
+
+
+      <student-dashboard loaded="[[dashboardLoaded]]" current-user="[[currentUser]]" dashboardcourses="[[dashboardCourses]]">
+      </student-dashboard>
+
 
     <home-page current-user="[[currentUser]]"></home-page>
 
@@ -155,7 +172,23 @@
         coursesLoaded: {
           type: Boolean,
           value: false,
-        }
+        },
+        registeredCourseIds: {
+          type: Array,
+          value: [],
+        },
+        dashboardCourses: {
+          type: Array,
+          value: []
+        },
+        dashboardLoaded: {
+          type: Boolean,
+          value: false,
+        },
+        loadDashboard: {
+          type: Boolean,
+          value: false,
+        },
       },
 
       _getBasicQuery: function () {
@@ -184,11 +217,50 @@
       },
 
       _onCoursesResponse: function (event) {
-        this.set('courses', event.detail.response.data.allCourses);
-        this.set(
-          'filterOptions.status', 'all'); // Todo:  this._enrolledInAny() ? 'enrolled' : 'all'
+        var courses = event.detail.response.data.allCourses;
+        this.set('courses', courses);
+        this.set('filterOptions.status', 'all');
         this.set('categories', this._getCategories().sort());
         this.set('coursesLoaded', true);
+
+        var registeredCourseIds = [];
+        courses.edges.forEach(function (course) {
+          if (course.node.enrollment.enrolled === true) {
+            registeredCourseIds.push(course.node.id)
+          }
+        });
+        if (registeredCourseIds.length > 0) {
+          this.set('registeredCourseIds', registeredCourseIds);
+          this.set('loadDashboard', true);
+        } else {
+          this.set('dashboardLoaded', true);
+        }
+      },
+
+      _getDetailedCoursesQuery: function () {
+        var query = '{';
+        var counter = 0;
+        this.get('registeredCourseIds').forEach(function (courseId) {
+          query += 'course' + counter + ': course(id:"' + courseId + '"){...courseDetails}';
+          counter += 1;
+        });
+        query += '} fragment courseDetails on Course {'
+          + 'id, title, url, allUnits{edges{node{title, detailedLessons{edges{node{title, progress, link}}}}}} }';
+        return {
+          q: query
+        }
+      },
+
+      _onDetailedCoursesResponse: function (event) {
+        var response = event.detail.response.data;
+        var courses = [];
+        this.get('registeredCourseIds').forEach(function (item, index) {
+          if (response['course' + index]) {
+            courses.push(response['course' + index]);
+          }
+        });
+        this.set('dashboardCourses', courses);
+        this.set('dashboardLoaded', true);
       },
 
       _enrolledInAny: function () {
