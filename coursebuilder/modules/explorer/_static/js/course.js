@@ -11,7 +11,8 @@ $(document).ready(function documentReady() {
       '<i class="material-icons small">chevron_left</i>',
       '<i class="material-icons small">chevron_right</i>'
     ],
-    items: 1
+    items: 1,
+    autoHeight: true
   });
 
   var sidebarToggle = false;
