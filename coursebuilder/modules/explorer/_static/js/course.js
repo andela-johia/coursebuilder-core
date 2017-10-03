@@ -12,7 +12,9 @@ $(document).ready(function documentReady() {
       '<i class="material-icons small">chevron_right</i>'
     ],
     items: 1,
-    autoHeight: true
+    AutoHeight: {
+      autoHeight: true
+  }
   });
 
   var sidebarToggle = false;
