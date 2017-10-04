@@ -325,3 +325,13 @@ ul#share-dropdown {
 [type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
     border-radius: 9px;
 }  
+
+@media screen and (max-width: 1000px) {
+  #course-page .course-content .course-accordion {
+    position: relative;
+    display: none;
+    color: #565555;
+    background-color: #FFF;
+    border-bottom: 1px solid #e0e0e0;
+}
+} 

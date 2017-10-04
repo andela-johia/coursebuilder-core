@@ -3886,6 +3886,8 @@ ul#share-dropdown { min-width: 150px; margin-top: 55px; }
 
 [type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after { border-radius: 9px; }
 
+@media screen and (max-width: 1000px) { #course-page .course-content .course-accordion { position: relative; display: none; color: #565555; background-color: #FFF; border-bottom: 1px solid #e0e0e0; } }
+
 #faqs { background-color: #F5F5F5; padding-bottom: 30px; min-height: 500px; }
 
 #faqs .img { position: relative; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); display: block; max-width: 100%; -ms-flex-item-align: center; align-self: center; max-width: 20%; max-height: 20%; }
