@@ -269,6 +269,25 @@
   }
 }
 
+#courseMobileSidebar {
+  min-width: 400px;
+  padding-top: 30px;
+
+  .course-expand-btn {
+    height: 50px;
+    top: 0;
+    width: 50px;
+    border-radius: 25px;
+  }
+
+ .collapsible-body i {
+    vertical-align: top !important;
+  }
+}
+#courseMobileSidebarBtn {
+  margin-right: 0;
+}
+
 // App specific styles
 .gcb-edit-lesson-button {
   display: none !important;
@@ -296,7 +315,7 @@
 
 .gcb-breadcrumb a {
   color: $brown-l;
-  
+
   &:hover {
     color: $color-white;
   }
