@@ -26,4 +26,10 @@ $(document).ready(function documentReady() {
     $('.course-card').animate({'margin-left': sidebarWidth / 2 + 'px'}, 300);
     $('.course-accordion').animate({'margin-left': '-' + sidebarWidth + 'px'}, 300);
   });
+
+  $('.course-accordion .collapsible').clone().appendTo('#courseMobileSidebar');
+  $('.collapsible').collapsible();
+  $('body').on('click', '#closeSideNav', function () {
+    $('.button-collapse').sideNav('hide');
+  });
 });
