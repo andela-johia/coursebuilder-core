@@ -8,8 +8,8 @@ $(document).ready(function documentReady() {
     margin: 10,
     nav: true,
     navText: [
-      '<i class="material-icons small">chevron_left</i>',
-      '<i class="material-icons small">chevron_right</i>'
+      '<i class="material-icons small" onclick="window.scrollTo(20, 20)">chevron_left</i>',
+      '<i class="material-icons small" onclick="window.scrollTo(20, 20)">chevron_right</i>'
     ],
     items: 1,
     AutoHeight: {
