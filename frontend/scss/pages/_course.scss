@@ -268,6 +268,24 @@
     position: relative;
   }
 }
+#courseMobileSidebar {
+  min-width: 400px;
+  padding-top: 30px;
+
+  .course-expand-btn {
+    height: 50px;
+    top: 0;
+    width: 50px;
+    border-radius: 25px;
+  }
+
+ .collapsible-body i {
+    vertical-align: top !important;
+  }
+}
+#courseMobileSidebarBtn {
+  margin-right: 0;
+}
 
 // App specific styles
 .gcb-edit-lesson-button {
@@ -321,3 +339,7 @@ ul#share-dropdown {
 .page-wrapper {
   margin-top: 65px;
   }
+
+[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
+    border-radius: 9px;
+}  
