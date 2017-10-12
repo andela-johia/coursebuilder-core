@@ -12,10 +12,15 @@ $(document).ready(function documentReady() {
       '<i class="material-icons small" onclick="window.scrollTo(20, 20)">chevron_right</i>'
     ],
     items: 1,
+    onDragged: callback,    
     AutoHeight: {
       autoHeight: true
   }
   });
+
+  $('.course-carousel').on('changed.owl.carousel', function(event) {
+    window.scrollTo(20, 20);
+});
 
   var sidebarToggle = false;
   $('body').on('click', '#hideCourseSidenav', function () {
