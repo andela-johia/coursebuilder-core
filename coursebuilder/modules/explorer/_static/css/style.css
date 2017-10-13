@@ -3836,7 +3836,7 @@ h2.style-scope.filter-sidebar { margin-top: 0 !important; }
 
 #course-page .course-content .course-card h2, #course-page .course-content .course-card h3 { font-size: 1.6rem; }
 
-#course-page .course-content .course-card p { font-size: 1.2rem; }
+#course-page .course-content .course-card p { font-size: 14px; }
 
 #course-page .course-content .course-card iframe { width: 100% !important; margin-bottom: 15px; }
 
@@ -3899,6 +3899,10 @@ ul#share-dropdown { min-width: 150px; margin-top: 55px; }
 .gcb-lesson-content ul:not(.browser-default) { padding-left: 30px; list-style-type: none; }
 
 .gcb-lesson-content ul:not(.browser-default) > li { list-style-type: disc; }
+
+body { font-size: 14px; }
+
+html { font-family: "Roboto"; font-weight: 400; line-height: 1.8571428571; color: #555; }
 
 #faqs { background-color: #F5F5F5; padding-bottom: 30px; min-height: 500px; }
 
