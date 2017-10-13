@@ -8,19 +8,15 @@ $(document).ready(function documentReady() {
     margin: 10,
     nav: true,
     navText: [
-      '<i class="material-icons small" onclick="window.scrollTo(20, 20)">chevron_left</i>',
-      '<i class="material-icons small" onclick="window.scrollTo(20, 20)">chevron_right</i>'
+      '<i class="material-icons small">chevron_left</i>',
+      '<i class="material-icons small">chevron_right</i>'
     ],
-    items: 1,
-    onDragged: callback,    
-    AutoHeight: {
-      autoHeight: true
-  }
+    items: 1
   });
 
   $('.course-carousel').on('changed.owl.carousel', function(event) {
     window.scrollTo(20, 20);
-});
+  });
 
   var sidebarToggle = false;
   $('body').on('click', '#hideCourseSidenav', function () {
