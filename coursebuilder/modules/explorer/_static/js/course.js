@@ -15,7 +15,9 @@ $(document).ready(function documentReady() {
   });
 
   $('.course-carousel').on('changed.owl.carousel', function(event) {
-    window.scrollTo(20, 20);
+    var el = $(".course-carousel");
+    var position = el.position();
+    window.scrollTo(position.top, position.left);    
   });
 
   var sidebarToggle = false;
