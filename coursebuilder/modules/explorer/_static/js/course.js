@@ -16,7 +16,11 @@ $(document).ready(function documentReady() {
 
   $('.course-carousel').on('changed.owl.carousel', function(event) {
     var pos = $(this).position();
-    window.scrollTo(pos.top, pos.left);
+    window.scrollTo({
+      'behavior': 'smooth',
+      'left': pos.left,
+      'top': pos.top
+    });
   });
 
   var sidebarToggle = false;
