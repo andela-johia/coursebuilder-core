@@ -15,12 +15,12 @@ $(document).ready(function documentReady() {
   });
 
   $('.course-carousel').on('changed.owl.carousel', function(event) {
-    var pos1 = jQuery(event.target)
-    var pos = pos1.position();
+    var changed_carousel = jQuery(event.target)
+    var position_coordinates = changed_carousel.position();
     window.scrollTo({
       'behavior': 'smooth',
-      'left': pos.left,
-      'top': pos.top
+      'left': position_coordinates.left,
+      'top': position_coordinates.top
     });
   });
 
