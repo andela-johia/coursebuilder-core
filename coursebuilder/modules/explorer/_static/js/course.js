@@ -15,7 +15,8 @@ $(document).ready(function documentReady() {
   });
 
   $('.course-carousel').on('changed.owl.carousel', function(event) {
-    var pos = $(this).position();
+    var pos1 = jQuery(event.target)
+    var pos = pos1.position();
     window.scrollTo({
       'behavior': 'smooth',
       'left': pos.left,
