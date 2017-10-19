@@ -15,7 +15,7 @@ $(document).ready(function documentReady() {
   });
 
   $('.course-carousel').on('changed.owl.carousel', function(event) {
-    var changed_carousel = jQuery(event.target)
+    var changed_carousel = $(event.target).closest('.course-carousel');
     var position_coordinates = changed_carousel.position();
     window.scrollTo({
       'behavior': 'smooth',
