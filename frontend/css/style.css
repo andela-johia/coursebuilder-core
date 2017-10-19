@@ -3862,14 +3862,6 @@ h2.style-scope.filter-sidebar { margin-top: 0 !important; }
 
 .course-carousel .item { position: relative; }
 
-#courseMobileSidebar { min-width: 400px; padding-top: 30px; }
-
-#courseMobileSidebar .course-expand-btn { height: 50px; top: 0; width: 50px; border-radius: 25px; }
-
-#courseMobileSidebar .collapsible-body i { vertical-align: top !important; }
-
-#courseMobileSidebarBtn { margin-right: 0; }
-
 .gcb-edit-lesson-button { display: none !important; }
 
 .gcb-progress-empty, .gcb-progress-icon { display: none; }
