@@ -3892,7 +3892,7 @@ ul#share-dropdown { min-width: 150px; margin-top: 55px; }
 
 .dropdown-content li > a, .dropdown-content li > span { color: #808080; }
 
-[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after { border-radius: 9px; }
+.page-wrapper { margin-top: 65px; }
 
 .gcb-lesson-content ul:not(.browser-default) { padding-left: 30px; list-style-type: none; }
 

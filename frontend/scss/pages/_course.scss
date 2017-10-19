@@ -337,9 +337,9 @@ ul#share-dropdown {
   color: #808080;
 }
 
-[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
-    border-radius: 9px;
-}  
+.page-wrapper {
+  margin-top: 65px;
+  } 
 
 .gcb-lesson-content ul {
   &:not(.browser-default) {
