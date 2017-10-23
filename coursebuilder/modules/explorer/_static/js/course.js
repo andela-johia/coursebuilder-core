@@ -14,6 +14,16 @@ $(document).ready(function documentReady() {
     items: 1
   });
 
+  $('.course-carousel').on('changed.owl.carousel', function(event) {
+    var changed_carousel = $(event.target).closest('.course-carousel');
+    var position_coordinates = changed_carousel.position();
+    window.scrollTo({
+      'behavior': 'smooth',
+      'left': position_coordinates.left,
+      'top': position_coordinates.top
+    });
+  });
+
   var sidebarToggle = false;
   $('body').on('click', '#hideCourseSidenav', function () {
     sidebarToggle = !sidebarToggle;

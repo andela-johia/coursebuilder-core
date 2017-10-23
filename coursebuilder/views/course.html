@@ -58,7 +58,7 @@
 
 
         <div class="course-accordion col l5 xl4 m12">
-          <div class="hide-on-med-and-down">
+
             {% if course_outline %}
               <h3>
                 Lesson Plan
@@ -86,10 +86,8 @@
                 {{ item }}
               {% endfor %}
             {% endif %}
+
           </div>
-          <ul class="side-nav" id="courseMobileSidebar">
-            <li><a id="closeSideNav" href="#!"><i class="material-icons">close</i>Close</a></li>
-          </ul>
 
         </div>
 
@@ -108,5 +106,4 @@
         </div>
       </div>
     </div>
-  </div>
 {% endblock %}

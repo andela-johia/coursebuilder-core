@@ -55,7 +55,7 @@
 }
 
 #course-page {
-  
+   margin-top: 0; 
   .course-content {
     .row, .course-accordion {
       margin: 0;
@@ -187,7 +187,7 @@
       }
 
       p {
-        font-size: 1.2rem;
+        font-size: 14px;
       }
 
       iframe {
@@ -269,24 +269,24 @@
   }
 }
 
-#courseMobileSidebar {
-  min-width: 400px;
-  padding-top: 30px;
+#courseMobileSidebar {		
+  min-width: 400px;		
+  padding-top: 30px;		
 
-  .course-expand-btn {
-    height: 50px;
-    top: 0;
-    width: 50px;
-    border-radius: 25px;
+  .course-expand-btn {		
+    height: 50px;		
+    top: 0;		
+    width: 50px;		
+    border-radius: 25px;		
+  }		
+	
+  .collapsible-body i {		
+    vertical-align: top !important;		
+   }		
+  }		
+  #courseMobileSidebarBtn {		
+    margin-right: 0;		
   }
-
- .collapsible-body i {
-    vertical-align: top !important;
-  }
-}
-#courseMobileSidebarBtn {
-  margin-right: 0;
-}
 
 // App specific styles
 .gcb-edit-lesson-button {
@@ -315,7 +315,7 @@
 
 .gcb-breadcrumb a {
   color: $brown-l;
-
+  
   &:hover {
     color: $color-white;
   }
@@ -337,6 +337,29 @@ ul#share-dropdown {
 .dropdown-content li > a, .dropdown-content li > span {
   color: #808080;
 }
+
 .page-wrapper {
   margin-top: 65px;
+  } 
+
+.gcb-lesson-content ul {
+  &:not(.browser-default) {
+    padding-left: 30px;
+    list-style-type: none;
+
+    & > li {
+      list-style-type: disc;
+    }
   }
+}
+
+body {
+  font-size: 14px;
+}
+ 
+html {
+  font-family: "Roboto";  
+  font-weight: 400;
+  line-height: 1.8571428571;
+  color: #555;
+}
