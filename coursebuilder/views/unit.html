@@ -126,7 +126,7 @@
                 {% if next_button_url %}
                   <a href="{{ next_button_url }}" class="btn right">{{ gettext('Next') }}</a>
                 {% else %}
-                  {% if unit.title in course_outline[((course_outline|length) - 1)].title %}
+                  {% if unit_id == course_outline[((course_outline|length) - 1)].id %}
                     <a href="/#!explorer" class="btn right"> {{ gettext('End') }} </a>
                   {% else %}
                     <a href="course" class="btn right"> {{ gettext('End') }} </a>
