@@ -372,7 +372,6 @@ class UnitHandler(utils.BaseHandler):
         return jinja_utils.get_gcb_tags_filter(self)(text)
 
     def _show_all_contents(self, student, unit, student_view):
-        self.template_value['unit_id'] = unit.unit_id
         is_admin = roles.Roles.is_course_admin(self.app_context)
 
         course = self.get_course()
