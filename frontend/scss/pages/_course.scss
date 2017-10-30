@@ -187,7 +187,7 @@
       }
 
       p {
-        font-size: 1.2rem;
+        font-size: 14px;
       }
 
       iframe {
@@ -268,24 +268,25 @@
     position: relative;
   }
 }
-#courseMobileSidebar {
-  min-width: 400px;
-  padding-top: 30px;
 
-  .course-expand-btn {
-    height: 50px;
-    top: 0;
-    width: 50px;
-    border-radius: 25px;
-  }
+#courseMobileSidebar {		
+  min-width: 400px;		
+  padding-top: 30px;		
 
- .collapsible-body i {
-    vertical-align: top !important;
+  .course-expand-btn {		
+    height: 50px;		
+    top: 0;		
+    width: 50px;		
+    border-radius: 25px;		
+  }		
+	
+  .collapsible-body i {		
+    vertical-align: top !important;		
+   }		
+  }		
+  #courseMobileSidebarBtn {		
+    margin-right: 0;		
   }
-}
-#courseMobileSidebarBtn {
-  margin-right: 0;
-}
 
 // App specific styles
 .gcb-edit-lesson-button {
@@ -336,10 +337,36 @@ ul#share-dropdown {
 .dropdown-content li > a, .dropdown-content li > span {
   color: #808080;
 }
+
 .page-wrapper {
   margin-top: 65px;
+  } 
+
+.gcb-lesson-content ul {
+  &:not(.browser-default) {
+    padding-left: 30px;
+    list-style-type: none;
+
+    & > li {
+      list-style-type: disc;
+    }
   }
+
 
 [type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
     border-radius: 9px;
 }  
+
+}
+
+body {
+  font-size: 14px;
+}
+ 
+html {
+  font-family: "Roboto";  
+  font-weight: 400;
+  line-height: 1.8571428571;
+  color: #555;
+}
+
