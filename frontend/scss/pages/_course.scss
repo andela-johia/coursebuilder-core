@@ -351,6 +351,12 @@ ul#share-dropdown {
       list-style-type: disc;
     }
   }
+
+
+[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
+    border-radius: 9px;
+}  
+
 }
 
 body {
@@ -363,3 +369,4 @@ html {
   line-height: 1.8571428571;
   color: #555;
 }
+
