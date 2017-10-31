@@ -244,8 +244,6 @@ class AssessmentHandler(AssignmentsModuleMixin, utils.BaseHandler):
             configure_active_view(unit, submission_contents)
 
         self.template_value['assessment_attempted'] = bool(submission_contents)
-        student_view = unit_outline.StudentCourseView(course, student)
-        self.template_value['course_outline'] = student_view.contents
 
         return self.render_template_to_html(
             self.template_value, 'assessment.html')
