@@ -83,7 +83,11 @@
 
             </div>
             <div class="course-navigation">
+              {% if unit_id|int == (course_outline[((course_outline|length) - 1)].id)|int %}
+                <a href="/#!explorer" class="btn right"> {{ gettext('End') }} </a>
+              {% else %}
                 <a href="course" class="btn right"> {{ gettext('End') }} </a>
+              {% endif %}
             </div>
           </div>
         </div>
