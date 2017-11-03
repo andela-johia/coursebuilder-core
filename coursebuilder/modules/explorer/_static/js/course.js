@@ -39,4 +39,35 @@ $(document).ready(function documentReady() {
   $('body').on('click', '#closeSideNav', function () {
     $('.button-collapse').sideNav('hide');
   });
+  var carouselContentElements = [
+    "input",
+    "img",
+    "textarea",
+    "select",
+    "option",
+    "span"
+  ];
+
+  $(".course-carousel").on("click", function(event) {
+    $(document.documentElement).off("keyup");
+    var owlCarousel = $(event.target).closest(".owl-carousel");
+    var target = $(event.target);
+    $(document.documentElement).on("keyup", function(event) {
+      var isElement = false;
+      for (var i = 0; i <= carouselContentElements.length; i++) {
+        if (target.is(carouselContentElements[i])) {
+          isElement = true;
+        }
+      }
+      if (isElement) {
+        event.stopPropagation();
+      } else {
+        if (event.keyCode == 37) {
+          owlCarousel.trigger("prev.owl.carousel");
+        } else if (event.keyCode == 39) {
+          owlCarousel.trigger("next.owl.carousel");
+        }
+      }
+    });
+  });
 });
