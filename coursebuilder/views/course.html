@@ -32,7 +32,7 @@
       <div class="course-links">
         <button class="btn">
           <a href="/#!explorer">
-            <i class="material-icons">library_books</i> 
+            <i class="material-icons">library_books</i>
             COURSES
           </a>
         </button>
@@ -84,21 +84,18 @@
                 {{ item }}
               {% endfor %}
             {% endif %}
-
           </div>
         <div class="course-card col l7 xl8 m12">
           <div class="card">
-
             <div class="gcb-cols">
               {% include 'summary.html' %}
-
               {% if transient_student %}
                 {% include 'registration_module.html' %}
               {% endif %}
             </div>
           </div>
         </div>
-        </div>
       </div>
     </div>
+  </div>
 {% endblock %}
