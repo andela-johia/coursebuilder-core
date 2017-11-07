@@ -16,9 +16,8 @@ class CarouselNavigationTest(unittest.TestCase):
         """Assert no carousel movement when the user clicks inside the carousel"""
         driver = self.driver
         driver.implicitly_wait(20)
-        driver.get("https://johnboscoohia-dot-cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=12")
+        driver.get("https://cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=12")
         driver.maximize_window()
-        self.assertIn("Test - - Unit 2 - Unit 2", driver.title)
         driver.find_element_by_tag_name("body")
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         element = driver.find_element_by_id("7MD2r4aHrXrY").find_element_by_tag_name("input")
@@ -33,7 +32,7 @@ class CarouselNavigationTest(unittest.TestCase):
         """Assert movement of the carousel when the user clicks outside the carousel content."""
         driver = self.driver
         driver.implicitly_wait(20)
-        driver.get("https://johnboscoohia-dot-cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=12")
+        driver.get("https://cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=12")
         driver.maximize_window()
         ActionChains(driver) \
             .key_down(Keys.ARROW_DOWN) \
@@ -52,7 +51,7 @@ class CarouselNavigationTest(unittest.TestCase):
             .perform()
         element = driver.find_element_by_css_selector("div#nwdacawc64qe")
         self.assertTrue(element)
-        carousel_element = driver.find_element_by_class_name('qt-check-answer-button')
+        carousel_element = driver.find_element_by_class_name('qt-sa-question')
         ActionChains(driver) \
             .click(carousel_element) \
             .key_down(Keys.ARROW_RIGHT) \
@@ -67,7 +66,7 @@ class CarouselNavigationTest(unittest.TestCase):
         """Assert movement of a carousel does not affect the movement of the other carousels present."""
         driver = self.driver
         driver.implicitly_wait(20)
-        driver.get("https://johnboscoohia-dot-cfafrica-mooc-dev.appspot.com/test/unit?unit=1&lesson=2")
+        driver.get("https://cfafrica-mooc-dev.appspot.com/test/unit?unit=1&lesson=2")
         driver.maximize_window()
         driver.find_element_by_tag_name("body")
         first_carousel_content = driver.find_element_by_class_name("gcb-video-container")
@@ -87,7 +86,7 @@ class CarouselNavigationTest(unittest.TestCase):
     def test_individual_carousel_movement(self):
         driver = self.driver
         driver.implicitly_wait(20)
-        driver.get("https://johnboscoohia-dot-cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=11")
+        driver.get("https://cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=11")
         driver.maximize_window()
         first_carousel = driver.find_element_by_class_name("owl-carousel")
         ActionChains(driver).click(first_carousel)\
@@ -99,7 +98,7 @@ class CarouselNavigationTest(unittest.TestCase):
     def test_no_carousel_movement_with_radio_buttons(self):
         driver = self.driver
         driver.implicitly_wait(20)
-        driver.get("https://johnboscoohia-dot-cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=11")
+        driver.get("https://cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=11")
         driver.maximize_window()
         first_carousel_content = driver.find_element_by_class_name("owl-carousel")
         ActionChains(driver).click(first_carousel_content).key_down(Keys.ARROW_RIGHT).perform()
@@ -118,7 +117,7 @@ class CarouselNavigationTest(unittest.TestCase):
     def test_no_carousel_movement_inside_code_mirror(self):
         driver = self.driver
         driver.implicitly_wait(20)
-        driver.get("https://johnboscoohia-dot-cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=17")
+        driver.get("https://cfafrica-mooc-dev.appspot.com/test/unit?unit=4&lesson=17")
         driver.maximize_window()
         first_carousel_content = driver.find_element_by_class_name("owl-carousel")
         ActionChains(driver).click(first_carousel_content).key_down(Keys.ARROW_RIGHT).perform()

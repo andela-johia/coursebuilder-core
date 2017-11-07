@@ -1,9 +1,9 @@
 $(document).ready(function documentReady() {
   $(".button-collapse").sideNav();
-  $('select').material_select();
-  $('.dropdown-button').dropdown();
+  $("select").material_select();
+  $(".dropdown-button").dropdown();
 
-  $('.course-carousel').owlCarousel({
+  $(".course-carousel").owlCarousel({
     loop: false,
     margin: 10,
     nav: true,
@@ -14,54 +14,53 @@ $(document).ready(function documentReady() {
     items: 1
   });
 
-  $('.course-carousel').on('changed.owl.carousel', function(event) {
-    var changed_carousel = $(event.target).closest('.course-carousel');
+  $(".course-carousel").on("changed.owl.carousel", function(event) {
+    var changed_carousel = $(event.target).closest(".course-carousel");
     var position_coordinates = changed_carousel.position();
     window.scrollTo({
-      'behavior': 'smooth',
-      'left': position_coordinates.left,
-      'top': position_coordinates.top
+      behavior: "smooth",
+      left: position_coordinates.left,
+      top: position_coordinates.top
     });
   });
 
   var sidebarToggle = false;
-  $('body').on('click', '#hideCourseSidenav', function () {
+  $("body").on("click", "#hideCourseSidenav", function() {
     sidebarToggle = !sidebarToggle;
-    var sidebarWidth = sidebarToggle ? $('.course-accordion').width() : 0;
+    var sidebarWidth = sidebarToggle ? $(".course-accordion").width() : 0;
 
-    $('.course-accordion').toggleClass('hide-sidenav');
-    $('.course-card').animate({'margin-left': sidebarWidth / 2 + 'px'}, 300);
-    $('.course-accordion').animate({'margin-left': '-' + sidebarWidth + 'px'}, 300);
+    $(".course-accordion").toggleClass("hide-sidenav");
+    $(".course-card").animate({ "margin-left": sidebarWidth / 2 + "px" }, 300);
+    $(".course-accordion").animate(
+      { "margin-left": "-" + sidebarWidth + "px" },
+      300
+    );
   });
 
-  $('.course-accordion .collapsible').clone().appendTo('#courseMobileSidebar');
-  $('.collapsible').collapsible();
-  $('body').on('click', '#closeSideNav', function () {
-    $('.button-collapse').sideNav('hide');
+  $(".course-accordion .collapsible").clone().appendTo("#courseMobileSidebar");
+  $(".collapsible").collapsible();
+  $("body").on("click", "#closeSideNav", function() {
+    $(".button-collapse").sideNav("hide");
   });
-  var carouselContentElements = [
-    "input",
-    "img",
-    "textarea",
-    "select",
-    "option",
-    "span"
-  ];
 
-  $(".course-carousel").on("click", function(event) {
-    $(document.documentElement).off("keyup");
+  /**
+   * This function returns the first element within the selector that matches
+   * the specified selector
+   * @param {string} element
+   * @returns {any} - the first element
+   */
+  function getQueryElement(element) {
+    if (typeof element == "string") {
+      return document.querySelector(element);
+    }
+    return element;
+  }
+  $(".course-carousel").on("click", function (event) {
+    $(document.documentElement).off("keydown");
+    var queryElement = getQueryElement(":focus");
     var owlCarousel = $(event.target).closest(".owl-carousel");
-    var target = $(event.target);
-    $(document.documentElement).on("keyup", function(event) {
-      var isElement = false;
-      for (var i = 0; i <= carouselContentElements.length; i++) {
-        if (target.is(carouselContentElements[i])) {
-          isElement = true;
-        }
-      }
-      if (isElement) {
-        event.stopPropagation();
-      } else {
+    $(document.documentElement).on("keydown", function (event) {
+      if (queryElement === null) {
         if (event.keyCode == 37) {
           owlCarousel.trigger("prev.owl.carousel");
         } else if (event.keyCode == 39) {
